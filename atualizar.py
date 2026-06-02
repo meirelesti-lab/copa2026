@@ -147,6 +147,8 @@ def git_push():
 
 
 def main():
+    no_git = "--no-git" in sys.argv
+
     # Carregar resultados existentes
     resultados = {}
     if os.path.exists(RESULTADOS_FILE):
@@ -176,9 +178,12 @@ def main():
     print("\n[html] Gerando index.html ...")
     gerar_html(resultados_path=RESULTADOS_FILE, output_path="index.html")
 
-    # Git push
-    print("\n[git] Fazendo push para GitHub Pages ...")
-    git_push()
+    # Git push (pulado quando rodando via GitHub Actions)
+    if no_git:
+        print("\n[git] Modo --no-git: push delegado ao GitHub Actions.")
+    else:
+        print("\n[git] Fazendo push para GitHub Pages ...")
+        git_push()
 
     print("\n✅ Concluído! Site atualizado em https://meirelesti-lab.github.io/copa2026")
 
