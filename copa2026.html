@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Copa do Mundo 2026 🏆</title>
+<link rel="manifest" href="manifest.json"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Copa2026">
+<meta name="application-name" content="Copa2026">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080e0a;font-family:'Space Mono',monospace;padding-bottom:48px;min-height:100vh}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:#10b98133;border-radius:4px}
+.wrap{max-width:600px;margin:0 auto;padding:0 14px}
+.card{background:linear-gradient(135deg,#0f1a12,#111827);border:1px solid #10b98128;border-radius:12px;padding:13px 14px;margin-bottom:8px;transition:opacity 0.2s}
+.card.encerrado{opacity:0.65;border-color:#22c55e44}
+.card.proximo{border:1.5px solid #10b98166;background:linear-gradient(135deg,#0d2a1a,#0f1f2e);box-shadow:0 0 20px #10b98118}
+.card.hidden{display:none}
+.filter-btn{background:#ffffff08;border:1px solid #ffffff12;color:#ffffff77;border-radius:8px;padding:6px 14px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Space Mono',monospace;transition:all 0.15s;white-space:nowrap;flex-shrink:0}
+.filter-btn.active{background:#10b981;border-color:#10b981;color:#000}
+.fase-btn.active{color:#000}
+.scroll-row{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.scroll-row::-webkit-scrollbar{height:2px}
+.sep{display:flex;align-items:center;gap:10px;margin:18px 0 10px}
+.sep-line{flex:1;height:1px;background:#ffffff0a}
+.sep-label{font-size:10px;font-weight:700;color:#ffffff44;font-family:'Space Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;white-space:nowrap}
+.proximo-label{font-size:9px;font-weight:700;color:#10b981;font-family:'Space Mono',monospace;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px}
+@media print{.no-print{display:none!important}body{background:#080e0a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+
+<div style="padding:22px 20px 14px;border-bottom:1px solid #ffffff08;margin-bottom:14px;text-align:center;position:relative;overflow:hidden">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:88px;font-family:'Syne',sans-serif;font-weight:900;color:#ffffff03;pointer-events:none;user-select:none;white-space:nowrap">2026</div>
+  <div style="font-size:9px;letter-spacing:0.3em;color:#10b981;font-weight:700;margin-bottom:3px">FIFA</div>
+  <div style="font-size:22px;font-family:'Syne',sans-serif;font-weight:900;color:#fff">Copa do Mundo</div>
+  <div style="font-size:32px;font-family:'Syne',sans-serif;font-weight:900;background:linear-gradient(90deg,#10b981,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:3px">2026 🏆</div>
+  <div style="font-size:10px;color:#ffffff33">11 Jun – 19 Jul · 🇺🇸 🇲🇽 🇨🇦 · 104 jogos · 48 seleções</div>
+  <div style="font-size:9px;color:#ffffff22;margin-top:6px">Gerado em 01/06/2026 · Horários em Brasília (BRT)</div>
+</div>
+
+<div class="wrap">
+
+<div class="no-print" style="margin-bottom:14px">
+  <div style="font-size:9px;color:#ffffff33;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px">Seleção</div>
+  <div class="scroll-row" id="sel-row">
+    <button class="filter-btn active" onclick="filtrarSel(this,'Todos')">Todos</button>
+    <button class="filter-btn" onclick="filtrarSel(this,'Brasil')">Brasil</button>
+    <button class="filter-btn" onclick="filtrarSel(this,'Argentina')">Argentina</button>
+    <button class="filter-btn" onclick="filtrarSel(this,'Uruguai')">Uruguai</button>
+    <button class="filter-btn" onclick="filtrarSel(this,'México')">México</button>
+    <button class="filter-btn" onclick="filtrarSel(this,'Alemanha')">Alemanha</button>
+  </div>
+</div>
+
+<div class="no-print" style="margin-bottom:16px">
+  <div style="font-size:9px;color:#ffffff33;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px">Fase</div>
+  <div class="scroll-row" id="fase-row">
+    <button class="filter-btn active" onclick="filtrarFase(this,'Todos')">Todos</button>
+    <button class="filter-btn" onclick="filtrarFase(this,'Grupos')" style="color:#10b981">Grupos</button>
+    <button class="filter-btn" onclick="filtrarFase(this,'32 avos')" style="color:#60a5fa">32 avos</button>
+    <button class="filter-btn" onclick="filtrarFase(this,'Oitavas')" style="color:#a78bfa">Oitavas</button>
+    <button class="filter-btn" onclick="filtrarFase(this,'Quartas')" style="color:#f472b6">Quartas</button>
+    <button class="filter-btn" onclick="filtrarFase(this,'Semifinal')" style="color:#fbbf24">Semifinal</button>
+    <button class="filter-btn" onclick="filtrarFase(this,'Final')" style="color:#f59e0b">Final</button>
+  </div>
+</div>
+
+<div id="lista">
+<div class="card" data-fase="Grupos" data-t1="México" data-t2="África do Sul">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP A</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇲🇽 México <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> África do Sul 🇿🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Cidade do México</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">11/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Coreia do Sul" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP B</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇰🇷 Coreia do Sul <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Guadalajara</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">11/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">23h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Canadá" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP D</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇨🇦 Canadá <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Toronto</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">12/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Estados Unidos" data-t2="Paraguai">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP A</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇺🇸 Estados Unidos <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Paraguai 🇵🇾
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Los Angeles</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">12/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">22h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Austrália" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP E</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇦🇺 Austrália <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Vancouver</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">13/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">01h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Catar" data-t2="Suíça">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP D</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇶🇦 Catar <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Suíça 🇨🇭
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 San Francisco</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">13/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Brasil" data-t2="Marrocos">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP C</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇧🇷 Brasil <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Marrocos 🇲🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Nova York/NJ</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">13/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">19h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Haiti" data-t2="Escócia">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP C</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇭🇹 Haiti <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Escócia 🏴󠁧󠁢󠁳󠁣󠁴󠁿
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Boston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">13/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">22h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Alemanha" data-t2="Curaçao">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP F</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇩🇪 Alemanha <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Curaçao 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Houston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">14/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">14h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Holanda" data-t2="Japão">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP F</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇳🇱 Holanda <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Japão 🇯🇵
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Dallas</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">14/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">17h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Costa do Marfim" data-t2="Equador">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP E</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇨🇮 Costa do Marfim <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Equador 🇪🇨
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Filadélfia</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">14/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">20h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="A definir" data-t2="Tunísia">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP G</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Tunísia 🇹🇳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Monterrey</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">14/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">23h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Espanha" data-t2="Cabo Verde">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP H</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇪🇸 Espanha <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Cabo Verde 🇨🇻
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Atlanta</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">15/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Seg</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">13h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Bélgica" data-t2="Egito">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP I</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇧🇪 Bélgica <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Egito 🇪🇬
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Seattle</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">15/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Seg</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Arábia Saudita" data-t2="Uruguai">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP H</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇸🇦 Arábia Saudita <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Uruguai 🇺🇾
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Miami</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">15/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Seg</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">19h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Irã" data-t2="Nova Zelândia">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP I</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇮🇷 Irã <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Nova Zelândia 🇳🇿
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Los Angeles</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">15/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Seg</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">22h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Argentina" data-t2="Argélia">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP J</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇦🇷 Argentina <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Argélia 🇩🇿
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Kansas City</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">16/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">14h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="França" data-t2="Senegal">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP K</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇫🇷 França <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Senegal 🇸🇳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Nova York/NJ</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">16/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="A definir" data-t2="Noruega">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP K</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Noruega 🇳🇴
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Boston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">16/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">19h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Áustria" data-t2="Jordânia">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP G</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇦🇹 Áustria <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Jordânia 🇯🇴
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 San Francisco</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">17/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">01h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Portugal" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP L</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇵🇹 Portugal <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Houston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">17/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">14h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Inglaterra" data-t2="Croácia">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP L</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Croácia 🇭🇷
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Dallas</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">17/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">17h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Gana" data-t2="Panamá">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP B</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇬🇭 Gana <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Panamá 🇵🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Toronto</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">17/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">20h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Uzbequistão" data-t2="Colômbia">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP J</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇺🇿 Uzbequistão <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Colômbia 🇨🇴
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Cidade do México</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">17/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">23h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="A definir" data-t2="África do Sul">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP B</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> África do Sul 🇿🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Atlanta</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">18/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">13h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Suíça" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP D</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇨🇭 Suíça <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Los Angeles</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">18/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Canadá" data-t2="Catar">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP D</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇨🇦 Canadá <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Catar 🇶🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Vancouver</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">18/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">19h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="México" data-t2="Coreia do Sul">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP A</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇲🇽 México <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Coreia do Sul 🇰🇷
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Guadalajara</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">18/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">22h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="A definir" data-t2="Paraguai">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP E</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Paraguai 🇵🇾
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 San Francisco</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">19/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">01h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Estados Unidos" data-t2="Austrália">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP A</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇺🇸 Estados Unidos <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Austrália 🇦🇺
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Seattle</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">19/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Escócia" data-t2="Marrocos">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP C</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escócia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Marrocos 🇲🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Boston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">19/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">19h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Brasil" data-t2="Haiti">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP C</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇧🇷 Brasil <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Haiti 🇭🇹
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Filadélfia</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">19/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">22h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Holanda" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP G</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇳🇱 Holanda <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Houston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">20/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">14h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Alemanha" data-t2="Costa do Marfim">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP F</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇩🇪 Alemanha <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Costa do Marfim 🇨🇮
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Toronto</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">20/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">17h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Equador" data-t2="Curaçao">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP E</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇪🇨 Equador <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Curaçao 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Kansas City</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">20/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">21h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Tunísia" data-t2="Japão">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP F</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇹🇳 Tunísia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Japão 🇯🇵
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Monterrey</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">21/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">01h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Espanha" data-t2="Arábia Saudita">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP H</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇪🇸 Espanha <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Arábia Saudita 🇸🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Atlanta</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">21/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">13h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Bélgica" data-t2="Irã">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP I</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇧🇪 Bélgica <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Irã 🇮🇷
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Los Angeles</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">21/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Uruguai" data-t2="Cabo Verde">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP H</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇺🇾 Uruguai <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Cabo Verde 🇨🇻
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Miami</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">21/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">19h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Nova Zelândia" data-t2="Egito">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP I</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇳🇿 Nova Zelândia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Egito 🇪🇬
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Vancouver</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">21/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">22h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Argentina" data-t2="Áustria">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP J</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇦🇷 Argentina <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Áustria 🇦🇹
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Dallas</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">22/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Seg</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">14h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="França" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP K</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇫🇷 França <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Filadélfia</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">22/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Seg</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">18h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Noruega" data-t2="Senegal">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP K</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇳🇴 Noruega <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Senegal 🇸🇳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Nova York/NJ</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">22/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Seg</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">21h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Jordânia" data-t2="Argélia">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP G</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇯🇴 Jordânia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Argélia 🇩🇿
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 San Francisco</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">23/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">00h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Portugal" data-t2="Uzbequistão">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP L</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇵🇹 Portugal <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Uzbequistão 🇺🇿
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Houston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">23/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">14h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Inglaterra" data-t2="Gana">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP L</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Gana 🇬🇭
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Boston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">23/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">17h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Panamá" data-t2="Croácia">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP B</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇵🇦 Panamá <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Croácia 🇭🇷
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Toronto</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">23/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">20h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Colômbia" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP J</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇨🇴 Colômbia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Guadalajara</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">23/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">23h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Suíça" data-t2="Canadá">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP D</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇨🇭 Suíça <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Canadá 🇨🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Vancouver</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">24/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="A definir" data-t2="Catar">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP D</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Catar 🇶🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Seattle</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">24/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Escócia" data-t2="Brasil">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP C</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escócia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Brasil 🇧🇷
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Miami</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">24/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">19h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Marrocos" data-t2="Haiti">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP C</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇲🇦 Marrocos <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Haiti 🇭🇹
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Atlanta</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">24/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">19h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="A definir" data-t2="México">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP B</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> México 🇲🇽
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Cidade do México</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">24/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">22h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="África do Sul" data-t2="Coreia do Sul">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP B</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇿🇦 África do Sul <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Coreia do Sul 🇰🇷
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Monterrey</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">24/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">22h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Equador" data-t2="Alemanha">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP E</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇪🇨 Equador <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Alemanha 🇩🇪
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Nova York/NJ</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">25/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">17h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Curaçao" data-t2="Costa do Marfim">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP E</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 Curaçao <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Costa do Marfim 🇨🇮
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Filadélfia</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">25/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">17h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Japão" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP F</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇯🇵 Japão <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Dallas</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">25/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">20h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Tunísia" data-t2="Holanda">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP F</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇹🇳 Tunísia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Holanda 🇳🇱
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Kansas City</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">25/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">20h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="A definir" data-t2="Estados Unidos">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP A</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Estados Unidos 🇺🇸
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Los Angeles</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">25/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">23h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Paraguai" data-t2="Austrália">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP A</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇵🇾 Paraguai <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Austrália 🇦🇺
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 San Francisco</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">25/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">23h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Noruega" data-t2="França">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP K</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇳🇴 Noruega <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> França 🇫🇷
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Boston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">26/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Senegal" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP K</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇸🇳 Senegal <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Toronto</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">26/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Cabo Verde" data-t2="Arábia Saudita">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP H</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇨🇻 Cabo Verde <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Arábia Saudita 🇸🇦
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Houston</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">26/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">21h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Uruguai" data-t2="Espanha">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP H</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇺🇾 Uruguai <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Espanha 🇪🇸
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Guadalajara</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">26/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">21h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Egito" data-t2="Irã">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP I</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇪🇬 Egito <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Irã 🇮🇷
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Seattle</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">27/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">00h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Nova Zelândia" data-t2="Bélgica">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP I</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇳🇿 Nova Zelândia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Bélgica 🇧🇪
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Vancouver</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">27/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">00h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Panamá" data-t2="Inglaterra">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP L</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇵🇦 Panamá <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Nova York/NJ</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">27/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">18h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Croácia" data-t2="Gana">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP L</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇭🇷 Croácia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Gana 🇬🇭
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Filadélfia</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">27/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">18h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Colômbia" data-t2="Portugal">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP J</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇨🇴 Colômbia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Portugal 🇵🇹
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Miami</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">27/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">20h30</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="A definir" data-t2="Uzbequistão">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP J</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Uzbequistão 🇺🇿
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Atlanta</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">27/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">20h30</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Argélia" data-t2="Áustria">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP G</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇩🇿 Argélia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Áustria 🇦🇹
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Kansas City</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">27/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">23h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Grupos" data-t1="Jordânia" data-t2="Argentina">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#10b981;background:#10b98118;border:1px solid #10b98144;border-radius:4px;padding:1px 7px">GRUPOS</span><span style="font-size:9px;color:#ffffff44;background:#ffffff0a;border-radius:4px;padding:1px 5px;border:1px solid #ffffff12;margin-left:4px">GRP G</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🇯🇴 Jordânia <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> Argentina 🇦🇷
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Dallas</div>
+    </div>
+    <div style="background:#10b98118;border:1px solid #10b98144;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#10b981;font-family:'Syne',sans-serif">27/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">23h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="32 avos" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#60a5fa;background:#60a5fa18;border:1px solid #60a5fa44;border-radius:4px;padding:1px 7px">32 AVOS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#60a5fa18;border:1px solid #60a5fa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#60a5fa;font-family:'Syne',sans-serif">28/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="32 avos" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#60a5fa;background:#60a5fa18;border:1px solid #60a5fa44;border-radius:4px;padding:1px 7px">32 AVOS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#60a5fa18;border:1px solid #60a5fa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#60a5fa;font-family:'Syne',sans-serif">29/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Seg</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="32 avos" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#60a5fa;background:#60a5fa18;border:1px solid #60a5fa44;border-radius:4px;padding:1px 7px">32 AVOS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#60a5fa18;border:1px solid #60a5fa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#60a5fa;font-family:'Syne',sans-serif">30/06</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="32 avos" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#60a5fa;background:#60a5fa18;border:1px solid #60a5fa44;border-radius:4px;padding:1px 7px">32 AVOS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#60a5fa18;border:1px solid #60a5fa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#60a5fa;font-family:'Syne',sans-serif">01/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="32 avos" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#60a5fa;background:#60a5fa18;border:1px solid #60a5fa44;border-radius:4px;padding:1px 7px">32 AVOS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#60a5fa18;border:1px solid #60a5fa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#60a5fa;font-family:'Syne',sans-serif">02/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="32 avos" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#60a5fa;background:#60a5fa18;border:1px solid #60a5fa44;border-radius:4px;padding:1px 7px">32 AVOS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#60a5fa18;border:1px solid #60a5fa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#60a5fa;font-family:'Syne',sans-serif">03/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Oitavas" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#a78bfa;background:#a78bfa18;border:1px solid #a78bfa44;border-radius:4px;padding:1px 7px">OITAVAS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#a78bfa18;border:1px solid #a78bfa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#a78bfa;font-family:'Syne',sans-serif">04/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Oitavas" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#a78bfa;background:#a78bfa18;border:1px solid #a78bfa44;border-radius:4px;padding:1px 7px">OITAVAS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#a78bfa18;border:1px solid #a78bfa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#a78bfa;font-family:'Syne',sans-serif">05/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Oitavas" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#a78bfa;background:#a78bfa18;border:1px solid #a78bfa44;border-radius:4px;padding:1px 7px">OITAVAS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#a78bfa18;border:1px solid #a78bfa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#a78bfa;font-family:'Syne',sans-serif">06/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Seg</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Oitavas" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#a78bfa;background:#a78bfa18;border:1px solid #a78bfa44;border-radius:4px;padding:1px 7px">OITAVAS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 A definir</div>
+    </div>
+    <div style="background:#a78bfa18;border:1px solid #a78bfa44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#a78bfa;font-family:'Syne',sans-serif">07/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">—</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Quartas" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#f472b6;background:#f472b618;border:1px solid #f472b644;border-radius:4px;padding:1px 7px">QUARTAS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Boston</div>
+    </div>
+    <div style="background:#f472b618;border:1px solid #f472b644;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#f472b6;font-family:'Syne',sans-serif">09/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qui</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">17h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Quartas" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#f472b6;background:#f472b618;border:1px solid #f472b644;border-radius:4px;padding:1px 7px">QUARTAS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Los Angeles</div>
+    </div>
+    <div style="background:#f472b618;border:1px solid #f472b644;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#f472b6;font-family:'Syne',sans-serif">10/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sex</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Quartas" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#f472b6;background:#f472b618;border:1px solid #f472b644;border-radius:4px;padding:1px 7px">QUARTAS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Miami</div>
+    </div>
+    <div style="background:#f472b618;border:1px solid #f472b644;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#f472b6;font-family:'Syne',sans-serif">11/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">18h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Quartas" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#f472b6;background:#f472b618;border:1px solid #f472b644;border-radius:4px;padding:1px 7px">QUARTAS</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Kansas City</div>
+    </div>
+    <div style="background:#f472b618;border:1px solid #f472b644;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#f472b6;font-family:'Syne',sans-serif">11/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">21h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Semifinal" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#fbbf24;background:#fbbf2418;border:1px solid #fbbf2444;border-radius:4px;padding:1px 7px">SEMIFINAL</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Dallas</div>
+    </div>
+    <div style="background:#fbbf2418;border:1px solid #fbbf2444;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#fbbf24;font-family:'Syne',sans-serif">14/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Ter</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Semifinal" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#fbbf24;background:#fbbf2418;border:1px solid #fbbf2444;border-radius:4px;padding:1px 7px">SEMIFINAL</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Atlanta</div>
+    </div>
+    <div style="background:#fbbf2418;border:1px solid #fbbf2444;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#fbbf24;font-family:'Syne',sans-serif">15/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Qua</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="3º Lugar" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#9ca3af;background:#9ca3af18;border:1px solid #9ca3af44;border-radius:4px;padding:1px 7px">3º LUGAR</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Miami</div>
+    </div>
+    <div style="background:#9ca3af18;border:1px solid #9ca3af44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#9ca3af;font-family:'Syne',sans-serif">18/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Sáb</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">18h</div>
+    </div>
+  </div>
+</div>
+<div class="card" data-fase="Final" data-t1="A definir" data-t2="A definir">
+  <div style="margin-bottom:5px">
+    <span style="font-size:9px;font-weight:700;color:#f59e0b;background:#f59e0b18;border:1px solid #f59e0b44;border-radius:4px;padding:1px 7px">FINAL</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+    <div>
+      <div class="times" style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;font-family:'Syne',sans-serif">
+        🏳 A definir <span style="color:#ffffff33;font-size:12px;font-weight:400;margin:0 4px">×</span> A definir 🏳
+      </div>
+      <div style="font-size:10px;color:#ffffff33;margin-top:4px">📍 Nova York/NJ</div>
+    </div>
+    <div style="background:#f59e0b18;border:1px solid #f59e0b44;border-radius:8px;padding:7px 9px;text-align:center;min-width:52px;flex-shrink:0">
+      <div style="font-size:12px;font-weight:900;color:#f59e0b;font-family:'Syne',sans-serif">19/07</div>
+      <div style="font-size:9px;color:#ffffff55;margin-top:1px">Dom</div>
+      <div style="font-size:10px;font-weight:700;color:#fff;background:#ffffff15;border-radius:4px;padding:1px 4px;margin-top:3px">16h</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="margin-top:24px;text-align:center;font-size:10px;color:#ffffff15;font-family:'Space Mono',monospace;line-height:1.9">
+  Horários em Brasília · Fonte: FIFA.com<br/>
+  <span style="color:#10b98133">Vai, Brasil! 🇧🇷⚽🏆</span>
+</div>
+
+</div>
+
+<script>
+let selAtual = 'Todos';
+let faseAtual = 'Todos';
+
+function filtrar() {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(c => {
+    const t1 = c.dataset.t1 || '';
+    const t2 = c.dataset.t2 || '';
+    const fase = c.dataset.fase || '';
+    const matchSel = selAtual === 'Todos' ||
+      t1.toLowerCase().includes(selAtual.toLowerCase()) ||
+      t2.toLowerCase().includes(selAtual.toLowerCase());
+    const matchFase = faseAtual === 'Todos' || fase === faseAtual;
+    c.classList.toggle('hidden', !(matchSel && matchFase));
+  });
+}
+
+function filtrarSel(btn, sel) {
+  selAtual = sel;
+  document.querySelectorAll('#sel-row .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filtrar();
+}
+
+function filtrarFase(btn, fase) {
+  faseAtual = fase;
+  document.querySelectorAll('#fase-row .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filtrar();
+}
+</script>
+</body>
+</html>

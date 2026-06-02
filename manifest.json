@@ -1,0 +1,16 @@
+{
+  "name": "Copa 2026",
+  "short_name": "Copa2026",
+  "description": "Jogos da Copa do Mundo FIFA 2026",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#080e0a",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/2026_FIFA_World_Cup.svg/192px-2026_FIFA_World_Cup.svg.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
