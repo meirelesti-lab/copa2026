@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Copa do Mundo 2026 🏆</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #080e0a;
+      color: #c8e6d0;
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+    header {
+      background: linear-gradient(135deg, #0a1a0e 0%, #0d2515 50%, #0a1a0e 100%);
+      border-bottom: 1px solid #1a3020;
+      padding: 28px 20px 22px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      color: #f0fdf4;
+      letter-spacing: -0.5px;
+    }
+    header p {
+      color: #4a7a5a;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      margin-top: 6px;
+    }
+    .filtros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 16px 20px;
+      background: #0a140d;
+      border-bottom: 1px solid #1a2a20;
+      justify-content: center;
+    }
+    .filtros-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+    .filtros-sep {
+      width: 1px;
+      background: #1a2a20;
+      margin: 0 4px;
+    }
+    .btn {
+      background: #0d1a12;
+      color: #6b9a7b;
+      border: 1px solid #1a2a20;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn:hover { background: #142a1c; color: #a8d4b4; }
+    .btn.ativo { background: #10b98122; color: #10b981; border-color: #10b98166; }
+    .main { max-width: 780px; margin: 0 auto; padding: 24px 16px 0; }
+    .secao-titulo {
+      font-size: 0.72rem;
+      font-family: 'Space Mono', monospace;
+      color: #4a7a5a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 28px 0 12px;
+      padding-left: 4px;
+      border-left: 3px solid #10b981;
+      padding-left: 10px;
+    }
+    .card { transition: opacity 0.2s; }
+    .card:hover { opacity: 1 !important; }
+    .placar {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #10b981;
+      padding: 0 12px;
+      white-space: nowrap;
+    }
+    .badge-proximo {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: #22c55e;
+      color: #052e16;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    details summary {
+      cursor: pointer;
+      user-select: none;
+      color: #6b9a7b;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 28px 0 12px;
+      padding-left: 10px;
+      border-left: 3px solid #60a5fa;
+      list-style: none;
+    }
+    details summary::after { content: " ▶"; }
+    details[open] summary::after { content: " ▼"; }
+    footer {
+      text-align: center;
+      color: #2d5a3d;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      margin-top: 48px;
+      padding: 0 16px;
+      line-height: 1.8;
+    }
+    @media (max-width: 480px) {
+      .filtros { padding: 12px; gap: 6px; }
+      .btn { padding: 5px 10px; font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Copa do Mundo 2026 🏆</h1>
+  <p>Horários em Brasília · 48 seleções · EUA, Canadá e México</p>
+</header>
+
+<div class="filtros">
+  <div class="filtros-group" id="filtro-times">
+    <button class="btn ativo" onclick="filtrar(this,'time','todos')">Todos</button>
+    <button class="btn" onclick="filtrar(this,'time','brasil')">🇧🇷 Brasil</button>
+    <button class="btn" onclick="filtrar(this,'time','argentina')">🇦🇷 Argentina</button>
+    <button class="btn" onclick="filtrar(this,'time','uruguai')">🇺🇾 Uruguai</button>
+    <button class="btn" onclick="filtrar(this,'time','méxico')">🇲🇽 México</button>
+    <button class="btn" onclick="filtrar(this,'time','alemanha')">🇩🇪 Alemanha</button>
+  </div>
+  <div class="filtros-sep"></div>
+  <div class="filtros-group" id="filtro-fases">
+    <button class="btn ativo" onclick="filtrar(this,'fase','todos')">Todos</button>
+    <button class="btn" onclick="filtrar(this,'fase','grupos')">Grupos</button>
+    <button class="btn" onclick="filtrar(this,'fase','32avos')">32 avos</button>
+    <button class="btn" onclick="filtrar(this,'fase','oitavas')">Oitavas</button>
+    <button class="btn" onclick="filtrar(this,'fase','quartas')">Quartas</button>
+    <button class="btn" onclick="filtrar(this,'fase','semifinal')">Semifinal</button>
+    <button class="btn" onclick="filtrar(this,'fase','final')">Final</button>
+  </div>
+</div>
+
+<div class="main" id="conteudo">
+
+  <div class='secao-titulo'>Próximo jogo</div>
+        <div class="card" data-fase="Grupos" data-times="méxico áfrica do sul" style="border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          <div class="badge-proximo">⚡ PRÓXIMO JOGO</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇲🇽</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">México</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">África do Sul</span>
+              <span style="font-size:1.6rem;">🇿🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 11/06 16h · 📍 Cidade do México</span>
+          </div>
+        </div>
+
+  <div class='secao-titulo'>Próximos jogos — Grupos</div>
+  
+        <div class="card" data-fase="Grupos" data-times="méxico áfrica do sul" style="border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          <div class="badge-proximo">⚡ PRÓXIMO JOGO</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇲🇽</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">México</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">África do Sul</span>
+              <span style="font-size:1.6rem;">🇿🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 11/06 16h · 📍 Cidade do México</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="coreia do sul a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇰🇷</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Coreia do Sul</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 11/06 23h · 📍 Guadalajara</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="canadá a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇨🇦</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Canadá</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 12/06 16h · 📍 Toronto</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="estados unidos paraguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇺🇸</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Estados Unidos</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Paraguai</span>
+              <span style="font-size:1.6rem;">🇵🇾</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 12/06 22h · 📍 Los Angeles</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="austrália a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇦🇺</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Austrália</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 13/06 01h · 📍 Vancouver</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="catar suíça" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇶🇦</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Catar</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Suíça</span>
+              <span style="font-size:1.6rem;">🇨🇭</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 13/06 16h · 📍 San Francisco</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="brasil marrocos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇧🇷</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Brasil</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Marrocos</span>
+              <span style="font-size:1.6rem;">🇲🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 13/06 19h · 📍 Nova York/NJ</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="haiti escócia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇭🇹</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Haiti</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Escócia</span>
+              <span style="font-size:1.6rem;">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 13/06 22h · 📍 Boston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="alemanha curaçao" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇩🇪</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Alemanha</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Curaçao</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 14/06 14h · 📍 Houston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="holanda japão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇳🇱</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Holanda</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Japão</span>
+              <span style="font-size:1.6rem;">🇯🇵</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 14/06 17h · 📍 Dallas</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="costa do marfim equador" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇨🇮</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Costa do Marfim</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Equador</span>
+              <span style="font-size:1.6rem;">🇪🇨</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 14/06 20h · 📍 Filadélfia</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="a definir tunísia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Tunísia</span>
+              <span style="font-size:1.6rem;">🇹🇳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 14/06 23h · 📍 Monterrey</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="espanha cabo verde" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇪🇸</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Espanha</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Cabo Verde</span>
+              <span style="font-size:1.6rem;">🇨🇻</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Seg 15/06 13h · 📍 Atlanta</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="bélgica egito" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇧🇪</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Bélgica</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Egito</span>
+              <span style="font-size:1.6rem;">🇪🇬</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Seg 15/06 16h · 📍 Seattle</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="arábia saudita uruguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇸🇦</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Arábia Saudita</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Uruguai</span>
+              <span style="font-size:1.6rem;">🇺🇾</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Seg 15/06 19h · 📍 Miami</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="irã nova zelândia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇮🇷</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Irã</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Nova Zelândia</span>
+              <span style="font-size:1.6rem;">🇳🇿</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Seg 15/06 22h · 📍 Los Angeles</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="argentina argélia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇦🇷</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Argentina</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Argélia</span>
+              <span style="font-size:1.6rem;">🇩🇿</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 16/06 14h · 📍 Kansas City</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="frança senegal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇫🇷</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">França</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Senegal</span>
+              <span style="font-size:1.6rem;">🇸🇳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 16/06 16h · 📍 Nova York/NJ</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="a definir noruega" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Noruega</span>
+              <span style="font-size:1.6rem;">🇳🇴</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 16/06 19h · 📍 Boston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="áustria jordânia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇦🇹</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Áustria</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Jordânia</span>
+              <span style="font-size:1.6rem;">🇯🇴</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 17/06 01h · 📍 San Francisco</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="portugal a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇵🇹</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Portugal</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 17/06 14h · 📍 Houston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="inglaterra croácia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Inglaterra</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Croácia</span>
+              <span style="font-size:1.6rem;">🇭🇷</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 17/06 17h · 📍 Dallas</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="gana panamá" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇬🇭</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Gana</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Panamá</span>
+              <span style="font-size:1.6rem;">🇵🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 17/06 20h · 📍 Toronto</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="uzbequistão colômbia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇺🇿</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Uzbequistão</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Colômbia</span>
+              <span style="font-size:1.6rem;">🇨🇴</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 17/06 23h · 📍 Cidade do México</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="a definir áfrica do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">África do Sul</span>
+              <span style="font-size:1.6rem;">🇿🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 18/06 13h · 📍 Atlanta</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="suíça a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇨🇭</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Suíça</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 18/06 16h · 📍 Los Angeles</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="canadá catar" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇨🇦</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Canadá</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Catar</span>
+              <span style="font-size:1.6rem;">🇶🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 18/06 19h · 📍 Vancouver</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="méxico coreia do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇲🇽</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">México</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Coreia do Sul</span>
+              <span style="font-size:1.6rem;">🇰🇷</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 18/06 22h · 📍 Guadalajara</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="a definir paraguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Paraguai</span>
+              <span style="font-size:1.6rem;">🇵🇾</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 19/06 01h · 📍 San Francisco</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="estados unidos austrália" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇺🇸</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Estados Unidos</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Austrália</span>
+              <span style="font-size:1.6rem;">🇦🇺</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 19/06 16h · 📍 Seattle</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="escócia marrocos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Escócia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Marrocos</span>
+              <span style="font-size:1.6rem;">🇲🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 19/06 19h · 📍 Boston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="brasil haiti" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇧🇷</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Brasil</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Haiti</span>
+              <span style="font-size:1.6rem;">🇭🇹</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 19/06 22h · 📍 Filadélfia</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="holanda a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇳🇱</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Holanda</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 20/06 14h · 📍 Houston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="alemanha costa do marfim" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇩🇪</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Alemanha</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Costa do Marfim</span>
+              <span style="font-size:1.6rem;">🇨🇮</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 20/06 17h · 📍 Toronto</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="equador curaçao" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇪🇨</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Equador</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Curaçao</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 20/06 21h · 📍 Kansas City</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="tunísia japão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇹🇳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Tunísia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Japão</span>
+              <span style="font-size:1.6rem;">🇯🇵</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 21/06 01h · 📍 Monterrey</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="espanha arábia saudita" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇪🇸</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Espanha</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Arábia Saudita</span>
+              <span style="font-size:1.6rem;">🇸🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 21/06 13h · 📍 Atlanta</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="bélgica irã" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇧🇪</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Bélgica</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Irã</span>
+              <span style="font-size:1.6rem;">🇮🇷</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 21/06 16h · 📍 Los Angeles</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="uruguai cabo verde" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇺🇾</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Uruguai</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Cabo Verde</span>
+              <span style="font-size:1.6rem;">🇨🇻</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 21/06 19h · 📍 Miami</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="nova zelândia egito" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇳🇿</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Nova Zelândia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Egito</span>
+              <span style="font-size:1.6rem;">🇪🇬</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 21/06 22h · 📍 Vancouver</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="argentina áustria" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇦🇷</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Argentina</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Áustria</span>
+              <span style="font-size:1.6rem;">🇦🇹</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Seg 22/06 14h · 📍 Dallas</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="frança a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇫🇷</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">França</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Seg 22/06 18h · 📍 Filadélfia</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="noruega senegal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇳🇴</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Noruega</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Senegal</span>
+              <span style="font-size:1.6rem;">🇸🇳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Seg 22/06 21h · 📍 Nova York/NJ</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="jordânia argélia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇯🇴</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Jordânia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Argélia</span>
+              <span style="font-size:1.6rem;">🇩🇿</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 23/06 00h · 📍 San Francisco</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="portugal uzbequistão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇵🇹</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Portugal</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Uzbequistão</span>
+              <span style="font-size:1.6rem;">🇺🇿</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 23/06 14h · 📍 Houston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="inglaterra gana" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Inglaterra</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Gana</span>
+              <span style="font-size:1.6rem;">🇬🇭</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 23/06 17h · 📍 Boston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="panamá croácia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇵🇦</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Panamá</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Croácia</span>
+              <span style="font-size:1.6rem;">🇭🇷</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 23/06 20h · 📍 Toronto</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="colômbia a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇨🇴</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Colômbia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 23/06 23h · 📍 Guadalajara</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="suíça canadá" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇨🇭</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Suíça</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Canadá</span>
+              <span style="font-size:1.6rem;">🇨🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 24/06 16h · 📍 Vancouver</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="a definir catar" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Catar</span>
+              <span style="font-size:1.6rem;">🇶🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 24/06 16h · 📍 Seattle</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="escócia brasil" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Escócia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Brasil</span>
+              <span style="font-size:1.6rem;">🇧🇷</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 24/06 19h · 📍 Miami</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="marrocos haiti" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇲🇦</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Marrocos</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Haiti</span>
+              <span style="font-size:1.6rem;">🇭🇹</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 24/06 19h · 📍 Atlanta</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="a definir méxico" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">México</span>
+              <span style="font-size:1.6rem;">🇲🇽</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 24/06 22h · 📍 Cidade do México</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="áfrica do sul coreia do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇿🇦</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">África do Sul</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Coreia do Sul</span>
+              <span style="font-size:1.6rem;">🇰🇷</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 24/06 22h · 📍 Monterrey</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="equador alemanha" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇪🇨</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Equador</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Alemanha</span>
+              <span style="font-size:1.6rem;">🇩🇪</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 25/06 17h · 📍 Nova York/NJ</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="curaçao costa do marfim" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Curaçao</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Costa do Marfim</span>
+              <span style="font-size:1.6rem;">🇨🇮</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 25/06 17h · 📍 Filadélfia</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="japão a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇯🇵</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Japão</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 25/06 20h · 📍 Dallas</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="tunísia holanda" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇹🇳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Tunísia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Holanda</span>
+              <span style="font-size:1.6rem;">🇳🇱</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 25/06 20h · 📍 Kansas City</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="a definir estados unidos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Estados Unidos</span>
+              <span style="font-size:1.6rem;">🇺🇸</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 25/06 23h · 📍 Los Angeles</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="paraguai austrália" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇵🇾</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Paraguai</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Austrália</span>
+              <span style="font-size:1.6rem;">🇦🇺</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 25/06 23h · 📍 San Francisco</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="noruega frança" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇳🇴</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Noruega</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">França</span>
+              <span style="font-size:1.6rem;">🇫🇷</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 26/06 16h · 📍 Boston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="senegal a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇸🇳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Senegal</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 26/06 16h · 📍 Toronto</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="cabo verde arábia saudita" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇨🇻</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Cabo Verde</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Arábia Saudita</span>
+              <span style="font-size:1.6rem;">🇸🇦</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 26/06 21h · 📍 Houston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="uruguai espanha" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇺🇾</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Uruguai</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Espanha</span>
+              <span style="font-size:1.6rem;">🇪🇸</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 26/06 21h · 📍 Guadalajara</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="egito irã" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇪🇬</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Egito</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Irã</span>
+              <span style="font-size:1.6rem;">🇮🇷</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 27/06 00h · 📍 Seattle</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="nova zelândia bélgica" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇳🇿</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Nova Zelândia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Bélgica</span>
+              <span style="font-size:1.6rem;">🇧🇪</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 27/06 00h · 📍 Vancouver</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="panamá inglaterra" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇵🇦</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Panamá</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Inglaterra</span>
+              <span style="font-size:1.6rem;">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 27/06 18h · 📍 Nova York/NJ</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="croácia gana" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇭🇷</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Croácia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Gana</span>
+              <span style="font-size:1.6rem;">🇬🇭</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 27/06 18h · 📍 Filadélfia</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="colômbia portugal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇨🇴</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Colômbia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Portugal</span>
+              <span style="font-size:1.6rem;">🇵🇹</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 27/06 20h30 · 📍 Miami</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="a definir uzbequistão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Uzbequistão</span>
+              <span style="font-size:1.6rem;">🇺🇿</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 27/06 20h30 · 📍 Atlanta</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="argélia áustria" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇩🇿</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Argélia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Áustria</span>
+              <span style="font-size:1.6rem;">🇦🇹</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 27/06 23h · 📍 Kansas City</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Grupos" data-times="jordânia argentina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🇯🇴</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Jordânia</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">Argentina</span>
+              <span style="font-size:1.6rem;">🇦🇷</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 27/06 23h · 📍 Dallas</span>
+          </div>
+        </div>
+
+  
+  
+
+  <details>
+    <summary>Mata-mata</summary>
+    <div style="margin-top:12px;">
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 28/06 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Seg 29/06 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 30/06 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 01/07 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 02/07 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 03/07 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Oitavas</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 04/07 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Oitavas</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 05/07 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Oitavas</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Seg 06/07 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Oitavas</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 07/07 ? · 📍 A definir</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Quartas</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qui 09/07 17h · 📍 Boston</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Quartas</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sex 10/07 16h · 📍 Los Angeles</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Quartas</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 11/07 18h · 📍 Miami</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Quartas</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 11/07 21h · 📍 Kansas City</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Semifinal" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#fbbf2422;color:#fbbf24;border:1px solid #fbbf2444;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Semifinal</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Ter 14/07 16h · 📍 Dallas</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Semifinal" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#fbbf2422;color:#fbbf24;border:1px solid #fbbf2444;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Semifinal</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Qua 15/07 16h · 📍 Atlanta</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="3º Lugar" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#fb923c22;color:#fb923c;border:1px solid #fb923c44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">3º Lugar</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Sáb 18/07 18h · 📍 Miami</span>
+          </div>
+        </div>
+
+        <div class="card" data-fase="Final" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+          
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+              <span style="font-size:1.6rem;">🏳</span>
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">A definir</span>
+            </div>
+            <div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>
+            <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
+              <span class="time-nome" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">A definir</span>
+              <span style="font-size:1.6rem;">🏳</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Final</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 Dom 19/07 16h · 📍 Nova York/NJ</span>
+          </div>
+        </div></div>
+  </details>
+
+</div>
+
+<footer>
+  Horários em Brasília · Fonte: football-data.org · Atualizado em 02/06/2026 00:37
+</footer>
+
+<script>
+  let filtroTime = 'todos';
+  let filtroFase = 'todos';
+
+  function filtrar(btn, tipo, valor) {
+    if (tipo === 'time') {
+      filtroTime = valor;
+      document.querySelectorAll('#filtro-times .btn').forEach(b => b.classList.remove('ativo'));
+    } else {
+      filtroFase = valor;
+      document.querySelectorAll('#filtro-fases .btn').forEach(b => b.classList.remove('ativo'));
+    }
+    btn.classList.add('ativo');
+    aplicarFiltros();
+  }
+
+  function aplicarFiltros() {
+    document.querySelectorAll('.card').forEach(card => {
+      const times = card.dataset.times || '';
+      const fase = (card.dataset.fase || '').toLowerCase();
+
+      const okTime = filtroTime === 'todos' || times.includes(filtroTime);
+      const okFase = filtroFase === 'todos' || fase === filtroFase || (filtroFase === 'final' && fase === '3º lugar');
+
+      card.style.display = (okTime && okFase) ? '' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
