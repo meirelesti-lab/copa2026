@@ -39,7 +39,6 @@ TIMES_DESTAQUE = [
     ("🇧🇷", "Brasil"),
     ("🇦🇷", "Argentina"),
     ("🇲🇽", "México"),
-    ("🇩🇪", "Alemanha"),
     ("🇧🇪", "Bélgica"),
 ]
 
