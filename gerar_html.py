@@ -35,6 +35,14 @@ def data_jogo_brasilia(jogo):
     return datetime(2026, int(mes), int(dia), h, m)
 
 
+TIMES_DESTAQUE = [
+    ("🇧🇷", "Brasil"),
+    ("🇦🇷", "Argentina"),
+    ("🇲🇽", "México"),
+    ("🇩🇪", "Alemanha"),
+    ("🇧🇪", "Bélgica"),
+]
+
 def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     resultados = {}
     if os.path.exists(resultados_path):
@@ -108,6 +116,15 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     # Próximo jogo (pode ser grupos ou mata-mata)
     proximo_jogo = jogos_enriquecidos[proximo_idx] if proximo_idx is not None else None
 
+    # Montar lista de times para o dropdown (todos exceto os de destaque e "A definir")
+    destaque_nomes = {t[1].lower() for t in TIMES_DESTAQUE}
+    todos_times = sorted({
+        j[campo]
+        for j in jogos_enriquecidos
+        for campo in ("time1", "time2")
+        if j[campo] != "A definir" and j[campo].lower() not in destaque_nomes
+    })
+
     # Cards de grupos encerrados
     resultados_cards = "\n".join(card_html(j) for j in reversed(encerrados))
     proximos_cards = "\n".join(
@@ -115,6 +132,16 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         for j in proximos
     )
     mata_cards = "\n".join(card_html(j) for j in mata_jogos)
+
+    # Pré-computar HTML dos filtros de time (evita backslash em f-string no Python 3.9)
+    btns_destaque = "".join(
+        f'<button class="btn" onclick="filtrarBtn(this,\'{t[1].lower()}\')">{t[0]} {t[1]}</button>'
+        for t in TIMES_DESTAQUE
+    )
+    options_dropdown = "".join(
+        f'<option value="{t.lower()}">{t}</option>'
+        for t in todos_times
+    )
 
     # Montar HTML completo
     html = f"""<!DOCTYPE html>
@@ -186,6 +213,25 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     }}
     .btn:hover {{ background: #142a1c; color: #a8d4b4; }}
     .btn.ativo {{ background: #10b98122; color: #10b981; border-color: #10b98166; }}
+    .select-time {{
+      background: #0d1a12;
+      color: #6b9a7b;
+      border: 1px solid #1a2a20;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b9a7b'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+      transition: all 0.15s;
+    }}
+    .select-time:hover {{ background-color: #142a1c; color: #a8d4b4; }}
+    .select-time.ativo {{ background-color: #10b98122; color: #10b981; border-color: #10b98166; }}
     .main {{ max-width: 780px; margin: 0 auto; padding: 24px 16px 0; }}
     .secao-titulo {{
       font-size: 0.72rem;
@@ -260,12 +306,12 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 
 <div class="filtros">
   <div class="filtros-group" id="filtro-times">
-    <button class="btn ativo" onclick="filtrar(this,'time','todos')">Todos</button>
-    <button class="btn" onclick="filtrar(this,'time','brasil')">🇧🇷 Brasil</button>
-    <button class="btn" onclick="filtrar(this,'time','argentina')">🇦🇷 Argentina</button>
-    <button class="btn" onclick="filtrar(this,'time','uruguai')">🇺🇾 Uruguai</button>
-    <button class="btn" onclick="filtrar(this,'time','méxico')">🇲🇽 México</button>
-    <button class="btn" onclick="filtrar(this,'time','alemanha')">🇩🇪 Alemanha</button>
+    <button class="btn ativo" onclick="filtrarBtn(this,'todos')">Todos</button>
+    {btns_destaque}
+    <select class="select-time" id="select-outro" onchange="filtrarSelect(this)">
+      <option value="">Outro time ▾</option>
+      {options_dropdown}
+    </select>
   </div>
   <div class="filtros-sep"></div>
   <div class="filtros-group" id="filtro-fases">
@@ -304,14 +350,31 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
   let filtroTime = 'todos';
   let filtroFase = 'todos';
 
-  function filtrar(btn, tipo, valor) {{
-    if (tipo === 'time') {{
-      filtroTime = valor;
-      document.querySelectorAll('#filtro-times .btn').forEach(b => b.classList.remove('ativo'));
+  function filtrarBtn(btn, valor) {{
+    filtroTime = valor;
+    document.querySelectorAll('#filtro-times .btn').forEach(b => b.classList.remove('ativo'));
+    btn.classList.add('ativo');
+    const sel = document.getElementById('select-outro');
+    sel.value = '';
+    sel.classList.remove('ativo');
+    aplicarFiltros();
+  }}
+
+  function filtrarSelect(sel) {{
+    filtroTime = sel.value || 'todos';
+    document.querySelectorAll('#filtro-times .btn').forEach(b => b.classList.remove('ativo'));
+    if (sel.value) {{
+      sel.classList.add('ativo');
     }} else {{
-      filtroFase = valor;
-      document.querySelectorAll('#filtro-fases .btn').forEach(b => b.classList.remove('ativo'));
+      sel.classList.remove('ativo');
+      document.querySelector('#filtro-times .btn').classList.add('ativo');
     }}
+    aplicarFiltros();
+  }}
+
+  function filtrar(btn, tipo, valor) {{
+    filtroFase = valor;
+    document.querySelectorAll('#filtro-fases .btn').forEach(b => b.classList.remove('ativo'));
     btn.classList.add('ativo');
     aplicarFiltros();
   }}
@@ -320,10 +383,8 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     document.querySelectorAll('.card').forEach(card => {{
       const times = card.dataset.times || '';
       const fase = (card.dataset.fase || '').toLowerCase();
-
       const okTime = filtroTime === 'todos' || times.includes(filtroTime);
       const okFase = filtroFase === 'todos' || fase === filtroFase || (filtroFase === 'final' && fase === '3º lugar');
-
       card.style.display = (okTime && okFase) ? '' : 'none';
     }});
   }}

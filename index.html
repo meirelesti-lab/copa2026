@@ -67,6 +67,25 @@
     }
     .btn:hover { background: #142a1c; color: #a8d4b4; }
     .btn.ativo { background: #10b98122; color: #10b981; border-color: #10b98166; }
+    .select-time {
+      background: #0d1a12;
+      color: #6b9a7b;
+      border: 1px solid #1a2a20;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b9a7b'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+      transition: all 0.15s;
+    }
+    .select-time:hover { background-color: #142a1c; color: #a8d4b4; }
+    .select-time.ativo { background-color: #10b98122; color: #10b981; border-color: #10b98166; }
     .main { max-width: 780px; margin: 0 auto; padding: 24px 16px 0; }
     .secao-titulo {
       font-size: 0.72rem;
@@ -141,12 +160,12 @@
 
 <div class="filtros">
   <div class="filtros-group" id="filtro-times">
-    <button class="btn ativo" onclick="filtrar(this,'time','todos')">Todos</button>
-    <button class="btn" onclick="filtrar(this,'time','brasil')">🇧🇷 Brasil</button>
-    <button class="btn" onclick="filtrar(this,'time','argentina')">🇦🇷 Argentina</button>
-    <button class="btn" onclick="filtrar(this,'time','uruguai')">🇺🇾 Uruguai</button>
-    <button class="btn" onclick="filtrar(this,'time','méxico')">🇲🇽 México</button>
-    <button class="btn" onclick="filtrar(this,'time','alemanha')">🇩🇪 Alemanha</button>
+    <button class="btn ativo" onclick="filtrarBtn(this,'todos')">Todos</button>
+    <button class="btn" onclick="filtrarBtn(this,'brasil')">🇧🇷 Brasil</button><button class="btn" onclick="filtrarBtn(this,'argentina')">🇦🇷 Argentina</button><button class="btn" onclick="filtrarBtn(this,'méxico')">🇲🇽 México</button><button class="btn" onclick="filtrarBtn(this,'alemanha')">🇩🇪 Alemanha</button><button class="btn" onclick="filtrarBtn(this,'bélgica')">🇧🇪 Bélgica</button>
+    <select class="select-time" id="select-outro" onchange="filtrarSelect(this)">
+      <option value="">Outro time ▾</option>
+      <option value="argélia">Argélia</option><option value="arábia saudita">Arábia Saudita</option><option value="austrália">Austrália</option><option value="cabo verde">Cabo Verde</option><option value="canadá">Canadá</option><option value="catar">Catar</option><option value="colômbia">Colômbia</option><option value="coreia do sul">Coreia do Sul</option><option value="costa do marfim">Costa do Marfim</option><option value="croácia">Croácia</option><option value="curaçao">Curaçao</option><option value="egito">Egito</option><option value="equador">Equador</option><option value="escócia">Escócia</option><option value="espanha">Espanha</option><option value="estados unidos">Estados Unidos</option><option value="frança">França</option><option value="gana">Gana</option><option value="haiti">Haiti</option><option value="holanda">Holanda</option><option value="inglaterra">Inglaterra</option><option value="irã">Irã</option><option value="japão">Japão</option><option value="jordânia">Jordânia</option><option value="marrocos">Marrocos</option><option value="noruega">Noruega</option><option value="nova zelândia">Nova Zelândia</option><option value="panamá">Panamá</option><option value="paraguai">Paraguai</option><option value="portugal">Portugal</option><option value="senegal">Senegal</option><option value="suíça">Suíça</option><option value="tunísia">Tunísia</option><option value="uruguai">Uruguai</option><option value="uzbequistão">Uzbequistão</option><option value="áfrica do sul">África do Sul</option><option value="áustria">Áustria</option>
+    </select>
   </div>
   <div class="filtros-sep"></div>
   <div class="filtros-group" id="filtro-fases">
@@ -1904,21 +1923,38 @@
 </div>
 
 <footer>
-  Horários em Brasília · Fonte: football-data.org · Atualizado em 02/06/2026 00:49
+  Horários em Brasília · Fonte: football-data.org · Atualizado em 02/06/2026 00:56
 </footer>
 
 <script>
   let filtroTime = 'todos';
   let filtroFase = 'todos';
 
-  function filtrar(btn, tipo, valor) {
-    if (tipo === 'time') {
-      filtroTime = valor;
-      document.querySelectorAll('#filtro-times .btn').forEach(b => b.classList.remove('ativo'));
+  function filtrarBtn(btn, valor) {
+    filtroTime = valor;
+    document.querySelectorAll('#filtro-times .btn').forEach(b => b.classList.remove('ativo'));
+    btn.classList.add('ativo');
+    const sel = document.getElementById('select-outro');
+    sel.value = '';
+    sel.classList.remove('ativo');
+    aplicarFiltros();
+  }
+
+  function filtrarSelect(sel) {
+    filtroTime = sel.value || 'todos';
+    document.querySelectorAll('#filtro-times .btn').forEach(b => b.classList.remove('ativo'));
+    if (sel.value) {
+      sel.classList.add('ativo');
     } else {
-      filtroFase = valor;
-      document.querySelectorAll('#filtro-fases .btn').forEach(b => b.classList.remove('ativo'));
+      sel.classList.remove('ativo');
+      document.querySelector('#filtro-times .btn').classList.add('ativo');
     }
+    aplicarFiltros();
+  }
+
+  function filtrar(btn, tipo, valor) {
+    filtroFase = valor;
+    document.querySelectorAll('#filtro-fases .btn').forEach(b => b.classList.remove('ativo'));
     btn.classList.add('ativo');
     aplicarFiltros();
   }
@@ -1927,10 +1963,8 @@
     document.querySelectorAll('.card').forEach(card => {
       const times = card.dataset.times || '';
       const fase = (card.dataset.fase || '').toLowerCase();
-
       const okTime = filtroTime === 'todos' || times.includes(filtroTime);
       const okFase = filtroFase === 'todos' || fase === filtroFase || (filtroFase === 'final' && fase === '3º lugar');
-
       card.style.display = (okTime && okFase) ? '' : 'none';
     });
   }
