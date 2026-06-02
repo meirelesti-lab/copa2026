@@ -15,9 +15,22 @@ FASE_COR = {
     "Final":     "#f59e0b",
 }
 
-FASES_ORDEM = ["Grupos", "32avos", "Oitavas", "Quartas", "Semifinal", "3º Lugar", "Final"]
+TIMES_DESTAQUE = [
+    ("🇧🇷", "Brasil"),
+    ("🇦🇷", "Argentina"),
+    ("🇲🇽", "México"),
+    ("🇧🇪", "Bélgica"),
+]
 
-# Mapeia hora string "16h" / "20h30" para tuple (hora, minuto) para comparação
+FUSOS = [
+    ("🇧🇷", "Brasília",     "America/Sao_Paulo"),
+    ("🇲🇽", "México",       "America/Mexico_City"),
+    ("🇧🇪", "Bélgica",      "Europe/Brussels"),
+    ("🇺🇸", "Nova York",    "America/New_York"),
+    ("🇺🇸", "Los Angeles",  "America/Los_Angeles"),
+]
+
+
 def parse_hora(hora_str):
     if hora_str in ("?", ""):
         return (23, 59)
@@ -29,18 +42,17 @@ def parse_hora(hora_str):
 
 
 def data_jogo_brasilia(jogo):
-    """Retorna datetime naive representando hora de Brasília do jogo."""
     dia, mes = jogo["data"].split("/")
     h, m = parse_hora(jogo["hora"])
     return datetime(2026, int(mes), int(dia), h, m)
 
 
-TIMES_DESTAQUE = [
-    ("🇧🇷", "Brasil"),
-    ("🇦🇷", "Argentina"),
-    ("🇲🇽", "México"),
-    ("🇧🇪", "Bélgica"),
-]
+def utc_iso(jogo):
+    if jogo["hora"] in ("?", ""):
+        return None
+    dt = data_jogo_brasilia(jogo).replace(tzinfo=BRASILIA)
+    return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
 
 def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     resultados = {}
@@ -61,11 +73,10 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         j["gols1"] = res.get("gols1")
         j["gols2"] = res.get("gols2")
         j["encerrado"] = res.get("encerrado", False)
+        j["dt"] = data_jogo_brasilia(j)
+        j["utc"] = utc_iso(j)
 
-        dt = data_jogo_brasilia(j)
-        j["dt"] = dt
-
-        if not j["encerrado"] and dt > agora_brasilia and proximo_idx is None:
+        if not j["encerrado"] and j["dt"] > agora_brasilia and proximo_idx is None:
             proximo_idx = i
 
         jogos_enriquecidos.append(j)
@@ -73,17 +84,16 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     def card_html(j, is_proximo=False):
         cor = FASE_COR.get(j["fase"], "#10b981")
         grp_label = f"Grupo {j['grupo']} · " if j["grupo"] else ""
-        fase_label = j["fase"]
         encerrado = j["encerrado"]
         opacity = "opacity:0.55;" if encerrado else ""
-        borda = "border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;" if is_proximo else f"border:1px solid #1a2a20;"
+        borda = "border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;" if is_proximo else "border:1px solid #1a2a20;"
         placar_html = ""
         if encerrado and j["gols1"] is not None and j["gols2"] is not None:
             placar_html = f'<div class="placar">{j["gols1"]} – {j["gols2"]}</div>'
         proximo_badge = '<div class="badge-proximo">⚡ PRÓXIMO JOGO</div>' if is_proximo else ""
 
-        time1_class = "time-nome"
-        time2_class = "time-nome"
+        utc_attr = f'data-utc="{j["utc"]}"' if j["utc"] else ""
+        hora_default = f"{j['dia']} {j['data']} {j['hora']}"
 
         return f"""
         <div class="card" data-fase="{j['fase']}" data-times="{j['time1'].lower()} {j['time2'].lower()}" style="{opacity}{borda}border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
@@ -91,31 +101,32 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
           <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
             <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
               <span style="font-size:1.6rem;">{j['flag1']}</span>
-              <span class="{time1_class}" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{j['time1']}</span>
+              <span style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{j['time1']}</span>
             </div>
             {placar_html if encerrado else '<div style="color:#4a7a5a;font-family:Space Mono,monospace;font-size:0.8rem;padding:0 8px;">vs</div>'}
             <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;justify-content:flex-end;">
-              <span class="{time2_class}" style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">{j['time2']}</span>
+              <span style="color:#e2f0e8;font-family:'Space Mono',monospace;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;">{j['time2']}</span>
               <span style="font-size:1.6rem;">{j['flag2']}</span>
             </div>
           </div>
           <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
-            <span style="background:{cor}22;color:{cor};border:1px solid {cor}44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">{grp_label}{fase_label}</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 {j['dia']} {j['data']} {j['hora']} · 📍 {j['local']}</span>
+            <span style="background:{cor}22;color:{cor};border:1px solid {cor}44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">{grp_label}{j['fase']}</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" {utc_attr}>{hora_default}</span> · 📍 {j['local']}</span>
           </div>
         </div>"""
 
     # Separar jogos em seções
+    proximo_jogo = jogos_enriquecidos[proximo_idx] if proximo_idx is not None else None
+    proximo_id = proximo_jogo["id"] if proximo_jogo else None
+
     grupos_jogos = [j for j in jogos_enriquecidos if j["fase"] == "Grupos"]
-    mata_jogos = [j for j in jogos_enriquecidos if j["fase"] != "Grupos"]
+    mata_jogos   = [j for j in jogos_enriquecidos if j["fase"] != "Grupos"]
 
     encerrados = [j for j in grupos_jogos if j["encerrado"]]
-    proximos = [j for j in grupos_jogos if not j["encerrado"]]
+    # Próximo jogo já aparece na seção dedicada — não duplicar
+    proximos = [j for j in grupos_jogos if not j["encerrado"] and j["id"] != proximo_id]
 
-    # Próximo jogo (pode ser grupos ou mata-mata)
-    proximo_jogo = jogos_enriquecidos[proximo_idx] if proximo_idx is not None else None
-
-    # Montar lista de times para o dropdown (todos exceto os de destaque e "A definir")
+    # Montar lista de times para o dropdown
     destaque_nomes = {t[1].lower() for t in TIMES_DESTAQUE}
     todos_times = sorted({
         j[campo]
@@ -124,15 +135,11 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         if j[campo] != "A definir" and j[campo].lower() not in destaque_nomes
     })
 
-    # Cards de grupos encerrados
     resultados_cards = "\n".join(card_html(j) for j in reversed(encerrados))
-    proximos_cards = "\n".join(
-        card_html(j, is_proximo=(j["id"] == proximo_jogo["id"])) if proximo_jogo else card_html(j)
-        for j in proximos
-    )
-    mata_cards = "\n".join(card_html(j) for j in mata_jogos)
+    proximos_cards   = "\n".join(card_html(j) for j in proximos)
+    mata_cards       = "\n".join(card_html(j) for j in mata_jogos)
 
-    # Pré-computar HTML dos filtros de time (evita backslash em f-string no Python 3.9)
+    # Pré-computar strings para evitar backslash em f-string (Python 3.9)
     btns_destaque = "".join(
         f'<button class="btn" onclick="filtrarBtn(this,\'{t[1].lower()}\')">{t[0]} {t[1]}</button>'
         for t in TIMES_DESTAQUE
@@ -141,8 +148,11 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         f'<option value="{t.lower()}">{t}</option>'
         for t in todos_times
     )
+    btns_fusos = "".join(
+        f'<button class="btn{" ativo" if i == 0 else ""}" onclick="mudarFuso(this,\'{f[2]}\')">{f[0]} {f[1]}</button>'
+        for i, f in enumerate(FUSOS)
+    )
 
-    # Montar HTML completo
     html = f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -167,37 +177,37 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       padding: 28px 20px 22px;
       text-align: center;
     }}
-    header h1 {{
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
-      font-weight: 800;
-      color: #f0fdf4;
-      letter-spacing: -0.5px;
-    }}
-    header p {{
-      color: #4a7a5a;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.78rem;
-      margin-top: 6px;
-    }}
+    header h1 {{ font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 800; color: #f0fdf4; letter-spacing: -0.5px; }}
+    header p  {{ color: #4a7a5a; font-family: 'Space Mono', monospace; font-size: 0.78rem; margin-top: 6px; }}
     .filtros {{
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 16px 20px;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px 20px;
       background: #0a140d;
       border-bottom: 1px solid #1a2a20;
-      justify-content: center;
+      align-items: center;
     }}
-    .filtros-group {{
+    .filtros-row {{
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       justify-content: center;
+      align-items: center;
+      width: 100%;
     }}
-    .filtros-sep {{
-      width: 1px;
+    .filtros-divider {{
+      width: 100%;
+      height: 1px;
       background: #1a2a20;
-      margin: 0 4px;
+    }}
+    .filtros-label {{
+      color: #2d5a3d;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding-right: 4px;
     }}
     .btn {{
       background: #0d1a12;
@@ -212,12 +222,13 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     }}
     .btn:hover {{ background: #142a1c; color: #a8d4b4; }}
     .btn.ativo {{ background: #10b98122; color: #10b981; border-color: #10b98166; }}
+    .btn-fuso.ativo {{ background: #60a5fa22; color: #60a5fa; border-color: #60a5fa66; }}
     .select-time {{
       background: #0d1a12;
       color: #6b9a7b;
       border: 1px solid #1a2a20;
       border-radius: 8px;
-      padding: 6px 14px;
+      padding: 6px 28px 6px 14px;
       font-family: 'Space Mono', monospace;
       font-size: 0.75rem;
       cursor: pointer;
@@ -226,7 +237,6 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b9a7b'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 10px center;
-      padding-right: 28px;
       transition: all 0.15s;
     }}
     .select-time:hover {{ background-color: #142a1c; color: #a8d4b4; }}
@@ -239,59 +249,30 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       letter-spacing: 2px;
       text-transform: uppercase;
       margin: 28px 0 12px;
-      padding-left: 4px;
       border-left: 3px solid #10b981;
       padding-left: 10px;
     }}
     .card {{ transition: opacity 0.2s; }}
     .card:hover {{ opacity: 1 !important; }}
-    .placar {{
-      font-family: 'Space Mono', monospace;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #10b981;
-      padding: 0 12px;
-      white-space: nowrap;
-    }}
+    .placar {{ font-family: 'Space Mono', monospace; font-size: 1.3rem; font-weight: 700; color: #10b981; padding: 0 12px; white-space: nowrap; }}
     .badge-proximo {{
-      position: absolute;
-      top: -10px;
-      left: 14px;
-      background: #22c55e;
-      color: #052e16;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 4px;
-      letter-spacing: 0.5px;
+      position: absolute; top: -10px; left: 14px;
+      background: #22c55e; color: #052e16;
+      font-family: 'Space Mono', monospace; font-size: 0.65rem; font-weight: 700;
+      padding: 2px 10px; border-radius: 4px; letter-spacing: 0.5px;
     }}
     details summary {{
-      cursor: pointer;
-      user-select: none;
-      color: #6b9a7b;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin: 28px 0 12px;
-      padding-left: 10px;
-      border-left: 3px solid #60a5fa;
-      list-style: none;
+      cursor: pointer; user-select: none;
+      color: #6b9a7b; font-family: 'Space Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase;
+      margin: 28px 0 12px; padding-left: 10px;
+      border-left: 3px solid #60a5fa; list-style: none;
     }}
     details summary::after {{ content: " ▶"; }}
     details[open] summary::after {{ content: " ▼"; }}
-    footer {{
-      text-align: center;
-      color: #2d5a3d;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.7rem;
-      margin-top: 48px;
-      padding: 0 16px;
-      line-height: 1.8;
-    }}
+    footer {{ text-align: center; color: #2d5a3d; font-family: 'Space Mono', monospace; font-size: 0.7rem; margin-top: 48px; padding: 0 16px; line-height: 1.8; }}
     @media (max-width: 480px) {{
-      .filtros {{ padding: 12px; gap: 6px; }}
+      .filtros {{ padding: 10px 12px; }}
       .btn {{ padding: 5px 10px; font-size: 0.7rem; }}
     }}
   </style>
@@ -300,11 +281,12 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 
 <header>
   <h1>Copa do Mundo 2026 🏆</h1>
-  <p>Horários em Brasília · 48 seleções · EUA, Canadá e México</p>
+  <p>48 seleções · EUA, Canadá e México</p>
 </header>
 
 <div class="filtros">
-  <div class="filtros-group" id="filtro-times">
+  <div class="filtros-row" id="filtro-times">
+    <span class="filtros-label">Time</span>
     <button class="btn ativo" onclick="filtrarBtn(this,'todos')">Todos</button>
     {btns_destaque}
     <select class="select-time" id="select-outro" onchange="filtrarSelect(this)">
@@ -312,15 +294,21 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       {options_dropdown}
     </select>
   </div>
-  <div class="filtros-sep"></div>
-  <div class="filtros-group" id="filtro-fases">
-    <button class="btn ativo" onclick="filtrar(this,'fase','todos')">Todos</button>
-    <button class="btn" onclick="filtrar(this,'fase','grupos')">Grupos</button>
-    <button class="btn" onclick="filtrar(this,'fase','32avos')">32 avos</button>
-    <button class="btn" onclick="filtrar(this,'fase','oitavas')">Oitavas</button>
-    <button class="btn" onclick="filtrar(this,'fase','quartas')">Quartas</button>
-    <button class="btn" onclick="filtrar(this,'fase','semifinal')">Semifinal</button>
-    <button class="btn" onclick="filtrar(this,'fase','final')">Final</button>
+  <div class="filtros-divider"></div>
+  <div class="filtros-row" id="filtro-fases">
+    <span class="filtros-label">Fase</span>
+    <button class="btn ativo" onclick="filtrarFase(this,'todos')">Todos</button>
+    <button class="btn" onclick="filtrarFase(this,'grupos')">Grupos</button>
+    <button class="btn" onclick="filtrarFase(this,'32avos')">32 avos</button>
+    <button class="btn" onclick="filtrarFase(this,'oitavas')">Oitavas</button>
+    <button class="btn" onclick="filtrarFase(this,'quartas')">Quartas</button>
+    <button class="btn" onclick="filtrarFase(this,'semifinal')">Semifinal</button>
+    <button class="btn" onclick="filtrarFase(this,'final')">Final</button>
+  </div>
+  <div class="filtros-divider"></div>
+  <div class="filtros-row" id="filtro-fusos">
+    <span class="filtros-label">🕐 Fuso</span>
+    {btns_fusos}
   </div>
 </div>
 
@@ -342,13 +330,23 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 </div>
 
 <footer>
-  Horários em Brasília · Fonte: football-data.org · Atualizado em {atualizado_em}
+  <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em {atualizado_em}
 </footer>
 
 <script>
   let filtroTime = 'todos';
   let filtroFase = 'todos';
+  let fusoAtual  = 'America/Sao_Paulo';
 
+  const NOMES_FUSO = {{
+    'America/Sao_Paulo':   'Brasília',
+    'America/Mexico_City': 'México',
+    'Europe/Brussels':     'Bélgica',
+    'America/New_York':    'Nova York',
+    'America/Los_Angeles': 'Los Angeles',
+  }};
+
+  // ── filtros de time ──────────────────────────────────────────────────────
   function filtrarBtn(btn, valor) {{
     filtroTime = valor;
     document.querySelectorAll('#filtro-times .btn').forEach(b => b.classList.remove('ativo'));
@@ -371,7 +369,8 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     aplicarFiltros();
   }}
 
-  function filtrar(btn, tipo, valor) {{
+  // ── filtros de fase ──────────────────────────────────────────────────────
+  function filtrarFase(btn, valor) {{
     filtroFase = valor;
     document.querySelectorAll('#filtro-fases .btn').forEach(b => b.classList.remove('ativo'));
     btn.classList.add('ativo');
@@ -380,11 +379,41 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 
   function aplicarFiltros() {{
     document.querySelectorAll('.card').forEach(card => {{
-      const times = card.dataset.times || '';
-      const fase = (card.dataset.fase || '').toLowerCase();
+      const times  = card.dataset.times || '';
+      const fase   = (card.dataset.fase || '').toLowerCase();
       const okTime = filtroTime === 'todos' || times.includes(filtroTime);
       const okFase = filtroFase === 'todos' || fase === filtroFase || (filtroFase === 'final' && fase === '3º lugar');
       card.style.display = (okTime && okFase) ? '' : 'none';
+    }});
+  }}
+
+  // ── fuso horário ─────────────────────────────────────────────────────────
+  function mudarFuso(btn, tz) {{
+    fusoAtual = tz;
+    document.querySelectorAll('#filtro-fusos .btn').forEach(b => b.classList.remove('ativo'));
+    btn.classList.add('ativo');
+    atualizarHorarios();
+    document.getElementById('footer-fuso').textContent = 'Horários em ' + NOMES_FUSO[tz];
+  }}
+
+  function atualizarHorarios() {{
+    document.querySelectorAll('.hora-display[data-utc]').forEach(el => {{
+      const d = new Date(el.dataset.utc);
+      const parts = {{}};
+      new Intl.DateTimeFormat('pt-BR', {{
+        timeZone: fusoAtual,
+        weekday: 'short',
+        day: '2-digit',
+        month: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      }}).formatToParts(d).forEach(p => parts[p.type] = p.value);
+
+      const min   = parts.minute;
+      const hora  = min === '00' ? parts.hour + 'h' : parts.hour + 'h' + min;
+      const dia   = (parts.weekday || '').replace('.', '');
+      el.textContent = dia + ' ' + parts.day + '/' + parts.month + ' ' + hora;
     }});
   }}
 </script>
