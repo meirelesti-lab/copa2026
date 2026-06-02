@@ -23,11 +23,10 @@ TIMES_DESTAQUE = [
 ]
 
 FUSOS = [
-    ("🇧🇷", "Brasília",     "America/Sao_Paulo"),
-    ("🇲🇽", "México",       "America/Mexico_City"),
-    ("🇧🇪", "Bélgica",      "Europe/Brussels"),
-    ("🇺🇸", "Nova York",    "America/New_York"),
-    ("🇺🇸", "Los Angeles",  "America/Los_Angeles"),
+    ("🇧🇷", "Rio de Janeiro", "America/Sao_Paulo"),
+    ("🇲🇽", "Monterrey",      "America/Monterrey"),
+    ("🇧🇪", "Bélgica",        "Europe/Brussels"),
+    ("🇺🇸", "Miami",          "America/New_York"),
 ]
 
 
@@ -339,11 +338,10 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
   let fusoAtual  = 'America/Sao_Paulo';
 
   const NOMES_FUSO = {{
-    'America/Sao_Paulo':   'Brasília',
-    'America/Mexico_City': 'México',
-    'Europe/Brussels':     'Bélgica',
-    'America/New_York':    'Nova York',
-    'America/Los_Angeles': 'Los Angeles',
+    'America/Sao_Paulo': 'Rio de Janeiro',
+    'America/Monterrey': 'Monterrey',
+    'Europe/Brussels':   'Bélgica',
+    'America/New_York':  'Miami',
   }};
 
   // ── filtros de time ──────────────────────────────────────────────────────
