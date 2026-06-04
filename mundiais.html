@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Mundiais · Copa 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #080e0a;
+      color: #c8e6d0;
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+    header {
+      background: linear-gradient(135deg, #0a1a0e 0%, #0d2515 50%, #0a1a0e 100%);
+      border-bottom: 1px solid #1a3020;
+      padding: 28px 20px 22px;
+      text-align: center;
+    }
+    header h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 800; color: #f0fdf4; letter-spacing: -0.5px; }
+    header p  { color: #4a7a5a; font-family: 'Space Mono', monospace; font-size: 0.78rem; margin-top: 6px; }
+
+    .nav-bar {
+      background: #0a140d;
+      border-bottom: 1px solid #1a2a20;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+    }
+    .btn-voltar {
+      background: #0d1a12;
+      color: #6b9a7b;
+      border: 1px solid #1a2a20;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-voltar:hover { background: #142a1c; color: #a8d4b4; border-color: #2a4a30; }
+
+    .main { max-width: 780px; margin: 0 auto; padding: 24px 16px 0; }
+
+    .secao-titulo {
+      font-size: 0.72rem;
+      font-family: 'Space Mono', monospace;
+      color: #4a7a5a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 28px 0 14px;
+      border-left: 3px solid #10b981;
+      padding-left: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82rem;
+    }
+    thead tr {
+      background: #0a140d;
+      border-bottom: 2px solid #1a3020;
+    }
+    thead th {
+      color: #4a7a5a;
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 400;
+    }
+    thead th.center { text-align: center; }
+    tbody tr {
+      border-bottom: 1px solid #0f1f14;
+      transition: background 0.12s;
+    }
+    tbody tr:hover { background: #0d1a12; }
+    tbody td {
+      padding: 10px 12px;
+      color: #a8d4b4;
+      vertical-align: middle;
+    }
+    tbody td.center { text-align: center; }
+
+    .pos {
+      color: #2d5a3d;
+      font-size: 0.7rem;
+      width: 32px;
+    }
+    .flag-nome {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .flag { font-size: 1.3rem; line-height: 1; }
+    .pais { color: #e2f0e8; font-weight: 700; }
+
+    .titulos-badge {
+      display: inline-block;
+      background: #10b98122;
+      color: #10b981;
+      border: 1px solid #10b98144;
+      border-radius: 6px;
+      padding: 2px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .anos { color: #4a7a5a; font-size: 0.7rem; }
+
+    /* Histórico */
+    .tr-2026 {
+      background: #0d2a1a !important;
+      border-bottom: 1px solid #10b98144 !important;
+    }
+    .tr-2026:hover { background: #0f3020 !important; }
+    .tr-2026 td { color: #c8e6d0; }
+
+    .badge-2026 {
+      display: inline-block;
+      background: #10b98122;
+      color: #10b981;
+      border: 1px solid #10b98166;
+      border-radius: 6px;
+      padding: 2px 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .badge-campeao {
+      display: inline-block;
+      background: #f59e0b22;
+      color: #f59e0b;
+      border: 1px solid #f59e0b66;
+      border-radius: 6px;
+      padding: 3px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      animation: pulse-gold 2s ease-in-out infinite;
+    }
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 0 0 0 #f59e0b33; }
+      50%       { box-shadow: 0 0 10px 4px #f59e0b22; }
+    }
+
+    .ano-col { color: #6b9a7b; font-size: 0.78rem; width: 52px; }
+    .ano-2026 { color: #10b981; font-weight: 700; }
+    .sede-col { color: #4a7a5a; font-size: 0.75rem; }
+
+    footer { text-align: center; color: #2d5a3d; font-family: 'Space Mono', monospace; font-size: 0.7rem; margin-top: 48px; padding: 0 16px; line-height: 1.8; }
+
+    @media (max-width: 520px) {
+      thead th, tbody td { padding: 8px 8px; }
+      .anos { display: none; }
+      .sede-col { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Mundiais de Futebol 🌍</h1>
+  <p>22 edições · 1930 – 2026</p>
+</header>
+
+<div class="nav-bar">
+  <a href="index.html" class="btn-voltar">← Copa 2026</a>
+</div>
+
+<div class="main">
+
+  <div class="secao-titulo">Ranking por títulos</div>
+
+  <table id="tabela-ranking">
+    <thead>
+      <tr>
+        <th class="center">Pos</th>
+        <th>Seleção</th>
+        <th class="center">Títulos</th>
+        <th>Anos</th>
+      </tr>
+    </thead>
+    <tbody id="corpo-ranking"></tbody>
+  </table>
+
+  <div class="secao-titulo">Histórico por edição</div>
+
+  <table id="tabela-historico">
+    <thead>
+      <tr>
+        <th>Ano</th>
+        <th>Campeão</th>
+        <th>Vice</th>
+        <th>Sede</th>
+      </tr>
+    </thead>
+    <tbody id="corpo-historico"></tbody>
+  </table>
+
+</div>
+
+<footer>
+  <p>Copa do Mundo 2026 · EUA, Canadá e México</p>
+</footer>
+
+<script>
+  const campeoes = [
+    { ano: 1930, campeao: "Uruguai",    vice: "Argentina",      sede: "Uruguai",       flag: "🇺🇾" },
+    { ano: 1934, campeao: "Itália",     vice: "Checoslováquia", sede: "Itália",         flag: "🇮🇹" },
+    { ano: 1938, campeao: "Itália",     vice: "Hungria",        sede: "França",         flag: "🇮🇹" },
+    { ano: 1950, campeao: "Uruguai",    vice: "Brasil",         sede: "Brasil",         flag: "🇺🇾" },
+    { ano: 1954, campeao: "Alemanha",   vice: "Hungria",        sede: "Suíça",          flag: "🇩🇪" },
+    { ano: 1958, campeao: "Brasil",     vice: "Suécia",         sede: "Suécia",         flag: "🇧🇷" },
+    { ano: 1962, campeao: "Brasil",     vice: "Checoslováquia", sede: "Chile",          flag: "🇧🇷" },
+    { ano: 1966, campeao: "Inglaterra", vice: "Alemanha",       sede: "Inglaterra",     flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+    { ano: 1970, campeao: "Brasil",     vice: "Itália",         sede: "México",         flag: "🇧🇷" },
+    { ano: 1974, campeao: "Alemanha",   vice: "Holanda",        sede: "Alemanha",       flag: "🇩🇪" },
+    { ano: 1978, campeao: "Argentina",  vice: "Holanda",        sede: "Argentina",      flag: "🇦🇷" },
+    { ano: 1982, campeao: "Itália",     vice: "Alemanha",       sede: "Espanha",        flag: "🇮🇹" },
+    { ano: 1986, campeao: "Argentina",  vice: "Alemanha",       sede: "México",         flag: "🇦🇷" },
+    { ano: 1990, campeao: "Alemanha",   vice: "Argentina",      sede: "Itália",         flag: "🇩🇪" },
+    { ano: 1994, campeao: "Brasil",     vice: "Itália",         sede: "EUA",            flag: "🇧🇷" },
+    { ano: 1998, campeao: "França",     vice: "Brasil",         sede: "França",         flag: "🇫🇷" },
+    { ano: 2002, campeao: "Brasil",     vice: "Alemanha",       sede: "Coreia/Japão",   flag: "🇧🇷" },
+    { ano: 2006, campeao: "Itália",     vice: "França",         sede: "Alemanha",       flag: "🇮🇹" },
+    { ano: 2010, campeao: "Espanha",    vice: "Holanda",        sede: "África do Sul",  flag: "🇪🇸" },
+    { ano: 2014, campeao: "Alemanha",   vice: "Argentina",      sede: "Brasil",         flag: "🇩🇪" },
+    { ano: 2018, campeao: "França",     vice: "Croácia",        sede: "Rússia",         flag: "🇫🇷" },
+    { ano: 2022, campeao: "Argentina",  vice: "França",         sede: "Catar",          flag: "🇦🇷" },
+    { ano: 2026, campeao: null,         vice: null,             sede: "EUA/CAN/MEX",    flag: "🏆" },
+  ];
+
+  const ranking = [
+    { pais: "Brasil",     flag: "🇧🇷", titulos: 5, anos: [1958, 1962, 1970, 1994, 2002] },
+    { pais: "Alemanha",   flag: "🇩🇪", titulos: 4, anos: [1954, 1974, 1990, 2014] },
+    { pais: "Itália",     flag: "🇮🇹", titulos: 4, anos: [1934, 1938, 1982, 2006] },
+    { pais: "Argentina",  flag: "🇦🇷", titulos: 3, anos: [1978, 1986, 2022] },
+    { pais: "França",     flag: "🇫🇷", titulos: 2, anos: [1998, 2018] },
+    { pais: "Uruguai",    flag: "🇺🇾", titulos: 2, anos: [1930, 1950] },
+    { pais: "Inglaterra", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", titulos: 1, anos: [1966] },
+    { pais: "Espanha",    flag: "🇪🇸", titulos: 1, anos: [2010] },
+  ];
+
+  // ── Ranking ──────────────────────────────────────────────────────────────
+  const corpoRanking = document.getElementById('corpo-ranking');
+  ranking.forEach((r, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="pos center">${i + 1}</td>
+      <td><div class="flag-nome"><span class="flag">${r.flag}</span><span class="pais">${r.pais}</span></div></td>
+      <td class="center"><span class="titulos-badge">${r.titulos}</span></td>
+      <td class="anos">${r.anos.join(' · ')}</td>
+    `;
+    corpoRanking.appendChild(tr);
+  });
+
+  // ── Histórico (ordem inversa) ─────────────────────────────────────────────
+  const corpoHistorico = document.getElementById('corpo-historico');
+  [...campeoes].reverse().forEach(c => {
+    const tr = document.createElement('tr');
+    const e2026 = c.ano === 2026;
+    if (e2026) tr.classList.add('tr-2026');
+
+    let celCampeao;
+    if (e2026) {
+      if (c.campeao) {
+        celCampeao = `<span class="badge-campeao">${c.flag} CAMPEÃO 2026 🎉</span>`;
+      } else {
+        celCampeao = `<span class="badge-2026">A definir 🏆</span>`;
+      }
+    } else {
+      celCampeao = `<div class="flag-nome"><span class="flag">${c.flag}</span><span class="pais">${c.campeao}</span></div>`;
+    }
+
+    const vice = c.vice ?? '—';
+    tr.innerHTML = `
+      <td class="ano-col ${e2026 ? 'ano-2026' : ''}">${c.ano}</td>
+      <td>${celCampeao}</td>
+      <td style="color:${e2026 ? '#4a7a5a' : '#6b9a7b'}">${vice}</td>
+      <td class="sede-col">${c.sede}</td>
+    `;
+    corpoHistorico.appendChild(tr);
+  });
+</script>
+
+</body>
+</html>
