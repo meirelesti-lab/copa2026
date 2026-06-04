@@ -3,3 +3,4 @@ resultados.json
 __pycache__/
 *.pyc
 .DS_Store
+CLAUDE.md
