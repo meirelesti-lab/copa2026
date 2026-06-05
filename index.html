@@ -127,7 +127,10 @@
     details summary::after { content: " ▶"; }
     details[open] summary::after { content: " ▼"; }
     footer { text-align: center; color: #2d5a3d; font-family: 'Space Mono', monospace; font-size: 0.7rem; margin-top: 48px; padding: 0 16px; line-height: 1.8; }
-    @media (min-width: 1024px) { .card-time-away { flex-direction:row-reverse; } }
+    @media (min-width: 1024px) {
+      .card-time-away { flex-direction:row-reverse; }
+      .card-time-away .card-name { text-align:right; }
+    }
     @media (max-width: 480px) {
       .filtros { padding: 10px 12px; }
       .btn { padding: 5px 10px; font-size: 0.7rem; }
@@ -138,7 +141,8 @@
       .placar { display:block; text-align:center; padding:2px 0; font-size:1.15rem; }
       .card-meta { justify-content:center; text-align:center; }
       .card-fase-badge { display:none; }
-      .fase-tag { display:block; position:absolute; top:-10px; right:12px; font-family:'Space Mono',monospace; font-size:0.62rem; font-weight:700; padding:2px 8px; border-radius:4px; letter-spacing:0.5px; }
+      .card-times { padding-top:22px; }
+      .fase-tag { display:block; position:absolute; top:10px; right:12px; font-family:'Space Mono',monospace; font-size:0.62rem; font-weight:700; padding:2px 10px; border-radius:4px; letter-spacing:0.5px; }
     }
   </style>
 </head>
@@ -183,7 +187,7 @@
   <div class='secao-titulo'>Próximo jogo</div>
         <div class="card" data-fase="Grupos" data-times="méxico áfrica do sul" style="border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           <div class="badge-proximo">⚡ PRÓXIMO JOGO</div>
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo A</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇲🇽</span>
@@ -209,7 +213,7 @@
 
         <div class="card" data-fase="Grupos" data-times="coreia do sul república tcheca" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo A</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇰🇷</span>
@@ -229,7 +233,7 @@
 
         <div class="card" data-fase="Grupos" data-times="canadá bósnia e herzegovina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo B</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇦</span>
@@ -249,7 +253,7 @@
 
         <div class="card" data-fase="Grupos" data-times="estados unidos paraguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo D</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇺🇸</span>
@@ -269,7 +273,7 @@
 
         <div class="card" data-fase="Grupos" data-times="austrália turquia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo D</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇦🇺</span>
@@ -289,7 +293,7 @@
 
         <div class="card" data-fase="Grupos" data-times="catar suíça" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo B</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇶🇦</span>
@@ -309,7 +313,7 @@
 
         <div class="card" data-fase="Grupos" data-times="brasil marrocos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo C</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇧🇷</span>
@@ -329,7 +333,7 @@
 
         <div class="card" data-fase="Grupos" data-times="haiti escócia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo C</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇭🇹</span>
@@ -349,7 +353,7 @@
 
         <div class="card" data-fase="Grupos" data-times="alemanha curaçao" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo E</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇩🇪</span>
@@ -369,7 +373,7 @@
 
         <div class="card" data-fase="Grupos" data-times="holanda japão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo F</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇳🇱</span>
@@ -389,7 +393,7 @@
 
         <div class="card" data-fase="Grupos" data-times="costa do marfim equador" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo E</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇮</span>
@@ -409,7 +413,7 @@
 
         <div class="card" data-fase="Grupos" data-times="suécia tunísia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo F</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇸🇪</span>
@@ -429,7 +433,7 @@
 
         <div class="card" data-fase="Grupos" data-times="espanha cabo verde" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo H</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇪🇸</span>
@@ -449,7 +453,7 @@
 
         <div class="card" data-fase="Grupos" data-times="bélgica egito" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo G</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇧🇪</span>
@@ -469,7 +473,7 @@
 
         <div class="card" data-fase="Grupos" data-times="arábia saudita uruguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo H</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇸🇦</span>
@@ -489,7 +493,7 @@
 
         <div class="card" data-fase="Grupos" data-times="irã nova zelândia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo G</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇮🇷</span>
@@ -509,7 +513,7 @@
 
         <div class="card" data-fase="Grupos" data-times="argentina argélia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo J</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇦🇷</span>
@@ -529,7 +533,7 @@
 
         <div class="card" data-fase="Grupos" data-times="frança senegal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo I</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇫🇷</span>
@@ -549,7 +553,7 @@
 
         <div class="card" data-fase="Grupos" data-times="iraque noruega" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo I</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇮🇶</span>
@@ -569,7 +573,7 @@
 
         <div class="card" data-fase="Grupos" data-times="áustria jordânia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo J</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇦🇹</span>
@@ -589,7 +593,7 @@
 
         <div class="card" data-fase="Grupos" data-times="portugal rd congo" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo K</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇵🇹</span>
@@ -609,7 +613,7 @@
 
         <div class="card" data-fase="Grupos" data-times="inglaterra croácia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo L</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
@@ -629,7 +633,7 @@
 
         <div class="card" data-fase="Grupos" data-times="gana panamá" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo L</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇬🇭</span>
@@ -649,7 +653,7 @@
 
         <div class="card" data-fase="Grupos" data-times="uzbequistão colômbia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo K</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇺🇿</span>
@@ -669,7 +673,7 @@
 
         <div class="card" data-fase="Grupos" data-times="república tcheca áfrica do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo A</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇿</span>
@@ -689,7 +693,7 @@
 
         <div class="card" data-fase="Grupos" data-times="suíça bósnia e herzegovina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo B</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇭</span>
@@ -709,7 +713,7 @@
 
         <div class="card" data-fase="Grupos" data-times="canadá catar" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo B</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇦</span>
@@ -729,7 +733,7 @@
 
         <div class="card" data-fase="Grupos" data-times="méxico coreia do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo A</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇲🇽</span>
@@ -749,7 +753,7 @@
 
         <div class="card" data-fase="Grupos" data-times="turquia paraguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo D</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇹🇷</span>
@@ -769,7 +773,7 @@
 
         <div class="card" data-fase="Grupos" data-times="estados unidos austrália" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo D</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇺🇸</span>
@@ -789,7 +793,7 @@
 
         <div class="card" data-fase="Grupos" data-times="escócia marrocos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo C</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
@@ -809,7 +813,7 @@
 
         <div class="card" data-fase="Grupos" data-times="brasil haiti" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo C</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇧🇷</span>
@@ -829,7 +833,7 @@
 
         <div class="card" data-fase="Grupos" data-times="holanda suécia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo F</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇳🇱</span>
@@ -849,7 +853,7 @@
 
         <div class="card" data-fase="Grupos" data-times="alemanha costa do marfim" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo E</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇩🇪</span>
@@ -869,7 +873,7 @@
 
         <div class="card" data-fase="Grupos" data-times="equador curaçao" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo E</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇪🇨</span>
@@ -889,7 +893,7 @@
 
         <div class="card" data-fase="Grupos" data-times="tunísia japão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo F</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇹🇳</span>
@@ -909,7 +913,7 @@
 
         <div class="card" data-fase="Grupos" data-times="espanha arábia saudita" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo H</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇪🇸</span>
@@ -929,7 +933,7 @@
 
         <div class="card" data-fase="Grupos" data-times="bélgica irã" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo G</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇧🇪</span>
@@ -949,7 +953,7 @@
 
         <div class="card" data-fase="Grupos" data-times="uruguai cabo verde" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo H</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇺🇾</span>
@@ -969,7 +973,7 @@
 
         <div class="card" data-fase="Grupos" data-times="nova zelândia egito" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo G</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇳🇿</span>
@@ -989,7 +993,7 @@
 
         <div class="card" data-fase="Grupos" data-times="argentina áustria" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo J</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇦🇷</span>
@@ -1009,7 +1013,7 @@
 
         <div class="card" data-fase="Grupos" data-times="frança iraque" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo I</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇫🇷</span>
@@ -1029,7 +1033,7 @@
 
         <div class="card" data-fase="Grupos" data-times="noruega senegal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo I</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇳🇴</span>
@@ -1049,7 +1053,7 @@
 
         <div class="card" data-fase="Grupos" data-times="jordânia argélia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo J</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇯🇴</span>
@@ -1069,7 +1073,7 @@
 
         <div class="card" data-fase="Grupos" data-times="portugal uzbequistão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo K</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇵🇹</span>
@@ -1089,7 +1093,7 @@
 
         <div class="card" data-fase="Grupos" data-times="inglaterra gana" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo L</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
@@ -1109,7 +1113,7 @@
 
         <div class="card" data-fase="Grupos" data-times="panamá croácia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo L</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇵🇦</span>
@@ -1129,7 +1133,7 @@
 
         <div class="card" data-fase="Grupos" data-times="colômbia rd congo" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo K</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇴</span>
@@ -1149,7 +1153,7 @@
 
         <div class="card" data-fase="Grupos" data-times="suíça canadá" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo B</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇭</span>
@@ -1169,7 +1173,7 @@
 
         <div class="card" data-fase="Grupos" data-times="bósnia e herzegovina catar" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo B</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇧🇦</span>
@@ -1189,7 +1193,7 @@
 
         <div class="card" data-fase="Grupos" data-times="escócia brasil" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo C</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
@@ -1209,7 +1213,7 @@
 
         <div class="card" data-fase="Grupos" data-times="marrocos haiti" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo C</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇲🇦</span>
@@ -1229,7 +1233,7 @@
 
         <div class="card" data-fase="Grupos" data-times="república tcheca méxico" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo A</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇿</span>
@@ -1249,7 +1253,7 @@
 
         <div class="card" data-fase="Grupos" data-times="áfrica do sul coreia do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo A</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇿🇦</span>
@@ -1269,7 +1273,7 @@
 
         <div class="card" data-fase="Grupos" data-times="equador alemanha" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo E</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇪🇨</span>
@@ -1289,7 +1293,7 @@
 
         <div class="card" data-fase="Grupos" data-times="curaçao costa do marfim" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo E</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇼</span>
@@ -1309,7 +1313,7 @@
 
         <div class="card" data-fase="Grupos" data-times="japão suécia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo F</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇯🇵</span>
@@ -1329,7 +1333,7 @@
 
         <div class="card" data-fase="Grupos" data-times="tunísia holanda" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo F</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇹🇳</span>
@@ -1349,7 +1353,7 @@
 
         <div class="card" data-fase="Grupos" data-times="turquia estados unidos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo D</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇹🇷</span>
@@ -1369,7 +1373,7 @@
 
         <div class="card" data-fase="Grupos" data-times="paraguai austrália" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo D</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇵🇾</span>
@@ -1389,7 +1393,7 @@
 
         <div class="card" data-fase="Grupos" data-times="noruega frança" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo I</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇳🇴</span>
@@ -1409,7 +1413,7 @@
 
         <div class="card" data-fase="Grupos" data-times="senegal iraque" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo I</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇸🇳</span>
@@ -1429,7 +1433,7 @@
 
         <div class="card" data-fase="Grupos" data-times="cabo verde arábia saudita" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo H</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇻</span>
@@ -1449,7 +1453,7 @@
 
         <div class="card" data-fase="Grupos" data-times="uruguai espanha" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo H</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇺🇾</span>
@@ -1469,7 +1473,7 @@
 
         <div class="card" data-fase="Grupos" data-times="egito irã" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo G</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇪🇬</span>
@@ -1489,7 +1493,7 @@
 
         <div class="card" data-fase="Grupos" data-times="nova zelândia bélgica" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo G</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇳🇿</span>
@@ -1509,7 +1513,7 @@
 
         <div class="card" data-fase="Grupos" data-times="panamá inglaterra" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo L</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇵🇦</span>
@@ -1529,7 +1533,7 @@
 
         <div class="card" data-fase="Grupos" data-times="croácia gana" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo L</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇭🇷</span>
@@ -1549,7 +1553,7 @@
 
         <div class="card" data-fase="Grupos" data-times="colômbia portugal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo K</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇴</span>
@@ -1569,7 +1573,7 @@
 
         <div class="card" data-fase="Grupos" data-times="rd congo uzbequistão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo K</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇨🇩</span>
@@ -1589,7 +1593,7 @@
 
         <div class="card" data-fase="Grupos" data-times="argélia áustria" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo J</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇩🇿</span>
@@ -1609,7 +1613,7 @@
 
         <div class="card" data-fase="Grupos" data-times="jordânia argentina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;">Grupo J</div>
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🇯🇴</span>
@@ -1630,7 +1634,7 @@
   <details><summary>A definir — Mata-mata</summary><div style='margin-top:12px;'>
         <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;">32avos</div>
+          <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1650,7 +1654,7 @@
 
         <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;">32avos</div>
+          <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1670,7 +1674,7 @@
 
         <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;">32avos</div>
+          <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1690,7 +1694,7 @@
 
         <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;">32avos</div>
+          <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1710,7 +1714,7 @@
 
         <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;">32avos</div>
+          <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1730,7 +1734,7 @@
 
         <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;">32avos</div>
+          <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1750,7 +1754,7 @@
 
         <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;">Oitavas</div>
+          <div class="fase-tag" style="background:#a78bfa;color:#052e16;">Oitavas</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1770,7 +1774,7 @@
 
         <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;">Oitavas</div>
+          <div class="fase-tag" style="background:#a78bfa;color:#052e16;">Oitavas</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1790,7 +1794,7 @@
 
         <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;">Oitavas</div>
+          <div class="fase-tag" style="background:#a78bfa;color:#052e16;">Oitavas</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1810,7 +1814,7 @@
 
         <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;">Oitavas</div>
+          <div class="fase-tag" style="background:#a78bfa;color:#052e16;">Oitavas</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1830,7 +1834,7 @@
 
         <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;">Quartas</div>
+          <div class="fase-tag" style="background:#f472b6;color:#052e16;">Quartas</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1850,7 +1854,7 @@
 
         <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;">Quartas</div>
+          <div class="fase-tag" style="background:#f472b6;color:#052e16;">Quartas</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1870,7 +1874,7 @@
 
         <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;">Quartas</div>
+          <div class="fase-tag" style="background:#f472b6;color:#052e16;">Quartas</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1890,7 +1894,7 @@
 
         <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;">Quartas</div>
+          <div class="fase-tag" style="background:#f472b6;color:#052e16;">Quartas</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1910,7 +1914,7 @@
 
         <div class="card" data-fase="Semifinal" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#fbbf2422;color:#fbbf24;border:1px solid #fbbf2444;">Semifinal</div>
+          <div class="fase-tag" style="background:#fbbf24;color:#052e16;">Semifinal</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1930,7 +1934,7 @@
 
         <div class="card" data-fase="Semifinal" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#fbbf2422;color:#fbbf24;border:1px solid #fbbf2444;">Semifinal</div>
+          <div class="fase-tag" style="background:#fbbf24;color:#052e16;">Semifinal</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1950,7 +1954,7 @@
 
         <div class="card" data-fase="3º Lugar" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#fb923c22;color:#fb923c;border:1px solid #fb923c44;">3º Lugar</div>
+          <div class="fase-tag" style="background:#fb923c;color:#052e16;">3º Lugar</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1970,7 +1974,7 @@
 
         <div class="card" data-fase="Final" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           
-          <div class="fase-tag" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44;">Final</div>
+          <div class="fase-tag" style="background:#f59e0b;color:#052e16;">Final</div>
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">🏳</span>
@@ -1997,7 +2001,7 @@
 </div>
 
 <footer>
-  <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em 04/06/2026 23:58
+  <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em 05/06/2026 00:02
 </footer>
 
 <script>

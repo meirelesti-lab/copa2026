@@ -111,7 +111,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
             center_html = "vs"
         proximo_badge = '<div class="badge-proximo">⚡ PRÓXIMO JOGO</div>' if is_proximo else ""
         tag_label = f"Grupo {j['grupo']}" if j["grupo"] else j["fase"]
-        fase_tag = f'<div class="fase-tag" style="background:{cor}22;color:{cor};border:1px solid {cor}44;">{tag_label}</div>'
+        fase_tag = f'<div class="fase-tag" style="background:{cor};color:#052e16;">{tag_label}</div>'
 
         utc_attr = f'data-utc="{j["utc"]}"' if j["utc"] else ""
         hora_default = f"{j['dia']} {j['data']} {j['hora']}"
@@ -311,7 +311,10 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     details summary::after {{ content: " ▶"; }}
     details[open] summary::after {{ content: " ▼"; }}
     footer {{ text-align: center; color: #2d5a3d; font-family: 'Space Mono', monospace; font-size: 0.7rem; margin-top: 48px; padding: 0 16px; line-height: 1.8; }}
-    @media (min-width: 1024px) {{ .card-time-away {{ flex-direction:row-reverse; }} }}
+    @media (min-width: 1024px) {{
+      .card-time-away {{ flex-direction:row-reverse; }}
+      .card-time-away .card-name {{ text-align:right; }}
+    }}
     @media (max-width: 480px) {{
       .filtros {{ padding: 10px 12px; }}
       .btn {{ padding: 5px 10px; font-size: 0.7rem; }}
@@ -322,7 +325,8 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       .placar {{ display:block; text-align:center; padding:2px 0; font-size:1.15rem; }}
       .card-meta {{ justify-content:center; text-align:center; }}
       .card-fase-badge {{ display:none; }}
-      .fase-tag {{ display:block; position:absolute; top:-10px; right:12px; font-family:'Space Mono',monospace; font-size:0.62rem; font-weight:700; padding:2px 8px; border-radius:4px; letter-spacing:0.5px; }}
+      .card-times {{ padding-top:22px; }}
+      .fase-tag {{ display:block; position:absolute; top:10px; right:12px; font-family:'Space Mono',monospace; font-size:0.62rem; font-weight:700; padding:2px 10px; border-radius:4px; letter-spacing:0.5px; }}
     }}
   </style>
 </head>
