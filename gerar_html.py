@@ -274,7 +274,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     }}
     .select-time:hover {{ background-color: #142a1c; color: #a8d4b4; }}
     .select-time.ativo {{ background-color: #10b98122; color: #10b981; border-color: #10b98166; }}
-    .main {{ max-width: 780px; margin: 0 auto; padding: 24px 16px 0; }}
+    .main {{ max-width: 580px; margin: 0 auto; padding: 24px 16px 0; }}
     .secao-titulo {{
       font-size: 0.72rem;
       font-family: 'Space Mono', monospace;
@@ -315,7 +315,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       .card-time-away {{ flex-direction:row-reverse; }}
       .card-time-away .card-name {{ text-align:right; }}
     }}
-    @media (max-width: 480px) {{
+    @media (max-width: 480px), (max-height: 500px) and (orientation: landscape) {{
       .filtros {{ padding: 10px 12px; }}
       .btn {{ padding: 5px 10px; font-size: 0.7rem; }}
       .card-times {{ flex-direction:column; align-items:center; gap:6px; }}
