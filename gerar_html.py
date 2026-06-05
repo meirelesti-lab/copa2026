@@ -311,10 +311,10 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     @media (max-width: 480px) {{
       .filtros {{ padding: 10px 12px; }}
       .btn {{ padding: 5px 10px; font-size: 0.7rem; }}
-      .card-times {{ flex-direction:column; align-items:stretch; gap:4px; }}
-      .card-time, .card-time-away {{ flex:none; flex-direction:row; width:100%; }}
-      .card-name {{ white-space:normal; font-size:0.85rem; }}
-      .card-vs {{ text-align:center; padding:4px 0; border-top:1px solid #1a2a20; border-bottom:1px solid #1a2a20; margin:2px 0; }}
+      .card-times {{ flex-direction:column; align-items:center; gap:6px; }}
+      .card-time, .card-time-away {{ flex:none; flex-direction:row; justify-content:center; width:100%; }}
+      .card-name {{ flex:none; font-size:0.85rem; }}
+      .card-vs {{ width:100%; text-align:center; padding:5px 0; border-top:1px solid #1a2a20; border-bottom:1px solid #1a2a20; margin:1px 0; }}
       .placar {{ display:block; text-align:center; padding:2px 0; font-size:1.15rem; }}
     }}
   </style>
