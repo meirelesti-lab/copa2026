@@ -317,7 +317,6 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       .card-vs {{ width:100%; text-align:center; padding:5px 0; border-top:1px solid #1a2a20; border-bottom:1px solid #1a2a20; margin:1px 0; }}
       .placar {{ display:block; text-align:center; padding:2px 0; font-size:1.15rem; }}
       .card-meta {{ justify-content:center; text-align:center; }}
-      .badge-proximo {{ left:50%; transform:translateX(-50%); }}
     }}
   </style>
 </head>
