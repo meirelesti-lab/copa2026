@@ -88,8 +88,14 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         j["dt"] = data_jogo_brasilia(j)
         j["utc"] = utc_iso(j)
 
-        if not j["encerrado"] and j["dt"] > agora_brasilia and proximo_idx is None:
-            proximo_idx = i
+        if proximo_idx is None and not j["encerrado"]:
+            if j["hora"] in ("?", ""):
+                _d, _m = j["data"].split("/")
+                _futuro = datetime(2026, int(_m), int(_d)).date() >= agora_brasilia.date()
+            else:
+                _futuro = j["dt"] > agora_brasilia
+            if _futuro:
+                proximo_idx = i
 
         jogos_enriquecidos.append(j)
 
@@ -132,11 +138,14 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     proximo_id = proximo_jogo["id"] if proximo_jogo else None
 
     grupos_jogos = [j for j in jogos_enriquecidos if j["fase"] == "Grupos"]
-    # Próximo jogo já aparece na seção dedicada — não duplicar em nenhuma seção
+    # Próximo jogo já aparece na seção dedicada — excluir de todas as outras
     mata_jogos   = [j for j in jogos_enriquecidos if j["fase"] != "Grupos" and j["id"] != proximo_id]
 
-    encerrados = [j for j in grupos_jogos if j["encerrado"]]
-    proximos = [j for j in grupos_jogos if not j["encerrado"] and j["id"] != proximo_id]
+    encerrados_grupos  = [j for j in grupos_jogos if j["encerrado"]]
+    proximos_grupos    = [j for j in grupos_jogos if not j["encerrado"] and j["id"] != proximo_id]
+    mata_encerrados    = [j for j in mata_jogos if j["encerrado"]]
+    mata_proximos      = [j for j in mata_jogos if not j["encerrado"] and j["time1"] != "A definir" and j["time2"] != "A definir"]
+    mata_a_definir     = [j for j in mata_jogos if not j["encerrado"] and (j["time1"] == "A definir" or j["time2"] == "A definir")]
 
     # Montar lista de times para o dropdown
     destaque_nomes = {t[1].lower() for t in TIMES_DESTAQUE}
@@ -147,9 +156,13 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         if j[campo] != "A definir" and j[campo].lower() not in destaque_nomes
     })
 
-    resultados_cards = "\n".join(card_html(j) for j in reversed(encerrados))
-    proximos_cards   = "\n".join(card_html(j) for j in proximos)
-    mata_cards       = "\n".join(card_html(j) for j in mata_jogos)
+    # Pré-computar blocos de cards e seções condicionais
+    secao_proximo    = ("<div class='secao-titulo'>Próximo jogo</div>" + card_html(proximo_jogo, is_proximo=True)) if proximo_jogo else ""
+    secao_mata_enc   = ("<div class='secao-titulo'>Resultados — Mata-mata</div>\n" + "\n".join(card_html(j) for j in reversed(mata_encerrados))) if mata_encerrados else ""
+    secao_mata_prox  = ("<div class='secao-titulo'>Próximos — Mata-mata</div>\n" + "\n".join(card_html(j) for j in mata_proximos)) if mata_proximos else ""
+    secao_grp_prox   = ("<div class='secao-titulo'>Próximos jogos — Grupos</div>\n" + "\n".join(card_html(j) for j in proximos_grupos)) if proximos_grupos else ""
+    secao_mata_adef  = ("<details><summary>A definir — Mata-mata</summary><div style='margin-top:12px;'>" + "\n".join(card_html(j) for j in mata_a_definir) + "</div></details>") if mata_a_definir else ""
+    secao_grp_enc    = ("<details><summary>Resultados — Grupos</summary><div style='margin-top:12px;'>" + "\n".join(card_html(j) for j in reversed(encerrados_grupos)) + "</div></details>") if encerrados_grupos else ""
 
     # Pré-computar strings para evitar backslash em f-string (Python 3.9)
     btns_destaque = "".join(
@@ -331,18 +344,17 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 
 <div class="main" id="conteudo">
 
-  {"<div class='secao-titulo'>Próximo jogo</div>" + card_html(proximo_jogo, is_proximo=True) if proximo_jogo else ""}
+  {secao_proximo}
 
-  {"<div class='secao-titulo'>Próximos jogos — Grupos</div>" if proximos else ""}
-  {proximos_cards}
+  {secao_mata_enc}
 
-  {"<div class='secao-titulo'>Resultados — Grupos</div>" if encerrados else ""}
-  {resultados_cards}
+  {secao_mata_prox}
 
-  <details>
-    <summary>Mata-mata</summary>
-    <div style="margin-top:12px;">{mata_cards}</div>
-  </details>
+  {secao_grp_prox}
+
+  {secao_mata_adef}
+
+  {secao_grp_enc}
 
 </div>
 
