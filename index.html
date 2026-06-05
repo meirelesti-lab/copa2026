@@ -110,7 +110,7 @@
     .card-flag { font-size:1.6rem; flex-shrink:0; line-height:1; }
     .card-name { color:#e2f0e8; font-family:'Space Mono',monospace; font-size:0.88rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1; min-width:0; }
     .card-vs { color:#4a7a5a; font-family:'Space Mono',monospace; font-size:0.78rem; padding:0 10px; flex-shrink:0; }
-    .card-meta { margin-top:10px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+    .card-meta { margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; }
     .badge-proximo {
       position: absolute; top: -10px; left: 14px;
       background: #22c55e; color: #052e16;
@@ -139,7 +139,7 @@
       .card-name { flex:none; font-size:0.85rem; }
       .card-vs { width:100%; text-align:center; padding:5px 0; border-top:1px solid #1a2a20; border-bottom:1px solid #1a2a20; margin:1px 0; }
       .placar { display:block; text-align:center; padding:2px 0; font-size:1.15rem; }
-      .card-meta { justify-content:center; text-align:center; }
+      .card-meta { text-align:center; }
       .card-fase-badge { display:none; }
       .card-times { padding-top:22px; }
       .fase-tag { display:block; position:absolute; top:10px; right:12px; font-family:'Space Mono',monospace; font-size:0.62rem; font-weight:700; padding:2px 10px; border-radius:4px; letter-spacing:0.5px; }
@@ -185,7 +185,7 @@
 <div class="main" id="conteudo">
 
   <div class='secao-titulo'>Próximo jogo</div>
-        <div class="card" data-fase="Grupos" data-times="méxico áfrica do sul" style="border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="méxico áfrica do sul" style="border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           <div class="badge-proximo">⚡ PRÓXIMO JOGO</div>
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
@@ -200,8 +200,8 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-11T19:00:00Z">Qui 11/06 16h</span> · 📍 Cidade do México</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-11T19:00:00Z">Qui · 11/06 · 16h</span> · 📍 Cidade do México</span>
           </div>
         </div>
 
@@ -211,7 +211,7 @@
 
   <div class='secao-titulo'>Próximos jogos — Grupos</div>
 
-        <div class="card" data-fase="Grupos" data-times="coreia do sul república tcheca" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="coreia do sul república tcheca" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
@@ -226,12 +226,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-12T02:00:00Z">Qui 11/06 23h</span> · 📍 Guadalajara</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-12T02:00:00Z">Qui · 11/06 · 23h</span> · 📍 Guadalajara</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="canadá bósnia e herzegovina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="canadá bósnia e herzegovina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
@@ -246,12 +246,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-12T19:00:00Z">Sex 12/06 16h</span> · 📍 Toronto</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-12T19:00:00Z">Sex · 12/06 · 16h</span> · 📍 Toronto</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="estados unidos paraguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="estados unidos paraguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
@@ -266,12 +266,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-13T01:00:00Z">Sex 12/06 22h</span> · 📍 Los Angeles</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-13T01:00:00Z">Sex · 12/06 · 22h</span> · 📍 Los Angeles</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="austrália turquia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="austrália turquia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
@@ -286,12 +286,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T04:00:00Z">Dom 14/06 01h</span> · 📍 Vancouver</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T04:00:00Z">Dom · 14/06 · 01h</span> · 📍 Vancouver</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="catar suíça" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="catar suíça" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
@@ -306,12 +306,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-13T19:00:00Z">Sáb 13/06 16h</span> · 📍 San Francisco</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-13T19:00:00Z">Sáb · 13/06 · 16h</span> · 📍 San Francisco</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="brasil marrocos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="brasil marrocos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
@@ -326,12 +326,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-13T22:00:00Z">Sáb 13/06 19h</span> · 📍 Nova York/NJ</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-13T22:00:00Z">Sáb · 13/06 · 19h</span> · 📍 Nova York/NJ</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="haiti escócia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="haiti escócia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
@@ -346,12 +346,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T01:00:00Z">Sáb 13/06 22h</span> · 📍 Boston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T01:00:00Z">Sáb · 13/06 · 22h</span> · 📍 Boston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="alemanha curaçao" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="alemanha curaçao" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
@@ -366,12 +366,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T17:00:00Z">Dom 14/06 14h</span> · 📍 Houston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T17:00:00Z">Dom · 14/06 · 14h</span> · 📍 Houston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="holanda japão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="holanda japão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
@@ -386,12 +386,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T20:00:00Z">Dom 14/06 17h</span> · 📍 Dallas</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T20:00:00Z">Dom · 14/06 · 17h</span> · 📍 Dallas</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="costa do marfim equador" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="costa do marfim equador" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
@@ -406,12 +406,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T23:00:00Z">Dom 14/06 20h</span> · 📍 Filadélfia</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-14T23:00:00Z">Dom · 14/06 · 20h</span> · 📍 Filadélfia</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="suécia tunísia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="suécia tunísia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
@@ -426,12 +426,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T02:00:00Z">Dom 14/06 23h</span> · 📍 Monterrey</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T02:00:00Z">Dom · 14/06 · 23h</span> · 📍 Monterrey</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="espanha cabo verde" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="espanha cabo verde" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
@@ -446,12 +446,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T16:00:00Z">Seg 15/06 13h</span> · 📍 Atlanta</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T16:00:00Z">Seg · 15/06 · 13h</span> · 📍 Atlanta</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="bélgica egito" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="bélgica egito" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
@@ -466,12 +466,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T19:00:00Z">Seg 15/06 16h</span> · 📍 Seattle</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T19:00:00Z">Seg · 15/06 · 16h</span> · 📍 Seattle</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="arábia saudita uruguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="arábia saudita uruguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
@@ -486,12 +486,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T22:00:00Z">Seg 15/06 19h</span> · 📍 Miami</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T22:00:00Z">Seg · 15/06 · 19h</span> · 📍 Miami</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="irã nova zelândia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="irã nova zelândia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
@@ -506,12 +506,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-16T01:00:00Z">Seg 15/06 22h</span> · 📍 Los Angeles</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-16T01:00:00Z">Seg · 15/06 · 22h</span> · 📍 Los Angeles</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="argentina argélia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="argentina argélia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
@@ -526,12 +526,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T01:00:00Z">Ter 16/06 22h</span> · 📍 Kansas City</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T01:00:00Z">Ter · 16/06 · 22h</span> · 📍 Kansas City</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="frança senegal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="frança senegal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
@@ -546,12 +546,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-16T19:00:00Z">Ter 16/06 16h</span> · 📍 Nova York/NJ</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-16T19:00:00Z">Ter · 16/06 · 16h</span> · 📍 Nova York/NJ</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="iraque noruega" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="iraque noruega" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
@@ -566,12 +566,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-16T22:00:00Z">Ter 16/06 19h</span> · 📍 Boston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-16T22:00:00Z">Ter · 16/06 · 19h</span> · 📍 Boston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="áustria jordânia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="áustria jordânia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
@@ -586,12 +586,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T04:00:00Z">Qua 17/06 01h</span> · 📍 San Francisco</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T04:00:00Z">Qua · 17/06 · 01h</span> · 📍 San Francisco</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="portugal rd congo" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="portugal rd congo" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
@@ -606,12 +606,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T17:00:00Z">Qua 17/06 14h</span> · 📍 Houston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T17:00:00Z">Qua · 17/06 · 14h</span> · 📍 Houston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="inglaterra croácia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="inglaterra croácia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
@@ -626,12 +626,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T20:00:00Z">Qua 17/06 17h</span> · 📍 Dallas</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T20:00:00Z">Qua · 17/06 · 17h</span> · 📍 Dallas</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="gana panamá" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="gana panamá" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
@@ -646,12 +646,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T23:00:00Z">Qua 17/06 20h</span> · 📍 Toronto</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-17T23:00:00Z">Qua · 17/06 · 20h</span> · 📍 Toronto</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="uzbequistão colômbia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="uzbequistão colômbia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
@@ -666,12 +666,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-18T02:00:00Z">Qua 17/06 23h</span> · 📍 Cidade do México</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-18T02:00:00Z">Qua · 17/06 · 23h</span> · 📍 Cidade do México</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="república tcheca áfrica do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="república tcheca áfrica do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
@@ -686,12 +686,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-18T16:00:00Z">Qui 18/06 13h</span> · 📍 Atlanta</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-18T16:00:00Z">Qui · 18/06 · 13h</span> · 📍 Atlanta</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="suíça bósnia e herzegovina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="suíça bósnia e herzegovina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
@@ -706,12 +706,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-18T19:00:00Z">Qui 18/06 16h</span> · 📍 Los Angeles</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-18T19:00:00Z">Qui · 18/06 · 16h</span> · 📍 Los Angeles</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="canadá catar" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="canadá catar" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
@@ -726,12 +726,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-18T22:00:00Z">Qui 18/06 19h</span> · 📍 Vancouver</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-18T22:00:00Z">Qui · 18/06 · 19h</span> · 📍 Vancouver</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="méxico coreia do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="méxico coreia do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
@@ -746,12 +746,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-19T01:00:00Z">Qui 18/06 22h</span> · 📍 Guadalajara</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-19T01:00:00Z">Qui · 18/06 · 22h</span> · 📍 Guadalajara</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="turquia paraguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="turquia paraguai" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
@@ -766,12 +766,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-20T04:00:00Z">Sáb 20/06 01h</span> · 📍 San Francisco</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-20T04:00:00Z">Sáb · 20/06 · 01h</span> · 📍 San Francisco</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="estados unidos austrália" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="estados unidos austrália" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
@@ -786,12 +786,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-19T19:00:00Z">Sex 19/06 16h</span> · 📍 Seattle</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-19T19:00:00Z">Sex · 19/06 · 16h</span> · 📍 Seattle</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="escócia marrocos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="escócia marrocos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
@@ -806,12 +806,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-19T22:00:00Z">Sex 19/06 19h</span> · 📍 Boston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-19T22:00:00Z">Sex · 19/06 · 19h</span> · 📍 Boston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="brasil haiti" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="brasil haiti" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
@@ -826,12 +826,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-20T01:00:00Z">Sex 19/06 22h</span> · 📍 Filadélfia</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-20T01:00:00Z">Sex · 19/06 · 22h</span> · 📍 Filadélfia</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="holanda suécia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="holanda suécia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
@@ -846,12 +846,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-20T17:00:00Z">Sáb 20/06 14h</span> · 📍 Houston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-20T17:00:00Z">Sáb · 20/06 · 14h</span> · 📍 Houston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="alemanha costa do marfim" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="alemanha costa do marfim" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
@@ -866,12 +866,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-20T20:00:00Z">Sáb 20/06 17h</span> · 📍 Toronto</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-20T20:00:00Z">Sáb · 20/06 · 17h</span> · 📍 Toronto</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="equador curaçao" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="equador curaçao" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
@@ -886,12 +886,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T00:00:00Z">Sáb 20/06 21h</span> · 📍 Kansas City</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T00:00:00Z">Sáb · 20/06 · 21h</span> · 📍 Kansas City</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="tunísia japão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="tunísia japão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
@@ -906,12 +906,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T04:00:00Z">Dom 21/06 01h</span> · 📍 Monterrey</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T04:00:00Z">Dom · 21/06 · 01h</span> · 📍 Monterrey</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="espanha arábia saudita" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="espanha arábia saudita" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
@@ -926,12 +926,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T16:00:00Z">Dom 21/06 13h</span> · 📍 Atlanta</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T16:00:00Z">Dom · 21/06 · 13h</span> · 📍 Atlanta</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="bélgica irã" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="bélgica irã" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
@@ -946,12 +946,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T19:00:00Z">Dom 21/06 16h</span> · 📍 Los Angeles</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T19:00:00Z">Dom · 21/06 · 16h</span> · 📍 Los Angeles</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="uruguai cabo verde" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="uruguai cabo verde" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
@@ -966,12 +966,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T22:00:00Z">Dom 21/06 19h</span> · 📍 Miami</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-21T22:00:00Z">Dom · 21/06 · 19h</span> · 📍 Miami</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="nova zelândia egito" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="nova zelândia egito" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
@@ -986,12 +986,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-22T01:00:00Z">Dom 21/06 22h</span> · 📍 Vancouver</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-22T01:00:00Z">Dom · 21/06 · 22h</span> · 📍 Vancouver</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="argentina áustria" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="argentina áustria" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
@@ -1006,12 +1006,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-22T17:00:00Z">Seg 22/06 14h</span> · 📍 Dallas</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-22T17:00:00Z">Seg · 22/06 · 14h</span> · 📍 Dallas</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="frança iraque" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="frança iraque" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
@@ -1026,12 +1026,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-22T21:00:00Z">Seg 22/06 18h</span> · 📍 Filadélfia</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-22T21:00:00Z">Seg · 22/06 · 18h</span> · 📍 Filadélfia</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="noruega senegal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="noruega senegal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
@@ -1046,12 +1046,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T00:00:00Z">Seg 22/06 21h</span> · 📍 Nova York/NJ</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T00:00:00Z">Seg · 22/06 · 21h</span> · 📍 Nova York/NJ</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="jordânia argélia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="jordânia argélia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
@@ -1066,12 +1066,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T03:00:00Z">Ter 23/06 00h</span> · 📍 San Francisco</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T03:00:00Z">Ter · 23/06 · 00h</span> · 📍 San Francisco</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="portugal uzbequistão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="portugal uzbequistão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
@@ -1086,12 +1086,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T17:00:00Z">Ter 23/06 14h</span> · 📍 Houston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T17:00:00Z">Ter · 23/06 · 14h</span> · 📍 Houston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="inglaterra gana" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="inglaterra gana" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
@@ -1106,12 +1106,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T20:00:00Z">Ter 23/06 17h</span> · 📍 Boston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T20:00:00Z">Ter · 23/06 · 17h</span> · 📍 Boston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="panamá croácia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="panamá croácia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
@@ -1126,12 +1126,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T23:00:00Z">Ter 23/06 20h</span> · 📍 Toronto</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-23T23:00:00Z">Ter · 23/06 · 20h</span> · 📍 Toronto</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="colômbia rd congo" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="colômbia rd congo" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
@@ -1146,12 +1146,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T02:00:00Z">Ter 23/06 23h</span> · 📍 Guadalajara</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T02:00:00Z">Ter · 23/06 · 23h</span> · 📍 Guadalajara</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="suíça canadá" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="suíça canadá" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
@@ -1166,12 +1166,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T19:00:00Z">Qua 24/06 16h</span> · 📍 Vancouver</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T19:00:00Z">Qua · 24/06 · 16h</span> · 📍 Vancouver</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="bósnia e herzegovina catar" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="bósnia e herzegovina catar" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo B</div>
           <div class="card-times">
@@ -1186,12 +1186,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T19:00:00Z">Qua 24/06 16h</span> · 📍 Seattle</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo B</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T19:00:00Z">Qua · 24/06 · 16h</span> · 📍 Seattle</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="escócia brasil" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="escócia brasil" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
@@ -1206,12 +1206,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T22:00:00Z">Qua 24/06 19h</span> · 📍 Miami</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T22:00:00Z">Qua · 24/06 · 19h</span> · 📍 Miami</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="marrocos haiti" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="marrocos haiti" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo C</div>
           <div class="card-times">
@@ -1226,12 +1226,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T22:00:00Z">Qua 24/06 19h</span> · 📍 Atlanta</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo C</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-24T22:00:00Z">Qua · 24/06 · 19h</span> · 📍 Atlanta</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="república tcheca méxico" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="república tcheca méxico" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
@@ -1246,12 +1246,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T01:00:00Z">Qua 24/06 22h</span> · 📍 Cidade do México</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T01:00:00Z">Qua · 24/06 · 22h</span> · 📍 Cidade do México</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="áfrica do sul coreia do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="áfrica do sul coreia do sul" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
           <div class="card-times">
@@ -1266,12 +1266,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T01:00:00Z">Qua 24/06 22h</span> · 📍 Monterrey</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo A</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T01:00:00Z">Qua · 24/06 · 22h</span> · 📍 Monterrey</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="equador alemanha" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="equador alemanha" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
@@ -1286,12 +1286,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T20:00:00Z">Qui 25/06 17h</span> · 📍 Nova York/NJ</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T20:00:00Z">Qui · 25/06 · 17h</span> · 📍 Nova York/NJ</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="curaçao costa do marfim" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="curaçao costa do marfim" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo E</div>
           <div class="card-times">
@@ -1306,12 +1306,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T20:00:00Z">Qui 25/06 17h</span> · 📍 Filadélfia</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo E</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T20:00:00Z">Qui · 25/06 · 17h</span> · 📍 Filadélfia</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="japão suécia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="japão suécia" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
@@ -1326,12 +1326,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T23:00:00Z">Qui 25/06 20h</span> · 📍 Dallas</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T23:00:00Z">Qui · 25/06 · 20h</span> · 📍 Dallas</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="tunísia holanda" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="tunísia holanda" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
           <div class="card-times">
@@ -1346,12 +1346,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T23:00:00Z">Qui 25/06 20h</span> · 📍 Kansas City</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo F</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-25T23:00:00Z">Qui · 25/06 · 20h</span> · 📍 Kansas City</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="turquia estados unidos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="turquia estados unidos" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
@@ -1366,12 +1366,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-26T02:00:00Z">Qui 25/06 23h</span> · 📍 Los Angeles</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-26T02:00:00Z">Qui · 25/06 · 23h</span> · 📍 Los Angeles</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="paraguai austrália" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="paraguai austrália" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo D</div>
           <div class="card-times">
@@ -1386,12 +1386,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-26T02:00:00Z">Qui 25/06 23h</span> · 📍 San Francisco</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo D</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-26T02:00:00Z">Qui · 25/06 · 23h</span> · 📍 San Francisco</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="noruega frança" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="noruega frança" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
@@ -1406,12 +1406,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-26T19:00:00Z">Sex 26/06 16h</span> · 📍 Boston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-26T19:00:00Z">Sex · 26/06 · 16h</span> · 📍 Boston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="senegal iraque" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="senegal iraque" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo I</div>
           <div class="card-times">
@@ -1426,12 +1426,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-26T19:00:00Z">Sex 26/06 16h</span> · 📍 Toronto</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo I</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-26T19:00:00Z">Sex · 26/06 · 16h</span> · 📍 Toronto</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="cabo verde arábia saudita" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="cabo verde arábia saudita" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
@@ -1446,12 +1446,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T00:00:00Z">Sex 26/06 21h</span> · 📍 Houston</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T00:00:00Z">Sex · 26/06 · 21h</span> · 📍 Houston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="uruguai espanha" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="uruguai espanha" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
           <div class="card-times">
@@ -1466,12 +1466,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T00:00:00Z">Sex 26/06 21h</span> · 📍 Guadalajara</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T00:00:00Z">Sex · 26/06 · 21h</span> · 📍 Guadalajara</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="egito irã" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="egito irã" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
@@ -1486,12 +1486,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T03:00:00Z">Sáb 27/06 00h</span> · 📍 Seattle</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T03:00:00Z">Sáb · 27/06 · 00h</span> · 📍 Seattle</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="nova zelândia bélgica" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="nova zelândia bélgica" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo G</div>
           <div class="card-times">
@@ -1506,12 +1506,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T03:00:00Z">Sáb 27/06 00h</span> · 📍 Vancouver</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo G</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T03:00:00Z">Sáb · 27/06 · 00h</span> · 📍 Vancouver</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="panamá inglaterra" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="panamá inglaterra" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
@@ -1526,12 +1526,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T21:00:00Z">Sáb 27/06 18h</span> · 📍 Nova York/NJ</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T21:00:00Z">Sáb · 27/06 · 18h</span> · 📍 Nova York/NJ</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="croácia gana" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="croácia gana" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo L</div>
           <div class="card-times">
@@ -1546,12 +1546,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T21:00:00Z">Sáb 27/06 18h</span> · 📍 Filadélfia</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo L</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T21:00:00Z">Sáb · 27/06 · 18h</span> · 📍 Filadélfia</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="colômbia portugal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="colômbia portugal" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
@@ -1566,12 +1566,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T23:30:00Z">Sáb 27/06 20h30</span> · 📍 Miami</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T23:30:00Z">Sáb · 27/06 · 20h30</span> · 📍 Miami</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="rd congo uzbequistão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="rd congo uzbequistão" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo K</div>
           <div class="card-times">
@@ -1586,12 +1586,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T23:30:00Z">Sáb 27/06 20h30</span> · 📍 Atlanta</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo K</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-27T23:30:00Z">Sáb · 27/06 · 20h30</span> · 📍 Atlanta</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="argélia áustria" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="argélia áustria" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
@@ -1606,12 +1606,12 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-28T02:00:00Z">Sáb 27/06 23h</span> · 📍 Kansas City</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-28T02:00:00Z">Sáb · 27/06 · 23h</span> · 📍 Kansas City</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Grupos" data-times="jordânia argentina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Grupos" data-times="jordânia argentina" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo J</div>
           <div class="card-times">
@@ -1626,13 +1626,13 @@
             </div>
           </div>
           <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J · Grupos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-28T02:00:00Z">Sáb 27/06 23h</span> · 📍 Dallas</span>
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo J</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-28T02:00:00Z">Sáb · 27/06 · 23h</span> · 📍 Dallas</span>
           </div>
         </div>
 
   <details><summary>A definir — Mata-mata</summary><div style='margin-top:12px;'>
-        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
@@ -1648,11 +1648,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Dom 28/06 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Dom · 28/06 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
@@ -1668,11 +1668,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Seg 29/06 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Seg · 29/06 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
@@ -1688,11 +1688,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Ter 30/06 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Ter · 30/06 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
@@ -1708,11 +1708,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Qua 01/07 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Qua · 01/07 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
@@ -1728,11 +1728,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Qui 02/07 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Qui · 02/07 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="32avos" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#60a5fa;color:#052e16;">32avos</div>
           <div class="card-times">
@@ -1748,11 +1748,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">32avos</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Sex 03/07 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Sex · 03/07 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#a78bfa;color:#052e16;">Oitavas</div>
           <div class="card-times">
@@ -1768,11 +1768,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Oitavas</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Sáb 04/07 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Sáb · 04/07 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#a78bfa;color:#052e16;">Oitavas</div>
           <div class="card-times">
@@ -1788,11 +1788,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Oitavas</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Dom 05/07 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Dom · 05/07 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#a78bfa;color:#052e16;">Oitavas</div>
           <div class="card-times">
@@ -1808,11 +1808,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Oitavas</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Seg 06/07 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Seg · 06/07 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Oitavas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#a78bfa;color:#052e16;">Oitavas</div>
           <div class="card-times">
@@ -1828,11 +1828,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Oitavas</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Ter 07/07 ?</span> · 📍 A definir</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" >Ter · 07/07 · ?</span> · 📍 A definir</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#f472b6;color:#052e16;">Quartas</div>
           <div class="card-times">
@@ -1848,11 +1848,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Quartas</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-09T20:00:00Z">Qui 09/07 17h</span> · 📍 Boston</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-09T20:00:00Z">Qui · 09/07 · 17h</span> · 📍 Boston</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#f472b6;color:#052e16;">Quartas</div>
           <div class="card-times">
@@ -1868,11 +1868,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Quartas</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-10T19:00:00Z">Sex 10/07 16h</span> · 📍 Los Angeles</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-10T19:00:00Z">Sex · 10/07 · 16h</span> · 📍 Los Angeles</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#f472b6;color:#052e16;">Quartas</div>
           <div class="card-times">
@@ -1888,11 +1888,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Quartas</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-11T21:00:00Z">Sáb 11/07 18h</span> · 📍 Miami</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-11T21:00:00Z">Sáb · 11/07 · 18h</span> · 📍 Miami</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Quartas" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#f472b6;color:#052e16;">Quartas</div>
           <div class="card-times">
@@ -1908,11 +1908,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#f472b622;color:#f472b6;border:1px solid #f472b644;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Quartas</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-12T00:00:00Z">Sáb 11/07 21h</span> · 📍 Kansas City</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-12T00:00:00Z">Sáb · 11/07 · 21h</span> · 📍 Kansas City</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Semifinal" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Semifinal" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#fbbf24;color:#052e16;">Semifinal</div>
           <div class="card-times">
@@ -1928,11 +1928,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#fbbf2422;color:#fbbf24;border:1px solid #fbbf2444;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Semifinal</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-14T19:00:00Z">Ter 14/07 16h</span> · 📍 Dallas</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-14T19:00:00Z">Ter · 14/07 · 16h</span> · 📍 Dallas</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Semifinal" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Semifinal" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#fbbf24;color:#052e16;">Semifinal</div>
           <div class="card-times">
@@ -1948,11 +1948,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#fbbf2422;color:#fbbf24;border:1px solid #fbbf2444;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Semifinal</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-15T19:00:00Z">Qua 15/07 16h</span> · 📍 Atlanta</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-15T19:00:00Z">Qua · 15/07 · 16h</span> · 📍 Atlanta</span>
           </div>
         </div>
 
-        <div class="card" data-fase="3º Lugar" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="3º Lugar" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#fb923c;color:#052e16;">3º Lugar</div>
           <div class="card-times">
@@ -1968,11 +1968,11 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#fb923c22;color:#fb923c;border:1px solid #fb923c44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">3º Lugar</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-18T21:00:00Z">Sáb 18/07 18h</span> · 📍 Miami</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-18T21:00:00Z">Sáb · 18/07 · 18h</span> · 📍 Miami</span>
           </div>
         </div>
 
-        <div class="card" data-fase="Final" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
+        <div class="card" data-fase="Final" data-times="a definir a definir" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#f59e0b;color:#052e16;">Final</div>
           <div class="card-times">
@@ -1988,7 +1988,7 @@
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Final</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-19T19:00:00Z">Dom 19/07 16h</span> · 📍 Nova York/NJ</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-07-19T19:00:00Z">Dom · 19/07 · 16h</span> · 📍 Nova York/NJ</span>
           </div>
         </div></div></details>
 
@@ -2001,7 +2001,7 @@
 </div>
 
 <footer>
-  <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em 05/06/2026 00:02
+  <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em 05/06/2026 00:08
 </footer>
 
 <script>
