@@ -110,6 +110,8 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         else:
             center_html = "vs"
         proximo_badge = '<div class="badge-proximo">⚡ PRÓXIMO JOGO</div>' if is_proximo else ""
+        tag_label = f"Grupo {j['grupo']}" if j["grupo"] else j["fase"]
+        fase_tag = f'<div class="fase-tag" style="background:{cor}22;color:{cor};border:1px solid {cor}44;">{tag_label}</div>'
 
         utc_attr = f'data-utc="{j["utc"]}"' if j["utc"] else ""
         hora_default = f"{j['dia']} {j['data']} {j['hora']}"
@@ -117,6 +119,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         return f"""
         <div class="card" data-fase="{j['fase']}" data-times="{j['time1'].lower()} {j['time2'].lower()}" style="{opacity}{borda}border-radius:12px;background:#0d1a12;padding:16px 18px;margin-bottom:12px;position:relative;">
           {proximo_badge}
+          {fase_tag}
           <div class="card-times">
             <div class="card-time">
               <span class="card-flag">{j['flag1']}</span>
@@ -129,7 +132,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
             </div>
           </div>
           <div class="card-meta">
-            <span style="background:{cor}22;color:{cor};border:1px solid {cor}44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">{grp_label}{j['fase']}</span>
+            <span class="card-fase-badge" style="background:{cor}22;color:{cor};border:1px solid {cor}44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">{grp_label}{j['fase']}</span>
             <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" {utc_attr}>{hora_default}</span> · 📍 {j['local']}</span>
           </div>
         </div>"""
@@ -287,7 +290,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     .placar {{ font-family: 'Space Mono', monospace; font-size: 1.3rem; font-weight: 700; color: #10b981; white-space: nowrap; }}
     .card-times {{ display:flex; align-items:center; justify-content:space-between; gap:8px; }}
     .card-time {{ display:flex; align-items:center; gap:10px; flex:1; min-width:0; }}
-    .card-time-away {{ flex-direction:row-reverse; }}
+    .fase-tag {{ display:none; }}
     .card-flag {{ font-size:1.6rem; flex-shrink:0; line-height:1; }}
     .card-name {{ color:#e2f0e8; font-family:'Space Mono',monospace; font-size:0.88rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1; min-width:0; }}
     .card-vs {{ color:#4a7a5a; font-family:'Space Mono',monospace; font-size:0.78rem; padding:0 10px; flex-shrink:0; }}
@@ -308,6 +311,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     details summary::after {{ content: " ▶"; }}
     details[open] summary::after {{ content: " ▼"; }}
     footer {{ text-align: center; color: #2d5a3d; font-family: 'Space Mono', monospace; font-size: 0.7rem; margin-top: 48px; padding: 0 16px; line-height: 1.8; }}
+    @media (min-width: 1024px) {{ .card-time-away {{ flex-direction:row-reverse; }} }}
     @media (max-width: 480px) {{
       .filtros {{ padding: 10px 12px; }}
       .btn {{ padding: 5px 10px; font-size: 0.7rem; }}
@@ -317,6 +321,8 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       .card-vs {{ width:100%; text-align:center; padding:5px 0; border-top:1px solid #1a2a20; border-bottom:1px solid #1a2a20; margin:1px 0; }}
       .placar {{ display:block; text-align:center; padding:2px 0; font-size:1.15rem; }}
       .card-meta {{ justify-content:center; text-align:center; }}
+      .card-fase-badge {{ display:none; }}
+      .fase-tag {{ display:block; position:absolute; top:-10px; right:12px; font-family:'Space Mono',monospace; font-size:0.62rem; font-weight:700; padding:2px 8px; border-radius:4px; letter-spacing:0.5px; }}
     }}
   </style>
 </head>
