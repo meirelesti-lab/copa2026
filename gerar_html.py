@@ -132,10 +132,10 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     proximo_id = proximo_jogo["id"] if proximo_jogo else None
 
     grupos_jogos = [j for j in jogos_enriquecidos if j["fase"] == "Grupos"]
-    mata_jogos   = [j for j in jogos_enriquecidos if j["fase"] != "Grupos"]
+    # Próximo jogo já aparece na seção dedicada — não duplicar em nenhuma seção
+    mata_jogos   = [j for j in jogos_enriquecidos if j["fase"] != "Grupos" and j["id"] != proximo_id]
 
     encerrados = [j for j in grupos_jogos if j["encerrado"]]
-    # Próximo jogo já aparece na seção dedicada — não duplicar
     proximos = [j for j in grupos_jogos if not j["encerrado"] and j["id"] != proximo_id]
 
     # Montar lista de times para o dropdown
