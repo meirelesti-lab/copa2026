@@ -26,6 +26,46 @@ RESULTADOS_FILE = "resultados.json"
 BRASILIA = timezone(timedelta(hours=-3))
 
 
+def _hora_int(hora_str):
+    if hora_str in ("?", ""):
+        return -1
+    s = hora_str.rstrip("h")
+    if "h" in s:
+        h, _ = s.split("h")
+        return int(h)
+    return int(s)
+
+
+# Índice de jogos mata-mata para busca por data
+_MATA_HORA: dict = {}   # (mes, dia, hora) → jogo
+_MATA_DIA:  dict = {}   # (mes, dia) → jogo  (apenas datas com 1 jogo)
+_dias_count: dict = {}
+for _j in JOGOS:
+    if _j["fase"] == "Grupos":
+        continue
+    _d, _m = _j["data"].split("/")
+    _d, _m = int(_d), int(_m)
+    _h = _hora_int(_j["hora"])
+    if _h >= 0:
+        _MATA_HORA[(_m, _d, _h)] = _j
+    _dia_key = (_m, _d)
+    _dias_count[_dia_key] = _dias_count.get(_dia_key, 0) + 1
+    _MATA_DIA[_dia_key] = _j  # sobrescreve; se > 1 jogo no dia, usamos o hora-based
+
+
+def encontrar_jogo_por_data(utc_date_str):
+    """Encontra jogo mata-mata pela data/hora UTC retornada pela API."""
+    try:
+        dt_utc = datetime.fromisoformat(utc_date_str.replace("Z", "+00:00"))
+        dt_bra = dt_utc.astimezone(BRASILIA)
+        jogo = _MATA_HORA.get((dt_bra.month, dt_bra.day, dt_bra.hour))
+        if jogo is None and _dias_count.get((dt_bra.month, dt_bra.day), 0) == 1:
+            jogo = _MATA_DIA.get((dt_bra.month, dt_bra.day))
+        return jogo
+    except Exception:
+        return None
+
+
 def normalizar(nome):
     """Normaliza nome para comparação fuzzy: minúsculas, sem acentos comuns."""
     return (
@@ -94,34 +134,61 @@ def processar(dados_api, resultados_existentes):
         status = partida.get("status", "")
         encerrado = status in ("FINISHED", "AWARDED")
 
-        if not encerrado:
+        home_raw = partida["homeTeam"].get("name", "")
+        away_raw = partida["awayTeam"].get("name", "")
+        home = traduzir(home_raw) if home_raw else ""
+        away = traduzir(away_raw) if away_raw else ""
+
+        # Pula jogos futuros sem times definidos
+        if not encerrado and (not home or not away):
             continue
 
-        home = traduzir(partida["homeTeam"]["name"])
-        away = traduzir(partida["awayTeam"]["name"])
         score = partida.get("score", {})
         ft = score.get("fullTime", {})
-        gols_home = ft.get("home")
-        gols_away = ft.get("away")
+        gols_home = ft.get("home") if encerrado else None
+        gols_away = ft.get("away") if encerrado else None
 
-        jogo = encontrar_jogo(home, away)
+        # Tenta casar pelo nome dos times; fallback por data (mata-mata)
+        jogo = encontrar_jogo(home, away) if home and away else None
         if jogo is None:
-            nao_encontrados.append(f"{home} × {away}")
+            utc_date = partida.get("utcDate", "")
+            if utc_date:
+                jogo = encontrar_jogo_por_data(utc_date)
+
+        if jogo is None:
+            if encerrado:
+                nao_encontrados.append(f"{home} × {away}")
             continue
 
         rid = str(jogo["id"])
-        resultado_novo = {
-            "gols1": gols_home,
-            "gols2": gols_away,
-            "encerrado": True,
-            "home_api": home,
-            "away_api": away,
-        }
+        res_atual = resultados_existentes.get(rid, {})
+
+        if encerrado:
+            resultado_novo = {
+                **res_atual,
+                "gols1": gols_home,
+                "gols2": gols_away,
+                "encerrado": True,
+                "home_api": home,
+                "away_api": away,
+            }
+        else:
+            # Jogo futuro: salva times do bracket se for mata-mata
+            if jogo["fase"] == "Grupos":
+                continue
+            resultado_novo = {
+                **res_atual,
+                "time1_real": home,
+                "time2_real": away,
+            }
 
         if resultados_existentes.get(rid) != resultado_novo:
             resultados_existentes[rid] = resultado_novo
             atualizados += 1
-            print(f"  ✓ ID{rid}: {home} {gols_home}–{gols_away} {away}")
+            if encerrado:
+                print(f"  ✓ ID{rid}: {home} {gols_home}–{gols_away} {away}")
+            else:
+                print(f"  ✓ Bracket ID{rid}: {home} × {away}")
 
     return atualizados, nao_encontrados
 

@@ -3,6 +3,12 @@ import os
 from datetime import datetime, timezone, timedelta
 from dados_jogos import JOGOS
 
+# Mapa nome → flag construído a partir dos dados fixos
+NOME_PARA_FLAG: dict = {}
+for _j in JOGOS:
+    NOME_PARA_FLAG[_j["time1"]] = _j["flag1"]
+    NOME_PARA_FLAG[_j["time2"]] = _j["flag2"]
+
 BRASILIA = timezone(timedelta(hours=-3))
 
 FASE_COR = {
@@ -72,6 +78,13 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         j["gols1"] = res.get("gols1")
         j["gols2"] = res.get("gols2")
         j["encerrado"] = res.get("encerrado", False)
+        # Preenche times reais do bracket mata-mata quando a API já os definiu
+        if res.get("time1_real"):
+            j["time1"] = res["time1_real"]
+            j["flag1"] = NOME_PARA_FLAG.get(res["time1_real"], "🏳")
+        if res.get("time2_real"):
+            j["time2"] = res["time2_real"]
+            j["flag2"] = NOME_PARA_FLAG.get(res["time2_real"], "🏳")
         j["dt"] = data_jogo_brasilia(j)
         j["utc"] = utc_iso(j)
 
@@ -285,6 +298,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 <header>
   <h1>Copa do Mundo 2026 🏆</h1>
   <p>48 seleções · EUA, Canadá e México</p>
+  <a href="mundiais.html" style="display:inline-block;margin-top:14px;background:transparent;color:#4a7a5a;border:1px solid #1a3020;border-radius:8px;padding:5px 16px;font-family:'Space Mono',monospace;font-size:0.72rem;text-decoration:none;transition:all 0.15s;" onmouseover="this.style.color='#a8d4b4';this.style.borderColor='#2a4a30'" onmouseout="this.style.color='#4a7a5a';this.style.borderColor='#1a3020'">🌍 Histórico de Mundiais</a>
 </header>
 
 <div class="filtros">
@@ -330,6 +344,10 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     <div style="margin-top:12px;">{mata_cards}</div>
   </details>
 
+</div>
+
+<div style="text-align:center;margin-top:36px;">
+  <a href="mundiais.html" style="display:inline-block;margin-bottom:14px;background:#0d1a12;color:#6b9a7b;border:1px solid #1a2a20;border-radius:8px;padding:7px 18px;font-family:'Space Mono',monospace;font-size:0.75rem;text-decoration:none;transition:all 0.15s;" onmouseover="this.style.background='#142a1c';this.style.color='#a8d4b4'" onmouseout="this.style.background='#0d1a12';this.style.color='#6b9a7b'">🌍 Histórico de Mundiais</a>
 </div>
 
 <footer>
