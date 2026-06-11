@@ -1,6 +1,7 @@
 .env
-resultados.json
 __pycache__/
 *.pyc
 .DS_Store
 CLAUDE.md
+node_modules/
+*.pdf
