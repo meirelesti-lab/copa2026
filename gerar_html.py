@@ -13,13 +13,13 @@ for _j in JOGOS:
 BRASILIA = timezone(timedelta(hours=-3))
 
 FASE_COR = {
-    "Grupos":    "#10b981",
-    "32avos":    "#60a5fa",
-    "Oitavas":   "#a78bfa",
-    "Quartas":   "#f472b6",
+    "Grupos": "#10b981",
+    "32avos": "#60a5fa",
+    "Oitavas": "#a78bfa",
+    "Quartas": "#f472b6",
     "Semifinal": "#fbbf24",
-    "3º Lugar":  "#fb923c",
-    "Final":     "#f59e0b",
+    "3º Lugar": "#fb923c",
+    "Final": "#f59e0b",
 }
 
 TIMES_DESTAQUE = [
@@ -30,10 +30,10 @@ TIMES_DESTAQUE = [
 ]
 
 FUSOS = [
-    ("🇧🇷", "Brasil",  "America/Sao_Paulo"),
-    ("🇲🇽", "México",  "America/Monterrey"),
+    ("🇧🇷", "Brasil", "America/Sao_Paulo"),
+    ("🇲🇽", "México", "America/Monterrey"),
     ("🇧🇪", "Bélgica", "Europe/Brussels"),
-    ("🇺🇸", "EUA",     "America/New_York"),
+    ("🇺🇸", "EUA", "America/New_York"),
 ]
 
 
@@ -104,36 +104,42 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         cor = FASE_COR.get(j["fase"], "#10b981")
         encerrado = j["encerrado"]
         opacity = "opacity:0.55;" if encerrado else ""
-        borda = "border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;" if is_proximo else "border:1px solid #1a2a20;"
+        borda = (
+            "border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;"
+            if is_proximo
+            else "border:1px solid #1a2a20;"
+        )
         if encerrado and j["gols1"] is not None and j["gols2"] is not None:
             center_html = f'<span class="placar">{j["gols1"]} – {j["gols2"]}</span>'
         else:
             center_html = "vs"
         proximo_badge = '<div class="badge-proximo">⚡ PRÓXIMO JOGO</div>' if is_proximo else ""
         tag_label = f"Grupo {j['grupo']}" if j["grupo"] else j["fase"]
-        fase_tag = f'<div class="fase-tag" style="background:{cor};color:#052e16;">{tag_label}</div>'
+        fase_tag = (
+            f'<div class="fase-tag" style="background:{cor};color:#052e16;">{tag_label}</div>'
+        )
 
         utc_attr = f'data-utc="{j["utc"]}"' if j["utc"] else ""
         hora_default = f"{j['dia']} · {j['data']} · {j['hora']}"
 
         return f"""
-        <div class="card" data-fase="{j['fase']}" data-times="{j['time1'].lower()} {j['time2'].lower()}" style="{opacity}{borda}border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
+        <div class="card" data-fase="{j["fase"]}" data-times="{j["time1"].lower()} {j["time2"].lower()}" style="{opacity}{borda}border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           {proximo_badge}
           {fase_tag}
           <div class="card-times">
             <div class="card-time">
-              <span class="card-flag">{j['flag1']}</span>
-              <span class="card-name">{j['time1']}</span>
+              <span class="card-flag">{j["flag1"]}</span>
+              <span class="card-name">{j["time1"]}</span>
             </div>
             <div class="card-vs">{center_html}</div>
             <div class="card-time card-time-away">
-              <span class="card-flag">{j['flag2']}</span>
-              <span class="card-name">{j['time2']}</span>
+              <span class="card-flag">{j["flag2"]}</span>
+              <span class="card-name">{j["time2"]}</span>
             </div>
           </div>
           <div class="card-meta">
             <span class="card-fase-badge" style="background:{cor}22;color:{cor};border:1px solid {cor}44;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">{tag_label}</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" {utc_attr}>{hora_default}</span> · 📍 {j['local']}</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" {utc_attr}>{hora_default}</span> · 📍 {j["local"]}</span>
           </div>
         </div>"""
 
@@ -143,47 +149,96 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 
     grupos_jogos = [j for j in jogos_enriquecidos if j["fase"] == "Grupos"]
     # Próximo jogo já aparece na seção dedicada — excluir de todas as outras
-    mata_jogos   = [j for j in jogos_enriquecidos if j["fase"] != "Grupos" and j["id"] != proximo_id]
+    mata_jogos = [j for j in jogos_enriquecidos if j["fase"] != "Grupos" and j["id"] != proximo_id]
 
-    encerrados_grupos  = [j for j in grupos_jogos if j["encerrado"]]
-    proximos_grupos    = [j for j in grupos_jogos if not j["encerrado"] and j["id"] != proximo_id]
-    mata_encerrados    = [j for j in mata_jogos if j["encerrado"]]
-    mata_proximos      = [j for j in mata_jogos if not j["encerrado"] and j["time1"] != "A definir" and j["time2"] != "A definir"]
-    mata_a_definir     = [j for j in mata_jogos if not j["encerrado"] and (j["time1"] == "A definir" or j["time2"] == "A definir")]
+    encerrados_grupos = [j for j in grupos_jogos if j["encerrado"]]
+    proximos_grupos = [j for j in grupos_jogos if not j["encerrado"] and j["id"] != proximo_id]
+    mata_encerrados = [j for j in mata_jogos if j["encerrado"]]
+    mata_proximos = [
+        j
+        for j in mata_jogos
+        if not j["encerrado"] and j["time1"] != "A definir" and j["time2"] != "A definir"
+    ]
+    mata_a_definir = [
+        j
+        for j in mata_jogos
+        if not j["encerrado"] and (j["time1"] == "A definir" or j["time2"] == "A definir")
+    ]
 
     # Montar lista de times para o dropdown
     destaque_nomes = {t[1].lower() for t in TIMES_DESTAQUE}
-    todos_times = sorted({
-        j[campo]
-        for j in jogos_enriquecidos
-        for campo in ("time1", "time2")
-        if j[campo] != "A definir" and j[campo].lower() not in destaque_nomes
-    })
+    todos_times = sorted(
+        {
+            j[campo]
+            for j in jogos_enriquecidos
+            for campo in ("time1", "time2")
+            if j[campo] != "A definir" and j[campo].lower() not in destaque_nomes
+        }
+    )
 
     # Pré-computar blocos de cards e seções condicionais
-    secao_proximo    = ("<div class='secao-titulo'>Próximo jogo</div>" + card_html(proximo_jogo, is_proximo=True)) if proximo_jogo else ""
-    secao_mata_enc   = ("<div class='secao-titulo' id='resultados-mata'>Resultados — Mata-mata</div>\n" + "\n".join(card_html(j) for j in reversed(mata_encerrados))) if mata_encerrados else ""
-    secao_mata_prox  = ("<div class='secao-titulo'>Próximos — Mata-mata</div>\n" + "\n".join(card_html(j) for j in mata_proximos)) if mata_proximos else ""
-    secao_grp_prox   = ("<div class='secao-titulo'>Próximos jogos — Grupos</div>\n" + "\n".join(card_html(j) for j in proximos_grupos)) if proximos_grupos else ""
-    secao_mata_adef  = ("<details><summary>A definir — Mata-mata</summary><div style='margin-top:12px;'>" + "\n".join(card_html(j) for j in mata_a_definir) + "</div></details>") if mata_a_definir else ""
-    secao_grp_enc    = ("<details id='resultados-grupos'><summary>Resultados — Grupos</summary><div style='margin-top:12px;'>" + "\n".join(card_html(j) for j in reversed(encerrados_grupos)) + "</div></details>") if encerrados_grupos else ""
+    secao_proximo = (
+        ("<div class='secao-titulo'>Próximo jogo</div>" + card_html(proximo_jogo, is_proximo=True))
+        if proximo_jogo
+        else ""
+    )
+    secao_mata_enc = (
+        (
+            "<div class='secao-titulo' id='resultados-mata'>Resultados — Mata-mata</div>\n"
+            + "\n".join(card_html(j) for j in reversed(mata_encerrados))
+        )
+        if mata_encerrados
+        else ""
+    )
+    secao_mata_prox = (
+        (
+            "<div class='secao-titulo'>Próximos — Mata-mata</div>\n"
+            + "\n".join(card_html(j) for j in mata_proximos)
+        )
+        if mata_proximos
+        else ""
+    )
+    secao_grp_prox = (
+        (
+            "<div class='secao-titulo'>Próximos jogos — Grupos</div>\n"
+            + "\n".join(card_html(j) for j in proximos_grupos)
+        )
+        if proximos_grupos
+        else ""
+    )
+    secao_mata_adef = (
+        (
+            "<details><summary>A definir — Mata-mata</summary><div style='margin-top:12px;'>"
+            + "\n".join(card_html(j) for j in mata_a_definir)
+            + "</div></details>"
+        )
+        if mata_a_definir
+        else ""
+    )
+    secao_grp_enc = (
+        (
+            "<details id='resultados-grupos'><summary>Resultados — Grupos</summary><div style='margin-top:12px;'>"
+            + "\n".join(card_html(j) for j in reversed(encerrados_grupos))
+            + "</div></details>"
+        )
+        if encerrados_grupos
+        else ""
+    )
 
     # Pré-computar strings para evitar backslash em f-string (Python 3.9)
     btns_destaque = "".join(
         f'<button class="btn" onclick="filtrarBtn(this,\'{t[1].lower()}\')">{t[0]} {t[1]}</button>'
         for t in TIMES_DESTAQUE
     )
-    options_dropdown = "".join(
-        f'<option value="{t.lower()}">{t}</option>'
-        for t in todos_times
-    )
+    options_dropdown = "".join(f'<option value="{t.lower()}">{t}</option>' for t in todos_times)
     btns_fusos = "".join(
         f'<button class="btn{" ativo" if i == 0 else ""}" onclick="mudarFuso(this,\'{f[2]}\')">{f[0]} {f[1]}</button>'
         for i, f in enumerate(FUSOS)
     )
     btn_resultados = (
         '<a href="#" onclick="irParaResultados();return false;" class="header-link">📊 Resultados</a>'
-        if (mata_encerrados or encerrados_grupos) else ""
+        if (mata_encerrados or encerrados_grupos)
+        else ""
     )
 
     html = f"""<!DOCTYPE html>

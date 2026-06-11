@@ -37,8 +37,8 @@ def _hora_int(hora_str):
 
 
 # Índice de jogos mata-mata para busca por data
-_MATA_HORA: dict = {}   # (mes, dia, hora) → jogo
-_MATA_DIA:  dict = {}   # (mes, dia) → jogo  (apenas datas com 1 jogo)
+_MATA_HORA: dict = {}  # (mes, dia, hora) → jogo
+_MATA_DIA: dict = {}  # (mes, dia) → jogo  (apenas datas com 1 jogo)
 _dias_count: dict = {}
 for _j in JOGOS:
     if _j["fase"] == "Grupos":
@@ -70,14 +70,22 @@ def normalizar(nome):
     """Normaliza nome para comparação fuzzy: minúsculas, sem acentos comuns."""
     return (
         nome.lower()
-        .replace("á", "a").replace("à", "a").replace("ã", "a").replace("â", "a")
-        .replace("é", "e").replace("ê", "e")
+        .replace("á", "a")
+        .replace("à", "a")
+        .replace("ã", "a")
+        .replace("â", "a")
+        .replace("é", "e")
+        .replace("ê", "e")
         .replace("í", "i")
-        .replace("ó", "o").replace("ô", "o").replace("õ", "o")
-        .replace("ú", "u").replace("ü", "u")
+        .replace("ó", "o")
+        .replace("ô", "o")
+        .replace("õ", "o")
+        .replace("ú", "u")
+        .replace("ü", "u")
         .replace("ç", "c")
         .replace("ñ", "n")
-        .replace("'", "").replace("-", " ")
+        .replace("'", "")
+        .replace("-", " ")
         .strip()
     )
 
