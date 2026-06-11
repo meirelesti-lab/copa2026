@@ -9,7 +9,7 @@ import json
 import os
 import subprocess
 import sys
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 
 import requests
 from dotenv import load_dotenv
@@ -196,7 +196,7 @@ def processar(dados_api, resultados_existentes):
 def git_push():
     agora = datetime.now(BRASILIA).strftime("%d/%m/%Y %H:%M")
     cmds = [
-        ["git", "add", "index.html"],
+        ["git", "add", "index.html", "resultados.json"],
         ["git", "commit", "--no-verify", "-m", f"Resultados atualizados - {agora}"],
         ["git", "push", "origin", "main"],
     ]
