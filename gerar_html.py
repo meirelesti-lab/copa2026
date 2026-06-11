@@ -1,6 +1,7 @@
 import json
 import os
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
+
 from dados_jogos import JOGOS
 
 # Mapa nome → flag construído a partir dos dados fixos
@@ -101,7 +102,6 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 
     def card_html(j, is_proximo=False):
         cor = FASE_COR.get(j["fase"], "#10b981")
-        grp_label = f"Grupo {j['grupo']} · " if j["grupo"] else ""
         encerrado = j["encerrado"]
         opacity = "opacity:0.55;" if encerrado else ""
         borda = "border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;" if is_proximo else "border:1px solid #1a2a20;"
@@ -162,11 +162,11 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 
     # Pré-computar blocos de cards e seções condicionais
     secao_proximo    = ("<div class='secao-titulo'>Próximo jogo</div>" + card_html(proximo_jogo, is_proximo=True)) if proximo_jogo else ""
-    secao_mata_enc   = ("<div class='secao-titulo'>Resultados — Mata-mata</div>\n" + "\n".join(card_html(j) for j in reversed(mata_encerrados))) if mata_encerrados else ""
+    secao_mata_enc   = ("<div class='secao-titulo' id='resultados-mata'>Resultados — Mata-mata</div>\n" + "\n".join(card_html(j) for j in reversed(mata_encerrados))) if mata_encerrados else ""
     secao_mata_prox  = ("<div class='secao-titulo'>Próximos — Mata-mata</div>\n" + "\n".join(card_html(j) for j in mata_proximos)) if mata_proximos else ""
     secao_grp_prox   = ("<div class='secao-titulo'>Próximos jogos — Grupos</div>\n" + "\n".join(card_html(j) for j in proximos_grupos)) if proximos_grupos else ""
     secao_mata_adef  = ("<details><summary>A definir — Mata-mata</summary><div style='margin-top:12px;'>" + "\n".join(card_html(j) for j in mata_a_definir) + "</div></details>") if mata_a_definir else ""
-    secao_grp_enc    = ("<details><summary>Resultados — Grupos</summary><div style='margin-top:12px;'>" + "\n".join(card_html(j) for j in reversed(encerrados_grupos)) + "</div></details>") if encerrados_grupos else ""
+    secao_grp_enc    = ("<details id='resultados-grupos'><summary>Resultados — Grupos</summary><div style='margin-top:12px;'>" + "\n".join(card_html(j) for j in reversed(encerrados_grupos)) + "</div></details>") if encerrados_grupos else ""
 
     # Pré-computar strings para evitar backslash em f-string (Python 3.9)
     btns_destaque = "".join(
@@ -180,6 +180,10 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     btns_fusos = "".join(
         f'<button class="btn{" ativo" if i == 0 else ""}" onclick="mudarFuso(this,\'{f[2]}\')">{f[0]} {f[1]}</button>'
         for i, f in enumerate(FUSOS)
+    )
+    btn_resultados = (
+        '<a href="#" onclick="irParaResultados();return false;" class="header-link">📊 Resultados</a>'
+        if (mata_encerrados or encerrados_grupos) else ""
     )
 
     html = f"""<!DOCTYPE html>
@@ -212,6 +216,14 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     }}
     header h1 {{ font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 800; color: #f0fdf4; letter-spacing: -0.5px; }}
     header p  {{ color: #4a7a5a; font-family: 'Space Mono', monospace; font-size: 0.78rem; margin-top: 6px; }}
+    .header-links {{ margin-top: 14px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }}
+    .header-link {{
+      display: inline-block; background: transparent; color: #4a7a5a;
+      border: 1px solid #1a3020; border-radius: 8px; padding: 5px 16px;
+      font-family: 'Space Mono', monospace; font-size: 0.72rem;
+      text-decoration: none; transition: all 0.15s; cursor: pointer;
+    }}
+    .header-link:hover {{ color: #a8d4b4; border-color: #2a4a30; }}
     .filtros {{
       display: flex;
       flex-direction: column;
@@ -335,7 +347,10 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 <header>
   <h1>Copa do Mundo 2026 🏆</h1>
   <p>48 seleções · EUA, Canadá e México</p>
-  <a href="mundiais.html" style="display:inline-block;margin-top:14px;background:transparent;color:#4a7a5a;border:1px solid #1a3020;border-radius:8px;padding:5px 16px;font-family:'Space Mono',monospace;font-size:0.72rem;text-decoration:none;transition:all 0.15s;" onmouseover="this.style.color='#a8d4b4';this.style.borderColor='#2a4a30'" onmouseout="this.style.color='#4a7a5a';this.style.borderColor='#1a3020'">🌍 Histórico de Mundiais</a>
+  <div class="header-links">
+    <a href="mundiais.html" class="header-link">🌍 Histórico de Mundiais</a>
+    {btn_resultados}
+  </div>
 </header>
 
 <div class="filtros">
@@ -471,6 +486,14 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       const dia   = (parts.weekday || '').replace('.', '');
       el.textContent = dia + ' ' + parts.day + '/' + parts.month + ' ' + hora;
     }});
+  }}
+
+  // ── atalho para resultados ───────────────────────────────────────────────
+  function irParaResultados() {{
+    const grupos = document.getElementById('resultados-grupos');
+    if (grupos) grupos.open = true;
+    const alvo = document.getElementById('resultados-mata') || grupos;
+    if (alvo) alvo.scrollIntoView({{behavior: 'smooth'}});
   }}
 </script>
 

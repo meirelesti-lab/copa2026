@@ -28,6 +28,14 @@
     }
     header h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 800; color: #f0fdf4; letter-spacing: -0.5px; }
     header p  { color: #4a7a5a; font-family: 'Space Mono', monospace; font-size: 0.78rem; margin-top: 6px; }
+    .header-links { margin-top: 14px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .header-link {
+      display: inline-block; background: transparent; color: #4a7a5a;
+      border: 1px solid #1a3020; border-radius: 8px; padding: 5px 16px;
+      font-family: 'Space Mono', monospace; font-size: 0.72rem;
+      text-decoration: none; transition: all 0.15s; cursor: pointer;
+    }
+    .header-link:hover { color: #a8d4b4; border-color: #2a4a30; }
     .filtros {
       display: flex;
       flex-direction: column;
@@ -151,7 +159,10 @@
 <header>
   <h1>Copa do Mundo 2026 🏆</h1>
   <p>48 seleções · EUA, Canadá e México</p>
-  <a href="mundiais.html" style="display:inline-block;margin-top:14px;background:transparent;color:#4a7a5a;border:1px solid #1a3020;border-radius:8px;padding:5px 16px;font-family:'Space Mono',monospace;font-size:0.72rem;text-decoration:none;transition:all 0.15s;" onmouseover="this.style.color='#a8d4b4';this.style.borderColor='#2a4a30'" onmouseout="this.style.color='#4a7a5a';this.style.borderColor='#1a3020'">🌍 Histórico de Mundiais</a>
+  <div class="header-links">
+    <a href="mundiais.html" class="header-link">🌍 Histórico de Mundiais</a>
+    <a href="#" onclick="irParaResultados();return false;" class="header-link">📊 Resultados</a>
+  </div>
 </header>
 
 <div class="filtros">
@@ -1972,7 +1983,7 @@
           </div>
         </div></div></details>
 
-  <details><summary>Resultados — Grupos</summary><div style='margin-top:12px;'>
+  <details id='resultados-grupos'><summary>Resultados — Grupos</summary><div style='margin-top:12px;'>
         <div class="card" data-fase="Grupos" data-times="méxico áfrica do sul" style="opacity:0.55;border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo A</div>
@@ -1981,7 +1992,7 @@
               <span class="card-flag">🇲🇽</span>
               <span class="card-name">México</span>
             </div>
-            <div class="card-vs">vs</div>
+            <div class="card-vs"><span class="placar">2 – 0</span></div>
             <div class="card-time card-time-away">
               <span class="card-flag">🇿🇦</span>
               <span class="card-name">África do Sul</span>
@@ -2000,7 +2011,7 @@
 </div>
 
 <footer>
-  <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em 11/06/2026 18:31
+  <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em 11/06/2026 19:59
 </footer>
 
 <script>
@@ -2084,6 +2095,14 @@
       const dia   = (parts.weekday || '').replace('.', '');
       el.textContent = dia + ' ' + parts.day + '/' + parts.month + ' ' + hora;
     });
+  }
+
+  // ── atalho para resultados ───────────────────────────────────────────────
+  function irParaResultados() {
+    const grupos = document.getElementById('resultados-grupos');
+    if (grupos) grupos.open = true;
+    const alvo = document.getElementById('resultados-mata') || grupos;
+    if (alvo) alvo.scrollIntoView({behavior: 'smooth'});
   }
 </script>
 
