@@ -5,5 +5,12 @@
     "encerrado": true,
     "home_api": "México",
     "away_api": "África do Sul"
+  },
+  "2": {
+    "gols1": 2,
+    "gols2": 1,
+    "encerrado": true,
+    "home_api": "Coreia do Sul",
+    "away_api": "República Tcheca"
   }
 }
