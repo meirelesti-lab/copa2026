@@ -141,6 +141,7 @@ def processar(dados_api, resultados_existentes):
     for partida in partidas:
         status = partida.get("status", "")
         encerrado = status in ("FINISHED", "AWARDED")
+        ao_vivo = status in ("IN_PLAY", "PAUSED")
 
         home_raw = partida["homeTeam"].get("name", "")
         away_raw = partida["awayTeam"].get("name", "")
@@ -153,8 +154,8 @@ def processar(dados_api, resultados_existentes):
 
         score = partida.get("score", {})
         ft = score.get("fullTime", {})
-        gols_home = ft.get("home") if encerrado else None
-        gols_away = ft.get("away") if encerrado else None
+        gols_home = ft.get("home") if (encerrado or ao_vivo) else None
+        gols_away = ft.get("away") if (encerrado or ao_vivo) else None
 
         # Tenta casar pelo nome dos times; fallback por data (mata-mata)
         jogo = encontrar_jogo(home, away) if home and away else None
@@ -177,6 +178,18 @@ def processar(dados_api, resultados_existentes):
                 "gols1": gols_home,
                 "gols2": gols_away,
                 "encerrado": True,
+                "ao_vivo": False,
+                "home_api": home,
+                "away_api": away,
+            }
+        elif ao_vivo:
+            resultado_novo = {
+                **res_atual,
+                "gols1": gols_home,
+                "gols2": gols_away,
+                "encerrado": False,
+                "ao_vivo": True,
+                "status_api": status,
                 "home_api": home,
                 "away_api": away,
             }
@@ -195,6 +208,8 @@ def processar(dados_api, resultados_existentes):
             atualizados += 1
             if encerrado:
                 print(f"  ✓ ID{rid}: {home} {gols_home}–{gols_away} {away}")
+            elif ao_vivo:
+                print(f"  🔴 AO VIVO ID{rid}: {home} {gols_home}–{gols_away} {away} ({status})")
             else:
                 print(f"  ✓ Bracket ID{rid}: {home} × {away}")
 

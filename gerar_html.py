@@ -78,6 +78,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         j["gols1"] = res.get("gols1")
         j["gols2"] = res.get("gols2")
         j["encerrado"] = res.get("encerrado", False)
+        j["ao_vivo"] = res.get("ao_vivo", False) and not j["encerrado"]
         # Preenche times reais do bracket mata-mata quando a API já os definiu
         if res.get("time1_real"):
             j["time1"] = res["time1_real"]
@@ -93,7 +94,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     # JOGOS não está em ordem cronológica, então selecionamos por menor data
     # (antes pegávamos o primeiro da lista, o que pulava dias inteiros).
     def _eh_futuro(j):
-        if j["encerrado"]:
+        if j["encerrado"] or j["ao_vivo"]:
             return False
         if j["hora"] in ("?", ""):
             return j["dt"].date() >= agora_brasilia.date()
@@ -105,17 +106,25 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     def card_html(j, is_proximo=False):
         cor = FASE_COR.get(j["fase"], "#10b981")
         encerrado = j["encerrado"]
+        ao_vivo = j["ao_vivo"]
         opacity = "opacity:0.55;" if encerrado else ""
-        borda = (
-            "border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;"
-            if is_proximo
-            else "border:1px solid #1a2a20;"
-        )
-        if encerrado and j["gols1"] is not None and j["gols2"] is not None:
-            center_html = f'<span class="placar">{j["gols1"]} – {j["gols2"]}</span>'
+        if ao_vivo:
+            borda = "border:2px solid #ef4444;box-shadow:0 0 18px #ef444455;"
+        elif is_proximo:
+            borda = "border:2px solid #22c55e;box-shadow:0 0 18px #22c55e44;"
+        else:
+            borda = "border:1px solid #1a2a20;"
+        if (encerrado or ao_vivo) and j["gols1"] is not None and j["gols2"] is not None:
+            estilo_placar = ' style="color:#ef4444;"' if ao_vivo else ""
+            center_html = f'<span class="placar"{estilo_placar}>{j["gols1"]} – {j["gols2"]}</span>'
         else:
             center_html = "vs"
-        proximo_badge = '<div class="badge-proximo">⚡ PRÓXIMO JOGO</div>' if is_proximo else ""
+        if ao_vivo:
+            proximo_badge = '<div class="badge-aovivo">🔴 AO VIVO</div>'
+        elif is_proximo:
+            proximo_badge = '<div class="badge-proximo">⚡ PRÓXIMO JOGO</div>'
+        else:
+            proximo_badge = ""
         tag_label = f"Grupo {j['grupo']}" if j["grupo"] else j["fase"]
         fase_tag = (
             f'<div class="fase-tag" style="background:{cor};color:#052e16;">{tag_label}</div>'
@@ -149,13 +158,27 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     proximo_jogo = jogos_enriquecidos[proximo_idx] if proximo_idx is not None else None
     proximo_id = proximo_jogo["id"] if proximo_jogo else None
 
+    # Jogos em andamento (começaram, API ainda não encerrou) ganham seção própria
+    ao_vivo_jogos = sorted(
+        (j for j in jogos_enriquecidos if j["ao_vivo"]),
+        key=lambda j: j["dt"],
+    )
+
     grupos_jogos = [j for j in jogos_enriquecidos if j["fase"] == "Grupos"]
-    # Próximo jogo já aparece na seção dedicada — excluir de todas as outras
-    mata_jogos = [j for j in jogos_enriquecidos if j["fase"] != "Grupos" and j["id"] != proximo_id]
+    # Próximo jogo e jogos ao vivo já aparecem em seções dedicadas — excluir das outras
+    mata_jogos = [
+        j
+        for j in jogos_enriquecidos
+        if j["fase"] != "Grupos" and j["id"] != proximo_id and not j["ao_vivo"]
+    ]
 
     encerrados_grupos = [j for j in grupos_jogos if j["encerrado"]]
     proximos_grupos = sorted(
-        (j for j in grupos_jogos if not j["encerrado"] and j["id"] != proximo_id),
+        (
+            j
+            for j in grupos_jogos
+            if not j["encerrado"] and not j["ao_vivo"] and j["id"] != proximo_id
+        ),
         key=lambda j: j["dt"],
     )
     mata_encerrados = [j for j in mata_jogos if j["encerrado"]]
@@ -185,6 +208,14 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     )
 
     # Pré-computar blocos de cards e seções condicionais
+    secao_aovivo = (
+        (
+            "<div class='secao-titulo'>🔴 Ao vivo</div>\n"
+            + "\n".join(card_html(j) for j in ao_vivo_jogos)
+        )
+        if ao_vivo_jogos
+        else ""
+    )
     secao_proximo = (
         ("<div class='secao-titulo'>Próximo jogo</div>" + card_html(proximo_jogo, is_proximo=True))
         if proximo_jogo
@@ -376,6 +407,17 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       font-family: 'Space Mono', monospace; font-size: 0.65rem; font-weight: 700;
       padding: 2px 10px; border-radius: 4px; letter-spacing: 0.5px;
     }}
+    .badge-aovivo {{
+      position: absolute; top: -10px; left: 14px;
+      background: #ef4444; color: #fff;
+      font-family: 'Space Mono', monospace; font-size: 0.65rem; font-weight: 700;
+      padding: 2px 10px; border-radius: 4px; letter-spacing: 0.5px;
+      animation: pulse-aovivo 1.4s ease-in-out infinite;
+    }}
+    @keyframes pulse-aovivo {{
+      0%, 100% {{ opacity: 1; box-shadow: 0 0 0 0 #ef444466; }}
+      50% {{ opacity: 0.85; box-shadow: 0 0 0 5px #ef444400; }}
+    }}
     details summary {{
       cursor: pointer; user-select: none;
       color: #6b9a7b; font-family: 'Space Mono', monospace;
@@ -445,6 +487,8 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 </div>
 
 <div class="main" id="conteudo">
+
+  {secao_aovivo}
 
   {secao_proximo}
 
