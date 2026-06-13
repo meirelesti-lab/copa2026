@@ -2,9 +2,11 @@ name: Atualizar Copa 2026
 
 on:
   schedule:
-    # Minuto deslocado: o slot ":00" é o mais congestionado do GitHub Actions
-    # e os disparos estavam sendo adiados/pulados (~2 runs/dia em vez de 24).
-    - cron: '7,37 * * * *'
+    # O agendador do GitHub é best-effort no plano gratuito: atrasa/pula
+    # disparos, então minutos esparsos resultavam em ~2 runs/dia. Adensar a
+    # malha (a cada 10 min) aumenta a chance de algum disparo cair perto do
+    # fim de cada jogo e evita janelas mortas de várias horas.
+    - cron: '*/10 * * * *'
   workflow_dispatch:          # permite rodar manualmente pelo GitHub
 
 jobs:
