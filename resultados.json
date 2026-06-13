@@ -12,5 +12,12 @@
     "encerrado": true,
     "home_api": "Coreia do Sul",
     "away_api": "República Tcheca"
+  },
+  "3": {
+    "gols1": 1,
+    "gols2": 1,
+    "encerrado": true,
+    "home_api": "Canadá",
+    "away_api": "Bósnia e Herzegovina"
   }
 }
