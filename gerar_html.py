@@ -70,7 +70,6 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     atualizado_em = agora_brasilia.strftime("%d/%m/%Y %H:%M")
 
     jogos_enriquecidos = []
-    proximo_idx = None
 
     for i, jogo in enumerate(JOGOS):
         j = dict(jogo)
@@ -88,17 +87,20 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
             j["flag2"] = NOME_PARA_FLAG.get(res["time2_real"], "🏳")
         j["dt"] = data_jogo_brasilia(j)
         j["utc"] = utc_iso(j)
-
-        if proximo_idx is None and not j["encerrado"]:
-            if j["hora"] in ("?", ""):
-                _d, _m = j["data"].split("/")
-                _futuro = datetime(2026, int(_m), int(_d)).date() >= agora_brasilia.date()
-            else:
-                _futuro = j["dt"] > agora_brasilia
-            if _futuro:
-                proximo_idx = i
-
         jogos_enriquecidos.append(j)
+
+    # Próximo jogo = jogo futuro não-encerrado mais cedo no tempo.
+    # JOGOS não está em ordem cronológica, então selecionamos por menor data
+    # (antes pegávamos o primeiro da lista, o que pulava dias inteiros).
+    def _eh_futuro(j):
+        if j["encerrado"]:
+            return False
+        if j["hora"] in ("?", ""):
+            return j["dt"].date() >= agora_brasilia.date()
+        return j["dt"] > agora_brasilia
+
+    futuros = [i for i, j in enumerate(jogos_enriquecidos) if _eh_futuro(j)]
+    proximo_idx = min(futuros, key=lambda i: jogos_enriquecidos[i]["dt"]) if futuros else None
 
     def card_html(j, is_proximo=False):
         cor = FASE_COR.get(j["fase"], "#10b981")
@@ -152,13 +154,19 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     mata_jogos = [j for j in jogos_enriquecidos if j["fase"] != "Grupos" and j["id"] != proximo_id]
 
     encerrados_grupos = [j for j in grupos_jogos if j["encerrado"]]
-    proximos_grupos = [j for j in grupos_jogos if not j["encerrado"] and j["id"] != proximo_id]
+    proximos_grupos = sorted(
+        (j for j in grupos_jogos if not j["encerrado"] and j["id"] != proximo_id),
+        key=lambda j: j["dt"],
+    )
     mata_encerrados = [j for j in mata_jogos if j["encerrado"]]
-    mata_proximos = [
-        j
-        for j in mata_jogos
-        if not j["encerrado"] and j["time1"] != "A definir" and j["time2"] != "A definir"
-    ]
+    mata_proximos = sorted(
+        (
+            j
+            for j in mata_jogos
+            if not j["encerrado"] and j["time1"] != "A definir" and j["time2"] != "A definir"
+        ),
+        key=lambda j: j["dt"],
+    )
     mata_a_definir = [
         j
         for j in mata_jogos
