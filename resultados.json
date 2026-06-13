@@ -19,5 +19,12 @@
     "encerrado": true,
     "home_api": "Canadá",
     "away_api": "Bósnia e Herzegovina"
+  },
+  "4": {
+    "gols1": 4,
+    "gols2": 1,
+    "encerrado": true,
+    "home_api": "Estados Unidos",
+    "away_api": "Paraguai"
   }
 }
