@@ -68,11 +68,11 @@
     "away_api": "Turquia"
   },
   "9": {
-    "gols1": 2,
+    "gols1": 3,
     "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "IN_PLAY",
+    "status_api": "PAUSED",
     "home_api": "Alemanha",
     "away_api": "Curaçao"
   }
