@@ -445,6 +445,17 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       .card-times {{ padding-top:22px; }}
       .fase-tag {{ display:block; position:absolute; top:10px; right:12px; font-family:'Space Mono',monospace; font-size:0.62rem; font-weight:700; padding:2px 10px; border-radius:4px; letter-spacing:0.5px; }}
     }}
+    #voltar-topo {{
+      position: fixed; bottom: 20px; right: 20px; z-index: 50;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: #0d1a12; color: #6b9a7b; border: 1px solid #1a3020;
+      font-size: 1.2rem; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transition: opacity 0.2s, background 0.15s, color 0.15s;
+      box-shadow: 0 2px 12px #00000066;
+    }}
+    #voltar-topo.visivel {{ opacity: 1; visibility: visible; }}
+    #voltar-topo:hover {{ background: #142a1c; color: #a8d4b4; }}
   </style>
 </head>
 <body>
@@ -511,6 +522,8 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
 <footer>
   <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em {atualizado_em}
 </footer>
+
+<button id="voltar-topo" onclick="voltarAoTopo()" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
 
 <script>
   let filtroTime = 'todos';
@@ -602,6 +615,16 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     const alvo = document.getElementById('resultados-mata') || grupos;
     if (alvo) alvo.scrollIntoView({{behavior: 'smooth'}});
   }}
+
+  // ── voltar ao topo ───────────────────────────────────────────────────────
+  function voltarAoTopo() {{
+    window.scrollTo({{top: 0, behavior: 'smooth'}});
+  }}
+
+  const _btnTopo = document.getElementById('voltar-topo');
+  window.addEventListener('scroll', () => {{
+    _btnTopo.classList.toggle('visivel', window.scrollY > 400);
+  }}, {{passive: true}});
 </script>
 
 </body>
