@@ -52,8 +52,8 @@
   "8": {
     "gols1": 0,
     "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Haiti",
     "away_api": "Escócia"
