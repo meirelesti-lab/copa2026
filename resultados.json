@@ -102,5 +102,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Suécia",
     "away_api": "Tunísia"
+  },
+  "14": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Bélgica",
+    "away_api": "Egito"
   }
 }
