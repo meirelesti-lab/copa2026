@@ -84,5 +84,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Holanda",
     "away_api": "Japão"
+  },
+  "11": {
+    "gols1": null,
+    "gols2": null,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Costa do Marfim",
+    "away_api": "Equador"
   }
 }
