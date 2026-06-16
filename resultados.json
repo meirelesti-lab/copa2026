@@ -140,11 +140,11 @@
     "away_api": "Senegal"
   },
   "19": {
-    "gols1": 0,
-    "gols2": 1,
+    "gols1": 1,
+    "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "IN_PLAY",
+    "status_api": "PAUSED",
     "home_api": "Iraque",
     "away_api": "Noruega"
   }
