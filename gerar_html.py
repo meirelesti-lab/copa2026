@@ -12,6 +12,10 @@ for _j in JOGOS:
 
 BRASILIA = timezone(timedelta(hours=-3))
 
+# Janela máxima (min) após o kickoff em que um jogo ainda pode estar "ao vivo".
+# 90' + intervalo + acréscimos + prorrogação/pênaltis no mata-mata ≈ 3h30.
+JANELA_AO_VIVO_MIN = 210
+
 FASE_COR = {
     "Grupos": "#10b981",
     "32avos": "#60a5fa",
@@ -60,6 +64,15 @@ def utc_iso(jogo):
     return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def _dentro_janela_ao_vivo(jogo, agora):
+    # Sem horário confiável ("?") não dá pra validar a janela — confia no flag.
+    if jogo["hora"] in ("?", ""):
+        return True
+    inicio = jogo["dt"] - timedelta(minutes=10)
+    fim = jogo["dt"] + timedelta(minutes=JANELA_AO_VIVO_MIN)
+    return inicio <= agora <= fim
+
+
 def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     resultados = {}
     if os.path.exists(resultados_path):
@@ -78,7 +91,6 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         j["gols1"] = res.get("gols1")
         j["gols2"] = res.get("gols2")
         j["encerrado"] = res.get("encerrado", False)
-        j["ao_vivo"] = res.get("ao_vivo", False) and not j["encerrado"]
         # Preenche times reais do bracket mata-mata quando a API já os definiu
         if res.get("time1_real"):
             j["time1"] = res["time1_real"]
@@ -88,6 +100,12 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
             j["flag2"] = NOME_PARA_FLAG.get(res["time2_real"], "🏳")
         j["dt"] = data_jogo_brasilia(j)
         j["utc"] = utc_iso(j)
+        # Um jogo só conta como "ao vivo" se o flag da API estiver ligado E o
+        # horário atual estiver dentro da janela plausível de partida. Sem essa
+        # checagem, um flag preso (API travada em IN_PLAY, geração interrompida)
+        # deixaria o jogo eternamente "AO VIVO" — bug do print de 14/06.
+        ao_vivo_flag = res.get("ao_vivo", False) and not j["encerrado"]
+        j["ao_vivo"] = ao_vivo_flag and _dentro_janela_ao_vivo(j, agora_brasilia)
         jogos_enriquecidos.append(j)
 
     # Próximo jogo = jogo futuro não-encerrado mais cedo no tempo.
@@ -625,6 +643,34 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
   window.addEventListener('scroll', () => {{
     _btnTopo.classList.toggle('visivel', window.scrollY > 400);
   }}, {{passive: true}});
+
+  // ── sanidade do "ao vivo" no cliente ─────────────────────────────────────
+  // O HTML é estático e pode congelar se a geração atrasar. Mesmo numa página
+  // antiga, o navegador tem a hora real: se o kickoff já passou da janela
+  // plausível de partida, removemos o estado "AO VIVO" preso.
+  function validarAoVivo() {{
+    const JANELA_MS = 210 * 60 * 1000; // 3h30 após o kickoff
+    const agora = Date.now();
+    document.querySelectorAll('.badge-aovivo').forEach(badge => {{
+      const card = badge.closest('.card');
+      if (!card) return;
+      const horaEl = card.querySelector('.hora-display[data-utc]');
+      if (!horaEl) return;
+      const kickoff = new Date(horaEl.dataset.utc).getTime();
+      if (agora <= kickoff + JANELA_MS) return; // ainda dentro da janela
+      badge.remove();
+      card.style.border = '1px solid #1a2a20';
+      card.style.boxShadow = 'none';
+      const placar = card.querySelector('.placar');
+      if (placar) placar.style.color = '';
+    }});
+    if (document.querySelectorAll('.badge-aovivo').length === 0) {{
+      document.querySelectorAll('.secao-titulo').forEach(t => {{
+        if (t.textContent.includes('Ao vivo')) t.style.display = 'none';
+      }});
+    }}
+  }}
+  validarAoVivo();
 </script>
 
 </body>
