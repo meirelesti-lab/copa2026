@@ -123,10 +123,10 @@
   },
   "16": {
     "gols1": 1,
-    "gols2": 1,
+    "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Irã",
     "away_api": "Nova Zelândia"
   }
