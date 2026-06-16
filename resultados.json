@@ -131,10 +131,10 @@
     "away_api": "Nova Zelândia"
   },
   "18": {
-    "gols1": 2,
-    "gols2": 0,
-    "encerrado": false,
-    "ao_vivo": true,
+    "gols1": 3,
+    "gols2": 1,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "França",
     "away_api": "Senegal"
