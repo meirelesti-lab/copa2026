@@ -9,6 +9,12 @@ on:
     - cron: '*/10 * * * *'
   workflow_dispatch:          # permite rodar manualmente pelo GitHub
 
+# Cron interno e pinger externo disparam o mesmo workflow. Serializa runs para
+# evitar dois `git push` competindo (o 2º levaria non-fast-forward e falharia).
+concurrency:
+  group: atualizar-copa
+  cancel-in-progress: false
+
 jobs:
   atualizar:
     runs-on: ubuntu-latest
