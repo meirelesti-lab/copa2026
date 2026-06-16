@@ -124,8 +124,8 @@
   "16": {
     "gols1": 2,
     "gols2": 2,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Irã",
     "away_api": "Nova Zelândia"
