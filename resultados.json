@@ -174,5 +174,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Portugal",
     "away_api": "RD Congo"
+  },
+  "22": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Inglaterra",
+    "away_api": "Croácia"
   }
 }
