@@ -198,7 +198,7 @@
     "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Uzbequistão",
     "away_api": "Colômbia"
   }
