@@ -210,5 +210,14 @@
     "status_api": "IN_PLAY",
     "home_api": "República Tcheca",
     "away_api": "África do Sul"
+  },
+  "26": {
+    "gols1": null,
+    "gols2": null,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Suíça",
+    "away_api": "Bósnia e Herzegovina"
   }
 }
