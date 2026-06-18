@@ -221,11 +221,11 @@
     "away_api": "Bósnia e Herzegovina"
   },
   "27": {
-    "gols1": 2,
+    "gols1": 3,
     "gols2": 0,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "IN_PLAY",
+    "status_api": "PAUSED",
     "home_api": "Canadá",
     "away_api": "Catar"
   }
