@@ -192,5 +192,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Gana",
     "away_api": "Panamá"
+  },
+  "24": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Uzbequistão",
+    "away_api": "Colômbia"
   }
 }
