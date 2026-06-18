@@ -195,10 +195,10 @@
   },
   "24": {
     "gols1": 0,
-    "gols2": 0,
+    "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "IN_PLAY",
+    "status_api": "PAUSED",
     "home_api": "Uzbequistão",
     "away_api": "Colômbia"
   }
