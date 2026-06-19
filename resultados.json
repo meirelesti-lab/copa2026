@@ -236,5 +236,14 @@
     "ao_vivo": false,
     "home_api": "Espanha",
     "away_api": "Cabo Verde"
+  },
+  "28": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "México",
+    "away_api": "Coreia do Sul"
   }
 }
