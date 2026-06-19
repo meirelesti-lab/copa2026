@@ -211,7 +211,7 @@
   <div class="filtros-divider"></div>
   <div class="filtros-row" id="filtro-fusos">
     <span class="filtros-label">🕐 Fuso</span>
-    <button class="btn ativo" onclick="mudarFuso(this,'America/Sao_Paulo')">🇧🇷 Brasil</button><button class="btn" onclick="mudarFuso(this,'America/Monterrey')">🇲🇽 México</button><button class="btn" onclick="mudarFuso(this,'Europe/Brussels')">🇧🇪 Bélgica</button><button class="btn" onclick="mudarFuso(this,'America/New_York')">🇺🇸 EUA</button>
+    <button class="btn ativo" data-tz="America/Sao_Paulo" onclick="mudarFuso(this,'America/Sao_Paulo')">🇧🇷 Brasil</button><button class="btn" data-tz="America/Monterrey" onclick="mudarFuso(this,'America/Monterrey')">🇲🇽 México</button><button class="btn" data-tz="Europe/Brussels" onclick="mudarFuso(this,'Europe/Brussels')">🇧🇪 Bélgica</button><button class="btn" data-tz="America/New_York" onclick="mudarFuso(this,'America/New_York')">🇺🇸 EUA</button>
   </div>
 </div>
 
@@ -245,26 +245,6 @@
   
 
   <div class='secao-titulo'>Próximos jogos — Grupos</div>
-
-        <div class="card" data-fase="Grupos" data-times="espanha cabo verde" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
-          
-          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
-          <div class="card-times">
-            <div class="card-time">
-              <span class="card-flag">🇪🇸</span>
-              <span class="card-name">Espanha</span>
-            </div>
-            <div class="card-vs">vs</div>
-            <div class="card-time card-time-away">
-              <span class="card-flag">🇨🇻</span>
-              <span class="card-name">Cabo Verde</span>
-            </div>
-          </div>
-          <div class="card-meta">
-            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H</span>
-            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T16:00:00Z">Seg · 15/06 · 13h</span> · 📍 Atlanta</span>
-          </div>
-        </div>
 
         <div class="card" data-fase="Grupos" data-times="estados unidos austrália" style="border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
@@ -1788,6 +1768,26 @@
           </div>
         </div>
 
+        <div class="card" data-fase="Grupos" data-times="espanha cabo verde" style="opacity:0.55;border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
+          
+          <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo H</div>
+          <div class="card-times">
+            <div class="card-time">
+              <span class="card-flag">🇪🇸</span>
+              <span class="card-name">Espanha</span>
+            </div>
+            <div class="card-vs"><span class="placar" style="color:#4a7a5a;">— · —</span></div>
+            <div class="card-time card-time-away">
+              <span class="card-flag">🇨🇻</span>
+              <span class="card-name">Cabo Verde</span>
+            </div>
+          </div>
+          <div class="card-meta">
+            <span class="card-fase-badge" style="background:#10b98122;color:#10b981;border:1px solid #10b98144;border-radius:6px;padding:2px 8px;font-size:0.72rem;font-family:'Space Mono',monospace;">Grupo H</span>
+            <span style="color:#4a7a5a;font-size:0.75rem;font-family:'Space Mono',monospace;">📅 <span class="hora-display" data-utc="2026-06-15T16:00:00Z">Seg · 15/06 · 13h</span> · 📍 Atlanta</span>
+          </div>
+        </div>
+
         <div class="card" data-fase="Grupos" data-times="suécia tunísia" style="opacity:0.55;border:1px solid #1a2a20;border-radius:12px;background:#0d1a12;padding:12px 16px;margin-bottom:10px;position:relative;">
           
           <div class="fase-tag" style="background:#10b981;color:#052e16;">Grupo F</div>
@@ -2035,7 +2035,7 @@
 </div>
 
 <footer>
-  <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em 18/06/2026 21:30
+  <span id="footer-fuso">Horários em Brasília</span> · Fonte: football-data.org · Atualizado em 18/06/2026 21:02
 </footer>
 
 <button id="voltar-topo" onclick="voltarAoTopo()" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
@@ -2141,25 +2141,43 @@
     _btnTopo.classList.toggle('visivel', window.scrollY > 400);
   }, {passive: true});
 
-  // ── sanidade do "ao vivo" no cliente ─────────────────────────────────────
-  // O HTML é estático e pode congelar se a geração atrasar. Mesmo numa página
-  // antiga, o navegador tem a hora real: se o kickoff já passou da janela
-  // plausível de partida, removemos o estado "AO VIVO" preso.
-  function validarAoVivo() {
+  // ── auto-correção pelo tempo real ────────────────────────────────────────
+  // O HTML é estático e pode congelar se a geração (CI best-effort) atrasar.
+  // Mesmo numa página antiga, o navegador tem a hora real: se o kickoff já
+  // passou da janela plausível de partida, corrigimos o estado preso —
+  // tanto um "AO VIVO" travado quanto um jogo já jogado ainda anunciado como
+  // "PRÓXIMO"/futuro (bug do jogo de dias atrás preso em "Próximos").
+  function autoCorrigirPorTempo() {
     const JANELA_MS = 210 * 60 * 1000; // 3h30 após o kickoff
     const agora = Date.now();
-    document.querySelectorAll('.badge-aovivo').forEach(badge => {
-      const card = badge.closest('.card');
-      if (!card) return;
+    document.querySelectorAll('.card').forEach(card => {
       const horaEl = card.querySelector('.hora-display[data-utc]');
       if (!horaEl) return;
       const kickoff = new Date(horaEl.dataset.utc).getTime();
       if (agora <= kickoff + JANELA_MS) return; // ainda dentro da janela
-      badge.remove();
-      card.style.border = '1px solid #1a2a20';
-      card.style.boxShadow = 'none';
-      const placar = card.querySelector('.placar');
-      if (placar) placar.style.color = '';
+
+      const live = card.querySelector('.badge-aovivo');
+      if (live) {
+        live.remove();
+        card.style.border = '1px solid #1a2a20';
+        card.style.boxShadow = 'none';
+        const placar = card.querySelector('.placar');
+        if (placar) placar.style.color = '';
+      }
+
+      const prox = card.querySelector('.badge-proximo');
+      if (prox) {
+        prox.remove();
+        card.style.border = '1px solid #1a2a20';
+        card.style.boxShadow = 'none';
+      }
+
+      // Card que ainda se anuncia como futuro ("vs", sem placar): o jogo já
+      // aconteceu — esconde até o próximo run do CI movê-lo pra Resultados.
+      const centro = card.querySelector('.card-vs');
+      if (centro && centro.textContent.trim() === 'vs') {
+        card.style.display = 'none';
+      }
     });
     if (document.querySelectorAll('.badge-aovivo').length === 0) {
       document.querySelectorAll('.secao-titulo').forEach(t => {
@@ -2167,7 +2185,39 @@
       });
     }
   }
-  validarAoVivo();
+
+  // ── fuso automático: mostra os horários no fuso de quem está acessando ────
+  // Sem isso a página renderiza tudo em Brasília por padrão e um visitante no
+  // México vê "13h" para um jogo que, no relógio dele, começou às 10h.
+  function offsetDoFuso(tz, d) {
+    const fmt = new Intl.DateTimeFormat('en-US', {
+      timeZone: tz, hour12: false,
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+    });
+    const p = {};
+    fmt.formatToParts(d).forEach(x => p[x.type] = x.value);
+    const asUTC = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second);
+    return Math.round((asUTC - d.getTime()) / 60000);
+  }
+
+  function autoSelecionarFuso() {
+    const agora = new Date();
+    const meuOffset = -agora.getTimezoneOffset();
+    let alvo = null;
+    document.querySelectorAll('#filtro-fusos .btn').forEach(btn => {
+      const tz = btn.getAttribute('data-tz');
+      if (tz && offsetDoFuso(tz, agora) === meuOffset) alvo = btn;
+    });
+    if (alvo) {
+      mudarFuso(alvo, alvo.getAttribute('data-tz'));
+    } else {
+      atualizarHorarios(); // fallback Brasília, mas renderizado pelo JS
+    }
+  }
+
+  autoSelecionarFuso();
+  autoCorrigirPorTempo();
 </script>
 
 </body>

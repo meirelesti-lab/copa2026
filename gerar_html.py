@@ -73,6 +73,18 @@ def _dentro_janela_ao_vivo(jogo, agora):
     return inicio <= agora <= fim
 
 
+def _ja_passou(jogo, agora):
+    """True quando o jogo já aconteceu (passou até da janela ao vivo).
+
+    Usado para classificar seções por TEMPO, não pelo flag de resultado: um jogo
+    sem resultado casado pela API continua com encerrado=False e, sem essa
+    checagem, ficaria preso eternamente em "Próximos jogos" (bug 15/06).
+    """
+    if jogo["hora"] in ("?", ""):
+        return jogo["dt"].date() < agora.date()
+    return jogo["dt"] + timedelta(minutes=JANELA_AO_VIVO_MIN) < agora
+
+
 def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     resultados = {}
     if os.path.exists(resultados_path):
@@ -106,6 +118,9 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         # deixaria o jogo eternamente "AO VIVO" — bug do print de 14/06.
         ao_vivo_flag = res.get("ao_vivo", False) and not j["encerrado"]
         j["ao_vivo"] = ao_vivo_flag and _dentro_janela_ao_vivo(j, agora_brasilia)
+        # Jogo cuja hora já passou mas sem resultado casado pela API: trata como
+        # "passado" (vai pra Resultados, nunca pra Próximos).
+        j["passado"] = _ja_passou(j, agora_brasilia) and not j["encerrado"] and not j["ao_vivo"]
         jogos_enriquecidos.append(j)
 
     # Próximo jogo = jogo futuro não-encerrado mais cedo no tempo.
@@ -125,7 +140,8 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         cor = FASE_COR.get(j["fase"], "#10b981")
         encerrado = j["encerrado"]
         ao_vivo = j["ao_vivo"]
-        opacity = "opacity:0.55;" if encerrado else ""
+        passado = j.get("passado", False)
+        opacity = "opacity:0.55;" if (encerrado or passado) else ""
         if ao_vivo:
             borda = "border:2px solid #ef4444;box-shadow:0 0 18px #ef444455;"
         elif is_proximo:
@@ -135,6 +151,8 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         if (encerrado or ao_vivo) and j["gols1"] is not None and j["gols2"] is not None:
             estilo_placar = ' style="color:#ef4444;"' if ao_vivo else ""
             center_html = f'<span class="placar"{estilo_placar}>{j["gols1"]} – {j["gols2"]}</span>'
+        elif passado:
+            center_html = '<span class="placar" style="color:#4a7a5a;">— · —</span>'
         else:
             center_html = "vs"
         if ao_vivo:
@@ -190,21 +208,27 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
         if j["fase"] != "Grupos" and j["id"] != proximo_id and not j["ao_vivo"]
     ]
 
-    encerrados_grupos = [j for j in grupos_jogos if j["encerrado"]]
+    encerrados_grupos = [j for j in grupos_jogos if j["encerrado"] or j["passado"]]
     proximos_grupos = sorted(
         (
             j
             for j in grupos_jogos
-            if not j["encerrado"] and not j["ao_vivo"] and j["id"] != proximo_id
+            if not j["encerrado"]
+            and not j["ao_vivo"]
+            and not j["passado"]
+            and j["id"] != proximo_id
         ),
         key=lambda j: j["dt"],
     )
-    mata_encerrados = [j for j in mata_jogos if j["encerrado"]]
+    mata_encerrados = [j for j in mata_jogos if j["encerrado"] or j["passado"]]
     mata_proximos = sorted(
         (
             j
             for j in mata_jogos
-            if not j["encerrado"] and j["time1"] != "A definir" and j["time2"] != "A definir"
+            if not j["encerrado"]
+            and not j["passado"]
+            and j["time1"] != "A definir"
+            and j["time2"] != "A definir"
         ),
         key=lambda j: j["dt"],
     )
@@ -289,7 +313,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     )
     options_dropdown = "".join(f'<option value="{t.lower()}">{t}</option>' for t in todos_times)
     btns_fusos = "".join(
-        f'<button class="btn{" ativo" if i == 0 else ""}" onclick="mudarFuso(this,\'{f[2]}\')">{f[0]} {f[1]}</button>'
+        f'<button class="btn{" ativo" if i == 0 else ""}" data-tz="{f[2]}" onclick="mudarFuso(this,\'{f[2]}\')">{f[0]} {f[1]}</button>'
         for i, f in enumerate(FUSOS)
     )
     btn_resultados = (
@@ -644,25 +668,43 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
     _btnTopo.classList.toggle('visivel', window.scrollY > 400);
   }}, {{passive: true}});
 
-  // ── sanidade do "ao vivo" no cliente ─────────────────────────────────────
-  // O HTML é estático e pode congelar se a geração atrasar. Mesmo numa página
-  // antiga, o navegador tem a hora real: se o kickoff já passou da janela
-  // plausível de partida, removemos o estado "AO VIVO" preso.
-  function validarAoVivo() {{
+  // ── auto-correção pelo tempo real ────────────────────────────────────────
+  // O HTML é estático e pode congelar se a geração (CI best-effort) atrasar.
+  // Mesmo numa página antiga, o navegador tem a hora real: se o kickoff já
+  // passou da janela plausível de partida, corrigimos o estado preso —
+  // tanto um "AO VIVO" travado quanto um jogo já jogado ainda anunciado como
+  // "PRÓXIMO"/futuro (bug do jogo de dias atrás preso em "Próximos").
+  function autoCorrigirPorTempo() {{
     const JANELA_MS = 210 * 60 * 1000; // 3h30 após o kickoff
     const agora = Date.now();
-    document.querySelectorAll('.badge-aovivo').forEach(badge => {{
-      const card = badge.closest('.card');
-      if (!card) return;
+    document.querySelectorAll('.card').forEach(card => {{
       const horaEl = card.querySelector('.hora-display[data-utc]');
       if (!horaEl) return;
       const kickoff = new Date(horaEl.dataset.utc).getTime();
       if (agora <= kickoff + JANELA_MS) return; // ainda dentro da janela
-      badge.remove();
-      card.style.border = '1px solid #1a2a20';
-      card.style.boxShadow = 'none';
-      const placar = card.querySelector('.placar');
-      if (placar) placar.style.color = '';
+
+      const live = card.querySelector('.badge-aovivo');
+      if (live) {{
+        live.remove();
+        card.style.border = '1px solid #1a2a20';
+        card.style.boxShadow = 'none';
+        const placar = card.querySelector('.placar');
+        if (placar) placar.style.color = '';
+      }}
+
+      const prox = card.querySelector('.badge-proximo');
+      if (prox) {{
+        prox.remove();
+        card.style.border = '1px solid #1a2a20';
+        card.style.boxShadow = 'none';
+      }}
+
+      // Card que ainda se anuncia como futuro ("vs", sem placar): o jogo já
+      // aconteceu — esconde até o próximo run do CI movê-lo pra Resultados.
+      const centro = card.querySelector('.card-vs');
+      if (centro && centro.textContent.trim() === 'vs') {{
+        card.style.display = 'none';
+      }}
     }});
     if (document.querySelectorAll('.badge-aovivo').length === 0) {{
       document.querySelectorAll('.secao-titulo').forEach(t => {{
@@ -670,7 +712,39 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
       }});
     }}
   }}
-  validarAoVivo();
+
+  // ── fuso automático: mostra os horários no fuso de quem está acessando ────
+  // Sem isso a página renderiza tudo em Brasília por padrão e um visitante no
+  // México vê "13h" para um jogo que, no relógio dele, começou às 10h.
+  function offsetDoFuso(tz, d) {{
+    const fmt = new Intl.DateTimeFormat('en-US', {{
+      timeZone: tz, hour12: false,
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+    }});
+    const p = {{}};
+    fmt.formatToParts(d).forEach(x => p[x.type] = x.value);
+    const asUTC = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second);
+    return Math.round((asUTC - d.getTime()) / 60000);
+  }}
+
+  function autoSelecionarFuso() {{
+    const agora = new Date();
+    const meuOffset = -agora.getTimezoneOffset();
+    let alvo = null;
+    document.querySelectorAll('#filtro-fusos .btn').forEach(btn => {{
+      const tz = btn.getAttribute('data-tz');
+      if (tz && offsetDoFuso(tz, agora) === meuOffset) alvo = btn;
+    }});
+    if (alvo) {{
+      mudarFuso(alvo, alvo.getAttribute('data-tz'));
+    }} else {{
+      atualizarHorarios(); // fallback Brasília, mas renderizado pelo JS
+    }}
+  }}
+
+  autoSelecionarFuso();
+  autoCorrigirPorTempo();
 </script>
 
 </body>
