@@ -1198,6 +1198,7 @@ MAPA_NOMES = {
     "Tunisia": "Tunísia",
     "Spain": "Espanha",
     "Cape Verde": "Cabo Verde",
+    "Cape Verde Islands": "Cabo Verde",
     "Belgium": "Bélgica",
     "Egypt": "Egito",
     "Saudi Arabia": "Arábia Saudita",

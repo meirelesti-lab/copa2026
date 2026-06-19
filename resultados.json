@@ -228,5 +228,13 @@
     "status_api": "IN_PLAY",
     "home_api": "Canadá",
     "away_api": "Catar"
+  },
+  "13": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": true,
+    "ao_vivo": false,
+    "home_api": "Espanha",
+    "away_api": "Cabo Verde"
   }
 }
