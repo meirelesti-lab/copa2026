@@ -278,7 +278,7 @@
     "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "IN_PLAY",
+    "status_api": "PAUSED",
     "home_api": "Turquia",
     "away_api": "Paraguai"
   }
