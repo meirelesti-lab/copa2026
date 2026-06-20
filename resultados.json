@@ -269,7 +269,7 @@
     "gols2": 0,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Brasil",
     "away_api": "Haiti"
   }
