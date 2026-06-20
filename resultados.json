@@ -272,5 +272,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Brasil",
     "away_api": "Haiti"
+  },
+  "29": {
+    "gols1": 0,
+    "gols2": 1,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Turquia",
+    "away_api": "Paraguai"
   }
 }
