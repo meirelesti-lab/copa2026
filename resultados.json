@@ -285,8 +285,8 @@
   "33": {
     "gols1": 5,
     "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Holanda",
     "away_api": "Suécia"
