@@ -290,5 +290,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Holanda",
     "away_api": "Suécia"
+  },
+  "34": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Alemanha",
+    "away_api": "Costa do Marfim"
   }
 }
