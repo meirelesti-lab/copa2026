@@ -283,11 +283,11 @@
     "away_api": "Paraguai"
   },
   "33": {
-    "gols1": 2,
+    "gols1": 3,
     "gols2": 0,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Holanda",
     "away_api": "Suécia"
   }
