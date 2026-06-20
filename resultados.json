@@ -263,5 +263,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Escócia",
     "away_api": "Marrocos"
+  },
+  "32": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Brasil",
+    "away_api": "Haiti"
   }
 }
