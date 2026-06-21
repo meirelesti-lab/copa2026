@@ -337,11 +337,11 @@
     "away_api": "Irã"
   },
   "39": {
-    "gols1": 0,
+    "gols1": 2,
     "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "IN_PLAY",
+    "status_api": "PAUSED",
     "home_api": "Uruguai",
     "away_api": "Cabo Verde"
   }
