@@ -335,5 +335,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Bélgica",
     "away_api": "Irã"
+  },
+  "39": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Uruguai",
+    "away_api": "Cabo Verde"
   }
 }
