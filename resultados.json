@@ -308,5 +308,14 @@
     "status_api": "PAUSED",
     "home_api": "Equador",
     "away_api": "Curaçao"
+  },
+  "36": {
+    "gols1": 0,
+    "gols2": 1,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Tunísia",
+    "away_api": "Japão"
   }
 }
