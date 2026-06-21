@@ -299,5 +299,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Alemanha",
     "away_api": "Costa do Marfim"
+  },
+  "35": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Equador",
+    "away_api": "Curaçao"
   }
 }
