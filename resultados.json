@@ -312,8 +312,8 @@
   "36": {
     "gols1": 0,
     "gols2": 4,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Tunísia",
     "away_api": "Japão"
