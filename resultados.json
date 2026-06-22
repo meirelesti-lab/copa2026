@@ -362,5 +362,14 @@
     "status_api": "IN_PLAY",
     "home_api": "Argentina",
     "away_api": "Áustria"
+  },
+  "42": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "França",
+    "away_api": "Iraque"
   }
 }
