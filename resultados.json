@@ -368,8 +368,17 @@
     "gols2": 0,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "França",
     "away_api": "Iraque"
+  },
+  "43": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Noruega",
+    "away_api": "Senegal"
   }
 }
