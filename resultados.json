@@ -402,8 +402,8 @@
   "46": {
     "gols1": 0,
     "gols2": 0,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "PAUSED",
     "home_api": "Inglaterra",
     "away_api": "Gana"
