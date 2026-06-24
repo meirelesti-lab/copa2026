@@ -425,5 +425,23 @@
     "status_api": "PAUSED",
     "home_api": "Colômbia",
     "away_api": "RD Congo"
+  },
+  "49": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Suíça",
+    "away_api": "Canadá"
+  },
+  "50": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Bósnia e Herzegovina",
+    "away_api": "Catar"
   }
 }
