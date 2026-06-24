@@ -449,7 +449,7 @@
     "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Marrocos",
     "away_api": "Haiti"
   },
