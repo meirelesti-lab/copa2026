@@ -443,5 +443,23 @@
     "status_api": "IN_PLAY",
     "home_api": "Bósnia e Herzegovina",
     "away_api": "Catar"
+  },
+  "52": {
+    "gols1": 2,
+    "gols2": 2,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Marrocos",
+    "away_api": "Haiti"
+  },
+  "51": {
+    "gols1": 0,
+    "gols2": 2,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Escócia",
+    "away_api": "Brasil"
   }
 }
