@@ -445,7 +445,7 @@
     "away_api": "Catar"
   },
   "52": {
-    "gols1": 2,
+    "gols1": 3,
     "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
@@ -458,7 +458,7 @@
     "gols2": 3,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "IN_PLAY",
+    "status_api": "PAUSED",
     "home_api": "Escócia",
     "away_api": "Brasil"
   }
