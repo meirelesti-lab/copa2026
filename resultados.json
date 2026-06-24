@@ -429,8 +429,8 @@
   "49": {
     "gols1": 2,
     "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Suíça",
     "away_api": "Canadá"
@@ -438,8 +438,8 @@
   "50": {
     "gols1": 3,
     "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Bósnia e Herzegovina",
     "away_api": "Catar"
