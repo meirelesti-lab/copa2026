@@ -407,5 +407,14 @@
     "status_api": "PAUSED",
     "home_api": "Inglaterra",
     "away_api": "Gana"
+  },
+  "47": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Panamá",
+    "away_api": "Croácia"
   }
 }
