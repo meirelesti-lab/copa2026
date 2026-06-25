@@ -464,7 +464,7 @@
   },
   "53": {
     "gols1": 0,
-    "gols2": 0,
+    "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
     "status_api": "IN_PLAY",
@@ -472,7 +472,7 @@
     "away_api": "México"
   },
   "54": {
-    "gols1": 0,
+    "gols1": 1,
     "gols2": 0,
     "encerrado": false,
     "ao_vivo": true,
