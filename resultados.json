@@ -479,5 +479,23 @@
     "status_api": "IN_PLAY",
     "home_api": "África do Sul",
     "away_api": "Coreia do Sul"
+  },
+  "55": {
+    "gols1": 1,
+    "gols2": 1,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Equador",
+    "away_api": "Alemanha"
+  },
+  "56": {
+    "gols1": 0,
+    "gols2": 1,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Curaçao",
+    "away_api": "Costa do Marfim"
   }
 }
