@@ -483,8 +483,8 @@
   "55": {
     "gols1": 2,
     "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Equador",
     "away_api": "Alemanha"
@@ -492,8 +492,8 @@
   "56": {
     "gols1": 0,
     "gols2": 2,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Curaçao",
     "away_api": "Costa do Marfim"
