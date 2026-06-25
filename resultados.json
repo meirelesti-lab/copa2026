@@ -485,7 +485,7 @@
     "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Equador",
     "away_api": "Alemanha"
   },
@@ -494,7 +494,7 @@
     "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Curaçao",
     "away_api": "Costa do Marfim"
   }
