@@ -447,8 +447,8 @@
   "52": {
     "gols1": 4,
     "gols2": 2,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Marrocos",
     "away_api": "Haiti"
@@ -456,8 +456,8 @@
   "51": {
     "gols1": 0,
     "gols2": 3,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "PAUSED",
     "home_api": "Escócia",
     "away_api": "Brasil"
