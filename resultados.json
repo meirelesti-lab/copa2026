@@ -543,7 +543,7 @@
     "gols2": 3,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Noruega",
     "away_api": "França"
   },
