@@ -548,12 +548,20 @@
     "away_api": "França"
   },
   "62": {
-    "gols1": 2,
+    "gols1": 4,
     "gols2": 0,
     "encerrado": false,
     "ao_vivo": true,
     "status_api": "IN_PLAY",
     "home_api": "Senegal",
     "away_api": "Iraque"
+  },
+  "73": {
+    "time1_real": "África do Sul",
+    "time2_real": "Canadá"
+  },
+  "74": {
+    "time1_real": "Holanda",
+    "time2_real": "Marrocos"
   }
 }
