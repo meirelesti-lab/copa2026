@@ -533,5 +533,17 @@
     "status_api": "IN_PLAY",
     "home_api": "Paraguai",
     "away_api": "Austrália"
+  },
+  "73": {
+    "time1_real": "África do Sul",
+    "time2_real": "Canadá"
+  },
+  "74": {
+    "time1_real": "Holanda",
+    "time2_real": "Marrocos"
+  },
+  "76": {
+    "time1_real": "Estados Unidos",
+    "time2_real": "Bósnia e Herzegovina"
   }
 }
