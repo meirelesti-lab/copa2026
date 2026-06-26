@@ -534,16 +534,17 @@
     "home_api": "Paraguai",
     "away_api": "Austrália"
   },
-  "73": {
-    "time1_real": "África do Sul",
-    "time2_real": "Canadá"
-  },
-  "74": {
-    "time1_real": "Holanda",
-    "time2_real": "Marrocos"
-  },
   "76": {
     "time1_real": "Estados Unidos",
     "time2_real": "Bósnia e Herzegovina"
+  },
+  "61": {
+    "gols1": 1,
+    "gols2": 3,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Noruega",
+    "away_api": "França"
   }
 }
