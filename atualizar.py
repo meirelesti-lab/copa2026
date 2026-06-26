@@ -25,6 +25,9 @@ RESULTADOS_FILE = "resultados.json"
 
 BRASILIA = timezone(timedelta(hours=-3))
 
+# Total de jogos da fase de grupos — usado para liberar o bracket do mata-mata.
+GRUPOS_TOTAL = sum(1 for _j in JOGOS if _j["fase"] == "Grupos")
+
 
 def _hora_int(hora_str):
     if hora_str in ("?", ""):
@@ -138,6 +141,33 @@ def processar(dados_api, resultados_existentes):
     atualizados = 0
     nao_encontrados = []
 
+    # A API publica um bracket PROVISÓRIO (LAST_32 etc. com times já preenchidos
+    # e status TIMED) antes do fim dos grupos, e ele muda a cada run — os 32avos
+    # só ficam realmente definidos quando todos os grupos encerram (depende do
+    # ranking dos melhores terceiros). Só liberamos `time1_real`/`time2_real`
+    # quando os 72 jogos de grupos estiverem FINISHED; antes disso o mata-mata
+    # fica "A definir" em vez de mostrar confrontos errados/voláteis.
+    grupos_concluidos = sum(
+        1
+        for p in partidas
+        if p.get("stage") == "GROUP_STAGE" and p.get("status") in ("FINISHED", "AWARDED")
+    )
+    bracket_liberado = grupos_concluidos >= GRUPOS_TOTAL
+
+    # Auto-cura: enquanto o bracket não está liberado, remove qualquer time
+    # provisório já gravado num jogo de mata-mata ainda sem resultado.
+    if not bracket_liberado:
+        for rid_k, val in list(resultados_existentes.items()):
+            tem_bracket = "time1_real" in val or "time2_real" in val
+            sem_resultado = not val.get("encerrado") and val.get("gols1") is None
+            if tem_bracket and sem_resultado:
+                val.pop("time1_real", None)
+                val.pop("time2_real", None)
+                if not val:
+                    del resultados_existentes[rid_k]
+                atualizados += 1
+                print(f"  ↩ Bracket provisório removido ID{rid_k} (grupos não encerrados)")
+
     for partida in partidas:
         status = partida.get("status", "")
         encerrado = status in ("FINISHED", "AWARDED")
@@ -196,6 +226,8 @@ def processar(dados_api, resultados_existentes):
         else:
             # Jogo futuro: salva times do bracket se for mata-mata
             if jogo["fase"] == "Grupos":
+                continue
+            if not bracket_liberado:
                 continue
             resultado_novo = {
                 **res_atual,
