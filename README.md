@@ -61,7 +61,7 @@ Adicione a linha (ajuste o caminho):
 copa2026/
 ├── atualizar.py        ← script principal (rodar diariamente)
 ├── gerar_html.py       ← gera o index.html
-├── dados_jogos.py      ← dados fixos dos 90 jogos + mapeamento de nomes
+├── dados_jogos.py      ← dados fixos dos 104 jogos + mapeamento de nomes
 ├── index.html          ← gerado automaticamente (não editar)
 ├── requirements.txt
 ├── .gitignore
