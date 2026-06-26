@@ -25,9 +25,6 @@ RESULTADOS_FILE = "resultados.json"
 
 BRASILIA = timezone(timedelta(hours=-3))
 
-# Total de jogos da fase de grupos — usado para liberar o bracket do mata-mata.
-GRUPOS_TOTAL = sum(1 for _j in JOGOS if _j["fase"] == "Grupos")
-
 
 def _hora_int(hora_str):
     if hora_str in ("?", ""):
@@ -141,32 +138,44 @@ def processar(dados_api, resultados_existentes):
     atualizados = 0
     nao_encontrados = []
 
-    # A API publica um bracket PROVISÓRIO (LAST_32 etc. com times já preenchidos
-    # e status TIMED) antes do fim dos grupos, e ele muda a cada run — os 32avos
-    # só ficam realmente definidos quando todos os grupos encerram (depende do
-    # ranking dos melhores terceiros). Só liberamos `time1_real`/`time2_real`
-    # quando os 72 jogos de grupos estiverem FINISHED; antes disso o mata-mata
-    # fica "A definir" em vez de mostrar confrontos errados/voláteis.
-    grupos_concluidos = sum(
-        1
-        for p in partidas
-        if p.get("stage") == "GROUP_STAGE" and p.get("status") in ("FINISHED", "AWARDED")
-    )
-    bracket_liberado = grupos_concluidos >= GRUPOS_TOTAL
+    # A API publica um bracket PROVISÓRIO (LAST_32 etc.) e VOLÁTIL antes do fim
+    # dos grupos — o confronto de um slot troca de times a cada run. Um confronto
+    # só é confiável quando AMBOS os times já jogaram todos os seus jogos de
+    # grupo (posição final definida); antes disso o mata-mata fica "A definir".
+    grupo_pendente = set()
+    grupo_visto = set()
+    for p in partidas:
+        if p.get("stage") != "GROUP_STAGE":
+            continue
+        for lado in ("homeTeam", "awayTeam"):
+            nome = p[lado].get("name")
+            if not nome:
+                continue
+            grupo_visto.add(nome)
+            if p.get("status") not in ("FINISHED", "AWARDED"):
+                grupo_pendente.add(nome)
+    # Nomes já traduzidos, para casar com time1_real/time2_real (também em PT).
+    times_decididos = {traduzir(n) for n in grupo_visto if n not in grupo_pendente}
 
-    # Auto-cura: enquanto o bracket não está liberado, remove qualquer time
-    # provisório já gravado num jogo de mata-mata ainda sem resultado.
-    if not bracket_liberado:
-        for rid_k, val in list(resultados_existentes.items()):
-            tem_bracket = "time1_real" in val or "time2_real" in val
-            sem_resultado = not val.get("encerrado") and val.get("gols1") is None
-            if tem_bracket and sem_resultado:
-                val.pop("time1_real", None)
-                val.pop("time2_real", None)
-                if not val:
-                    del resultados_existentes[rid_k]
-                atualizados += 1
-                print(f"  ↩ Bracket provisório removido ID{rid_k} (grupos não encerrados)")
+    def bracket_confiavel(t1, t2):
+        return bool(t1) and bool(t2) and t1 in times_decididos and t2 in times_decididos
+
+    # Auto-cura: remove qualquer bracket já gravado cujo confronto deixou de ser
+    # confiável (algum time ainda joga grupo, ou a API esvaziou o slot).
+    for rid_k, val in list(resultados_existentes.items()):
+        tem_bracket = "time1_real" in val or "time2_real" in val
+        sem_resultado = not val.get("encerrado") and val.get("gols1") is None
+        if (
+            tem_bracket
+            and sem_resultado
+            and not bracket_confiavel(val.get("time1_real"), val.get("time2_real"))
+        ):
+            val.pop("time1_real", None)
+            val.pop("time2_real", None)
+            if not val:
+                del resultados_existentes[rid_k]
+            atualizados += 1
+            print(f"  ↩ Bracket não confiável removido ID{rid_k}")
 
     for partida in partidas:
         status = partida.get("status", "")
@@ -227,7 +236,7 @@ def processar(dados_api, resultados_existentes):
             # Jogo futuro: salva times do bracket se for mata-mata
             if jogo["fase"] == "Grupos":
                 continue
-            if not bracket_liberado:
+            if not bracket_confiavel(home, away):
                 continue
             resultado_novo = {
                 **res_atual,
