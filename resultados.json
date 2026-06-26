@@ -517,10 +517,10 @@
     "away_api": "Suécia"
   },
   "59": {
-    "gols1": 2,
+    "gols1": 3,
     "gols2": 2,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Turquia",
     "away_api": "Estados Unidos"
@@ -528,8 +528,8 @@
   "60": {
     "gols1": 0,
     "gols2": 0,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Paraguai",
     "away_api": "Austrália"
