@@ -503,7 +503,7 @@
     "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Tunísia",
     "away_api": "Holanda"
   },
@@ -512,7 +512,7 @@
     "gols2": 0,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Japão",
     "away_api": "Suécia"
   }
