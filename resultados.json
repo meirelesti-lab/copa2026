@@ -567,8 +567,8 @@
   "64": {
     "gols1": 0,
     "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Uruguai",
     "away_api": "Espanha"
@@ -576,8 +576,8 @@
   "63": {
     "gols1": 0,
     "gols2": 0,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Cabo Verde",
     "away_api": "Arábia Saudita"
