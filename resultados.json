@@ -535,8 +535,8 @@
     "away_api": "Austrália"
   },
   "76": {
-    "time1_real": "Estados Unidos",
-    "time2_real": "Bósnia e Herzegovina"
+    "time1_real": "Holanda",
+    "time2_real": "Marrocos"
   },
   "61": {
     "gols1": 1,
@@ -561,8 +561,8 @@
     "time2_real": "Canadá"
   },
   "74": {
-    "time1_real": "Holanda",
-    "time2_real": "Marrocos"
+    "time1_real": "Brasil",
+    "time2_real": "Japão"
   },
   "64": {
     "gols1": 0,
@@ -599,5 +599,9 @@
     "status_api": "IN_PLAY",
     "home_api": "Nova Zelândia",
     "away_api": "Bélgica"
+  },
+  "82": {
+    "time1_real": "Estados Unidos",
+    "time2_real": "Bósnia e Herzegovina"
   }
 }
