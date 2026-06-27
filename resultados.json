@@ -587,13 +587,13 @@
     "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Egito",
     "away_api": "Irã"
   },
   "66": {
     "gols1": 0,
-    "gols2": 1,
+    "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
     "status_api": "IN_PLAY",
