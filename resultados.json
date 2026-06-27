@@ -587,8 +587,17 @@
     "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "IN_PLAY",
+    "status_api": "PAUSED",
     "home_api": "Egito",
     "away_api": "Irã"
+  },
+  "66": {
+    "gols1": 0,
+    "gols2": 1,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Nova Zelândia",
+    "away_api": "Bélgica"
   }
 }
