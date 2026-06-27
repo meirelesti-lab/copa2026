@@ -603,5 +603,14 @@
   "82": {
     "time1_real": "Estados Unidos",
     "time2_real": "Bósnia e Herzegovina"
+  },
+  "67": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Panamá",
+    "away_api": "Inglaterra"
   }
 }
