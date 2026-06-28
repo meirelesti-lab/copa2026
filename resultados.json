@@ -621,5 +621,23 @@
     "status_api": "IN_PLAY",
     "home_api": "Croácia",
     "away_api": "Gana"
+  },
+  "69": {
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Colômbia",
+    "away_api": "Portugal"
+  },
+  "70": {
+    "gols1": 0,
+    "gols2": 1,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "RD Congo",
+    "away_api": "Uzbequistão"
   }
 }
