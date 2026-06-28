@@ -561,8 +561,8 @@
     "time2_real": "Canadá",
     "gols1": 0,
     "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "PAUSED",
     "home_api": "África do Sul",
     "away_api": "Canadá"
