@@ -643,17 +643,17 @@
   "72": {
     "gols1": 1,
     "gols2": 3,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Jordânia",
     "away_api": "Argentina"
   },
   "71": {
-    "gols1": 2,
-    "gols2": 2,
-    "encerrado": false,
-    "ao_vivo": true,
+    "gols1": 3,
+    "gols2": 3,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Argélia",
     "away_api": "Áustria"
