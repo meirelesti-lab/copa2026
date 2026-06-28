@@ -657,5 +657,53 @@
     "status_api": "IN_PLAY",
     "home_api": "Argélia",
     "away_api": "Áustria"
+  },
+  "75": {
+    "time1_real": "Alemanha",
+    "time2_real": "Paraguai"
+  },
+  "77": {
+    "time1_real": "Costa do Marfim",
+    "time2_real": "Noruega"
+  },
+  "78": {
+    "time1_real": "França",
+    "time2_real": "Suécia"
+  },
+  "79": {
+    "time1_real": "México",
+    "time2_real": "Equador"
+  },
+  "80": {
+    "time1_real": "Inglaterra",
+    "time2_real": "RD Congo"
+  },
+  "81": {
+    "time1_real": "Bélgica",
+    "time2_real": "Senegal"
+  },
+  "83": {
+    "time1_real": "Espanha",
+    "time2_real": "Áustria"
+  },
+  "84": {
+    "time1_real": "Portugal",
+    "time2_real": "Croácia"
+  },
+  "85": {
+    "time1_real": "Suíça",
+    "time2_real": "Argélia"
+  },
+  "86": {
+    "time1_real": "Austrália",
+    "time2_real": "Egito"
+  },
+  "87": {
+    "time1_real": "Argentina",
+    "time2_real": "Cabo Verde"
+  },
+  "88": {
+    "time1_real": "Colômbia",
+    "time2_real": "Gana"
   }
 }
