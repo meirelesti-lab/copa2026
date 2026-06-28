@@ -949,7 +949,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Los Angeles",
         "fase": "32avos",
     },
     {
@@ -962,7 +962,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Boston",
         "fase": "32avos",
     },
     {
@@ -975,7 +975,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Monterrey",
         "fase": "32avos",
     },
     {
@@ -988,7 +988,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Houston",
         "fase": "32avos",
     },
     {
@@ -1001,7 +1001,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Nova York/NJ",
         "fase": "32avos",
     },
     {
@@ -1014,7 +1014,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Dallas",
         "fase": "32avos",
     },
     {
@@ -1027,7 +1027,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Cidade do México",
         "fase": "32avos",
     },
     {
@@ -1040,7 +1040,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Atlanta",
         "fase": "32avos",
     },
     {
@@ -1053,7 +1053,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "San Francisco",
         "fase": "32avos",
     },
     {
@@ -1066,7 +1066,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Seattle",
         "fase": "32avos",
     },
     {
@@ -1079,7 +1079,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Toronto",
         "fase": "32avos",
     },
     {
@@ -1092,7 +1092,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Los Angeles",
         "fase": "32avos",
     },
     {
@@ -1105,7 +1105,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Vancouver",
         "fase": "32avos",
     },
     {
@@ -1118,7 +1118,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Miami",
         "fase": "32avos",
     },
     {
@@ -1131,7 +1131,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Kansas City",
         "fase": "32avos",
     },
     {
@@ -1144,7 +1144,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Dallas",
         "fase": "32avos",
     },
     {
@@ -1157,7 +1157,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Filadélfia",
         "fase": "Oitavas",
     },
     {
@@ -1170,7 +1170,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Houston",
         "fase": "Oitavas",
     },
     {
@@ -1183,7 +1183,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Nova York/NJ",
         "fase": "Oitavas",
     },
     {
@@ -1196,7 +1196,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Cidade do México",
         "fase": "Oitavas",
     },
     {
@@ -1209,7 +1209,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Dallas",
         "fase": "Oitavas",
     },
     {
@@ -1222,7 +1222,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Seattle",
         "fase": "Oitavas",
     },
     {
@@ -1235,7 +1235,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Atlanta",
         "fase": "Oitavas",
     },
     {
@@ -1248,7 +1248,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Vancouver",
         "fase": "Oitavas",
     },
     {
@@ -1261,7 +1261,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Boston",
         "fase": "Quartas",
     },
     {
@@ -1274,7 +1274,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Los Angeles",
         "fase": "Quartas",
     },
     {
@@ -1287,7 +1287,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Miami",
         "fase": "Quartas",
     },
     {
@@ -1300,7 +1300,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Kansas City",
         "fase": "Quartas",
     },
     {
@@ -1313,7 +1313,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Dallas",
         "fase": "Semifinal",
     },
     {
@@ -1326,7 +1326,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Atlanta",
         "fase": "Semifinal",
     },
     {
@@ -1339,7 +1339,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Miami",
         "fase": "3º Lugar",
     },
     {
@@ -1352,7 +1352,7 @@ JOGOS = [
         "flag1": "🏳",
         "time2": "A definir",
         "flag2": "🏳",
-        "local": "A definir",
+        "local": "Nova York/NJ",
         "fase": "Final",
     },
 ]
