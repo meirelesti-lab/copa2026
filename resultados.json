@@ -645,7 +645,7 @@
     "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Jordânia",
     "away_api": "Argentina"
   },
@@ -654,7 +654,7 @@
     "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Argélia",
     "away_api": "Áustria"
   }
