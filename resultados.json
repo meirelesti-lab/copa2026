@@ -558,7 +558,14 @@
   },
   "73": {
     "time1_real": "África do Sul",
-    "time2_real": "Canadá"
+    "time2_real": "Canadá",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "África do Sul",
+    "away_api": "Canadá"
   },
   "74": {
     "time1_real": "Brasil",
