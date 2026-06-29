@@ -577,11 +577,11 @@
   "74": {
     "time1_real": "Alemanha",
     "time2_real": "Paraguai",
-    "gols1": 2,
-    "gols2": 1,
+    "gols1": 4,
+    "gols2": 5,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Alemanha",
     "away_api": "Paraguai"
   },
