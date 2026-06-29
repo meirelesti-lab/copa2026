@@ -536,7 +536,14 @@
   },
   "76": {
     "time1_real": "Brasil",
-    "time2_real": "Japão"
+    "time2_real": "Japão",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Brasil",
+    "away_api": "Japão"
   },
   "61": {
     "gols1": 1,
