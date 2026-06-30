@@ -682,7 +682,7 @@
   "75": {
     "time1_real": "Holanda",
     "time2_real": "Marrocos",
-    "gols1": 4,
+    "gols1": 3,
     "gols2": 4,
     "encerrado": true,
     "ao_vivo": false,
@@ -733,5 +733,9 @@
   "88": {
     "time1_real": "Austrália",
     "time2_real": "Egito"
+  },
+  "90": {
+    "time1_real": "Canadá",
+    "time2_real": "Marrocos"
   }
 }
