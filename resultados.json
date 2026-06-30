@@ -696,7 +696,14 @@
   },
   "78": {
     "time1_real": "Costa do Marfim",
-    "time2_real": "Noruega"
+    "time2_real": "Noruega",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Costa do Marfim",
+    "away_api": "Noruega"
   },
   "79": {
     "time1_real": "México",
