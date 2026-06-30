@@ -682,10 +682,10 @@
   "75": {
     "time1_real": "Holanda",
     "time2_real": "Marrocos",
-    "gols1": 1,
-    "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "gols1": 3,
+    "gols2": 4,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "PAUSED",
     "home_api": "Holanda",
     "away_api": "Marrocos"
