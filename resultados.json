@@ -623,7 +623,14 @@
   },
   "82": {
     "time1_real": "Bélgica",
-    "time2_real": "Senegal"
+    "time2_real": "Senegal",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Bélgica",
+    "away_api": "Senegal"
   },
   "67": {
     "gols1": 0,
