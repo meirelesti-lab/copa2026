@@ -714,7 +714,14 @@
   },
   "79": {
     "time1_real": "México",
-    "time2_real": "Equador"
+    "time2_real": "Equador",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "México",
+    "away_api": "Equador"
   },
   "80": {
     "time1_real": "Inglaterra",
