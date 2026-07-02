@@ -754,7 +754,14 @@
   },
   "83": {
     "time1_real": "Portugal",
-    "time2_real": "Croácia"
+    "time2_real": "Croácia",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Portugal",
+    "away_api": "Croácia"
   },
   "84": {
     "time1_real": "Espanha",
