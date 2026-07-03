@@ -776,7 +776,14 @@
   },
   "85": {
     "time1_real": "Suíça",
-    "time2_real": "Argélia"
+    "time2_real": "Argélia",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Suíça",
+    "away_api": "Argélia"
   },
   "86": {
     "time1_real": "Argentina",
