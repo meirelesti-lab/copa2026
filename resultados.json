@@ -777,11 +777,11 @@
   "85": {
     "time1_real": "Suíça",
     "time2_real": "Argélia",
-    "gols1": 1,
+    "gols1": 2,
     "gols2": 0,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "PAUSED",
+    "status_api": "IN_PLAY",
     "home_api": "Suíça",
     "away_api": "Argélia"
   },
