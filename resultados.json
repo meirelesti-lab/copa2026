@@ -796,10 +796,10 @@
   "88": {
     "time1_real": "Austrália",
     "time2_real": "Egito",
-    "gols1": 1,
-    "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "gols1": 3,
+    "gols2": 5,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "PAUSED",
     "home_api": "Austrália",
     "away_api": "Egito"
