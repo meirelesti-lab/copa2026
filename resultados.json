@@ -779,8 +779,8 @@
     "time2_real": "Argélia",
     "gols1": 2,
     "gols2": 0,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Suíça",
     "away_api": "Argélia"
