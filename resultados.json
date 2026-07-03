@@ -787,7 +787,14 @@
   },
   "86": {
     "time1_real": "Argentina",
-    "time2_real": "Cabo Verde"
+    "time2_real": "Cabo Verde",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Argentina",
+    "away_api": "Cabo Verde"
   },
   "87": {
     "time1_real": "Colômbia",
