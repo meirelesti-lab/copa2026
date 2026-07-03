@@ -795,7 +795,14 @@
   },
   "88": {
     "time1_real": "Austrália",
-    "time2_real": "Egito"
+    "time2_real": "Egito",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Austrália",
+    "away_api": "Egito"
   },
   "90": {
     "time1_real": "Canadá",
