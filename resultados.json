@@ -822,9 +822,9 @@
     "time1_real": "Canadá",
     "time2_real": "Marrocos",
     "gols1": 0,
-    "gols2": 2,
-    "encerrado": false,
-    "ao_vivo": true,
+    "gols2": 3,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Canadá",
     "away_api": "Marrocos"
