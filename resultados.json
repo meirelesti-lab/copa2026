@@ -831,7 +831,14 @@
   },
   "89": {
     "time1_real": "Paraguai",
-    "time2_real": "França"
+    "time2_real": "França",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Paraguai",
+    "away_api": "França"
   },
   "91": {
     "time1_real": "Brasil",
