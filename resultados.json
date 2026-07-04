@@ -820,7 +820,14 @@
   },
   "90": {
     "time1_real": "Canadá",
-    "time2_real": "Marrocos"
+    "time2_real": "Marrocos",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Canadá",
+    "away_api": "Marrocos"
   },
   "89": {
     "time1_real": "Paraguai",
