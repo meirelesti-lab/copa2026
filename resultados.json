@@ -798,7 +798,14 @@
   },
   "87": {
     "time1_real": "Colômbia",
-    "time2_real": "Gana"
+    "time2_real": "Gana",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Colômbia",
+    "away_api": "Gana"
   },
   "88": {
     "time1_real": "Austrália",
