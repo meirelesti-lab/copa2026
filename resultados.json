@@ -861,7 +861,14 @@
   },
   "93": {
     "time1_real": "Portugal",
-    "time2_real": "Espanha"
+    "time2_real": "Espanha",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "PAUSED",
+    "home_api": "Portugal",
+    "away_api": "Espanha"
   },
   "95": {
     "time1_real": "Argentina",
