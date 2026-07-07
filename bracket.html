@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Chaveamento — Copa 2026 🏆</title>
+  <link rel="apple-touch-icon" href="icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#080e0a;color:#c8e6d0;font-family:'Syne',sans-serif;min-height:100vh;padding-bottom:40px}
+    header{background:linear-gradient(135deg,#0a1a0e 0%,#0d2515 50%,#0a1a0e 100%);border-bottom:1px solid #1a3020;padding:22px 20px 16px;text-align:center}
+    header h1{font-size:clamp(1.3rem,4.5vw,2rem);font-weight:800;color:#f0fdf4;letter-spacing:-0.5px}
+    header p{color:#4a7a5a;font-family:'Space Mono',monospace;font-size:0.72rem;margin-top:5px}
+    .header-links{margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+    .header-link{display:inline-block;background:transparent;color:#4a7a5a;border:1px solid #1a3020;border-radius:8px;padding:5px 16px;font-family:'Space Mono',monospace;font-size:0.72rem;text-decoration:none;transition:all .15s;cursor:pointer}
+    .header-link:hover{color:#a8d4b4;border-color:#2a4a30}
+    /* abas de fase */
+    .abas{position:sticky;top:0;z-index:30;display:flex;gap:4px;justify-content:center;padding:12px;background:#0a140dee;backdrop-filter:blur(6px);border-bottom:1px solid #1a2a20;flex-wrap:wrap}
+    .aba{background:#0d1a12;color:#6b9a7b;border:1px solid #1a2a20;border-radius:8px;padding:7px 16px;font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:700;cursor:pointer;transition:all .15s}
+    .aba:hover{background:#142a1c;color:#a8d4b4}
+    .aba.ativa{background:#10b98122;color:#10b981;border-color:#10b98166}
+    .aviso{max-width:760px;margin:14px auto 0;padding:0 16px;color:#4a7a5a;font-family:'Space Mono',monospace;font-size:0.68rem;text-align:center}
+    /* ── bracket ── */
+    #bracket-wrap{overflow:auto;padding:16px 8px 24px;-webkit-overflow-scrolling:touch}
+    #bracket{position:relative}
+    #bracket svg{position:absolute;top:0;left:0;pointer-events:none}
+    .bm{position:absolute;width:168px;background:#0d1a12;border:1px solid #1a2a20;border-radius:10px;padding:6px 8px;box-shadow:0 2px 8px #00000044}
+    .bm-head{font-family:'Space Mono',monospace;font-size:0.6rem;color:#4a7a5a;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .bm-team{display:flex;align-items:center;gap:7px;padding:2px 0}
+    .bm-flag{font-size:1.05rem;flex-shrink:0;line-height:1}
+    .bm-dot{width:16px;height:16px;border-radius:50%;background:#16281d;flex-shrink:0}
+    .bm-name{font-family:'Space Mono',monospace;font-size:0.78rem;color:#e2f0e8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0}
+    .bm-score{font-family:'Space Mono',monospace;font-size:0.82rem;font-weight:700;color:#c8e6d0;flex-shrink:0}
+    .bm-pen{font-size:0.62rem;color:#6b9a7b;margin-left:1px}
+    .bm-team.perdeu .bm-name,.bm-team.perdeu .bm-score{color:#4a6a55}
+    .bm-team.perdeu .bm-flag{opacity:0.5}
+    .bm-team.venceu .bm-name{color:#f0fdf4;font-weight:700}
+    .bm-team.venceu .bm-score{color:#10b981}
+    .bm-rotulo{position:absolute;font-family:'Space Mono',monospace;font-size:0.66rem;color:#fb923c;letter-spacing:1px;text-transform:uppercase}
+    /* ── grupos ── */
+    #grupos-wrap{max-width:900px;margin:0 auto;padding:18px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+    .grupo-card{background:#0d1a12;border:1px solid #1a2a20;border-radius:12px;padding:12px 14px}
+    .grupo-titulo{font-family:'Space Mono',monospace;font-size:0.72rem;color:#10b981;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+    .grupo-tab{width:100%;border-collapse:collapse;font-family:'Space Mono',monospace;font-size:0.76rem}
+    .grupo-tab th{color:#2d5a3d;font-weight:400;font-size:0.62rem;text-align:center;padding:2px 3px;border-bottom:1px solid #1a2a20}
+    .grupo-tab td{padding:5px 3px;text-align:center;color:#a8d4b4}
+    .grupo-tab td.cl-pos{color:#4a7a5a;width:16px}
+    .grupo-tab td.cl-flag{width:20px;font-size:1rem}
+    .grupo-tab td.cl-nome{text-align:left;color:#e2f0e8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+    .grupo-tab th.cl-nome{text-align:left}
+    .grupo-tab td.cl-sg{color:#6b9a7b}
+    .grupo-tab td.cl-pts{color:#f0fdf4;font-weight:700}
+    .grupo-tab tr.classif td.cl-pos{color:#10b981;font-weight:700}
+    .grupo-tab tr.classif{background:#10b98108}
+    footer{text-align:center;color:#2d5a3d;font-family:'Space Mono',monospace;font-size:0.7rem;margin-top:28px;padding:0 16px;line-height:1.8}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Chaveamento — Copa 2026 🏆</h1>
+  <p>Fase de grupos e mata-mata</p>
+  <div class="header-links">
+    <a href="index.html" class="header-link">← Jogos e resultados</a>
+    <a href="mundiais.html" class="header-link">🌍 Histórico</a>
+  </div>
+</header>
+
+<div class="abas" id="abas"><button class="aba ativa" onclick="mostrarAba(this,'Grupos')">GS</button><button class="aba" onclick="mostrarAba(this,'32avos')">R32</button><button class="aba" onclick="mostrarAba(this,'Oitavas')">R16</button><button class="aba" onclick="mostrarAba(this,'Quartas')">QF</button><button class="aba" onclick="mostrarAba(this,'Semifinal')">SF</button><button class="aba" onclick="mostrarAba(this,'Final')">F</button></div>
+
+<div id="grupos-wrap"><div class='grupo-card'><div class='grupo-titulo'>Grupo A</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇲🇽</td><td class='cl-nome'>México</td><td>3</td><td class='cl-sg'>+6</td><td class='cl-pts'>9</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇿🇦</td><td class='cl-nome'>África do Sul</td><td>3</td><td class='cl-sg'>-1</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇰🇷</td><td class='cl-nome'>Coreia do Sul</td><td>3</td><td class='cl-sg'>-1</td><td class='cl-pts'>3</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇨🇿</td><td class='cl-nome'>República Tcheca</td><td>3</td><td class='cl-sg'>-4</td><td class='cl-pts'>1</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo B</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇨🇭</td><td class='cl-nome'>Suíça</td><td>3</td><td class='cl-sg'>+4</td><td class='cl-pts'>7</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇨🇦</td><td class='cl-nome'>Canadá</td><td>3</td><td class='cl-sg'>+5</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇧🇦</td><td class='cl-nome'>Bósnia e Herzegovina</td><td>3</td><td class='cl-sg'>-1</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇶🇦</td><td class='cl-nome'>Catar</td><td>3</td><td class='cl-sg'>-8</td><td class='cl-pts'>1</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo C</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇧🇷</td><td class='cl-nome'>Brasil</td><td>3</td><td class='cl-sg'>+6</td><td class='cl-pts'>7</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇲🇦</td><td class='cl-nome'>Marrocos</td><td>3</td><td class='cl-sg'>+3</td><td class='cl-pts'>7</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🏴󠁧󠁢󠁳󠁣󠁴󠁿</td><td class='cl-nome'>Escócia</td><td>3</td><td class='cl-sg'>-3</td><td class='cl-pts'>3</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇭🇹</td><td class='cl-nome'>Haiti</td><td>3</td><td class='cl-sg'>-6</td><td class='cl-pts'>0</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo D</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇺🇸</td><td class='cl-nome'>Estados Unidos</td><td>3</td><td class='cl-sg'>+4</td><td class='cl-pts'>6</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇦🇺</td><td class='cl-nome'>Austrália</td><td>3</td><td class='cl-sg'>0</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇵🇾</td><td class='cl-nome'>Paraguai</td><td>3</td><td class='cl-sg'>-2</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇹🇷</td><td class='cl-nome'>Turquia</td><td>3</td><td class='cl-sg'>-2</td><td class='cl-pts'>3</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo E</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇩🇪</td><td class='cl-nome'>Alemanha</td><td>3</td><td class='cl-sg'>+6</td><td class='cl-pts'>6</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇨🇮</td><td class='cl-nome'>Costa do Marfim</td><td>3</td><td class='cl-sg'>+2</td><td class='cl-pts'>6</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇪🇨</td><td class='cl-nome'>Equador</td><td>3</td><td class='cl-sg'>0</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇨🇼</td><td class='cl-nome'>Curaçao</td><td>3</td><td class='cl-sg'>-8</td><td class='cl-pts'>1</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo F</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇳🇱</td><td class='cl-nome'>Holanda</td><td>3</td><td class='cl-sg'>+6</td><td class='cl-pts'>7</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇯🇵</td><td class='cl-nome'>Japão</td><td>3</td><td class='cl-sg'>+4</td><td class='cl-pts'>5</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇸🇪</td><td class='cl-nome'>Suécia</td><td>3</td><td class='cl-sg'>0</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇹🇳</td><td class='cl-nome'>Tunísia</td><td>3</td><td class='cl-sg'>-10</td><td class='cl-pts'>0</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo G</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇧🇪</td><td class='cl-nome'>Bélgica</td><td>3</td><td class='cl-sg'>+4</td><td class='cl-pts'>5</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇪🇬</td><td class='cl-nome'>Egito</td><td>3</td><td class='cl-sg'>+2</td><td class='cl-pts'>5</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇮🇷</td><td class='cl-nome'>Irã</td><td>3</td><td class='cl-sg'>0</td><td class='cl-pts'>3</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇳🇿</td><td class='cl-nome'>Nova Zelândia</td><td>3</td><td class='cl-sg'>-6</td><td class='cl-pts'>1</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo H</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇪🇸</td><td class='cl-nome'>Espanha</td><td>3</td><td class='cl-sg'>+5</td><td class='cl-pts'>7</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇨🇻</td><td class='cl-nome'>Cabo Verde</td><td>3</td><td class='cl-sg'>0</td><td class='cl-pts'>3</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇺🇾</td><td class='cl-nome'>Uruguai</td><td>3</td><td class='cl-sg'>-1</td><td class='cl-pts'>2</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇸🇦</td><td class='cl-nome'>Arábia Saudita</td><td>3</td><td class='cl-sg'>-4</td><td class='cl-pts'>2</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo I</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇫🇷</td><td class='cl-nome'>França</td><td>3</td><td class='cl-sg'>+8</td><td class='cl-pts'>9</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇳🇴</td><td class='cl-nome'>Noruega</td><td>3</td><td class='cl-sg'>+1</td><td class='cl-pts'>6</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇸🇳</td><td class='cl-nome'>Senegal</td><td>3</td><td class='cl-sg'>+2</td><td class='cl-pts'>3</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇮🇶</td><td class='cl-nome'>Iraque</td><td>3</td><td class='cl-sg'>-11</td><td class='cl-pts'>0</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo J</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇦🇷</td><td class='cl-nome'>Argentina</td><td>3</td><td class='cl-sg'>+7</td><td class='cl-pts'>9</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇦🇹</td><td class='cl-nome'>Áustria</td><td>3</td><td class='cl-sg'>0</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇩🇿</td><td class='cl-nome'>Argélia</td><td>3</td><td class='cl-sg'>-2</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇯🇴</td><td class='cl-nome'>Jordânia</td><td>3</td><td class='cl-sg'>-5</td><td class='cl-pts'>0</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo K</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🇨🇴</td><td class='cl-nome'>Colômbia</td><td>3</td><td class='cl-sg'>+3</td><td class='cl-pts'>7</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇵🇹</td><td class='cl-nome'>Portugal</td><td>3</td><td class='cl-sg'>+5</td><td class='cl-pts'>5</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇨🇩</td><td class='cl-nome'>RD Congo</td><td>3</td><td class='cl-sg'>+1</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇺🇿</td><td class='cl-nome'>Uzbequistão</td><td>3</td><td class='cl-sg'>-9</td><td class='cl-pts'>0</td></tr></tbody></table></div><div class='grupo-card'><div class='grupo-titulo'>Grupo L</div><table class='grupo-tab'><thead><tr><th></th><th></th><th class='cl-nome'></th><th>J</th><th>SG</th><th>P</th></tr></thead><tbody><tr class='classif'><td class='cl-pos'>1</td><td class='cl-flag'>🏴󠁧󠁢󠁥󠁮󠁧󠁿</td><td class='cl-nome'>Inglaterra</td><td>3</td><td class='cl-sg'>+4</td><td class='cl-pts'>7</td></tr><tr class='classif'><td class='cl-pos'>2</td><td class='cl-flag'>🇭🇷</td><td class='cl-nome'>Croácia</td><td>3</td><td class='cl-sg'>0</td><td class='cl-pts'>6</td></tr><tr ><td class='cl-pos'>3</td><td class='cl-flag'>🇬🇭</td><td class='cl-nome'>Gana</td><td>3</td><td class='cl-sg'>0</td><td class='cl-pts'>4</td></tr><tr ><td class='cl-pos'>4</td><td class='cl-flag'>🇵🇦</td><td class='cl-nome'>Panamá</td><td>3</td><td class='cl-sg'>-4</td><td class='cl-pts'>0</td></tr></tbody></table></div></div>
+
+<div id="bracket-wrap" style="display:none">
+  <div class="aviso">Deslize para os lados para ver todo o chaveamento →</div>
+  <div id="bracket" style="width:1288px;height:1362px;margin-top:8px">
+    <svg width="1288" height="1362"><path d="M188,51 H214 V90 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,129 H214 V90 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,207 H214 V246 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,285 H214 V246 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,675 H214 V714 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,753 H214 V714 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,831 H214 V870 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,909 H214 V870 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,363 H214 V402 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,441 H214 V402 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,519 H214 V558 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,597 H214 V558 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,987 H214 V1026 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,1065 H214 V1026 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,1143 H214 V1182 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M188,1221 H214 V1182 H240" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M408,90 H434 V168 H460" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M408,246 H434 V168 H460" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M408,402 H434 V480 H460" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M408,558 H434 V480 H460" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M408,714 H434 V792 H460" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M408,870 H434 V792 H460" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M408,1026 H434 V1104 H460" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M408,1182 H434 V1104 H460" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M628,168 H654 V324 H680" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M628,480 H654 V324 H680" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M628,792 H654 V948 H680" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M628,1104 H654 V948 H680" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M848,324 H874 V636 H900" fill="none" stroke="#1e3a2a" stroke-width="2"/>
+<path d="M848,948 H874 V636 H900" fill="none" stroke="#1e3a2a" stroke-width="2"/></svg>
+    <div class="bm" style="left:20px;top:176px;"><div class="bm-head">Dom, 28/06 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇿🇦</span><span class="bm-name">África do Sul</span><span class="bm-score">0</span></div><div class="bm-team venceu"><span class="bm-flag">🇨🇦</span><span class="bm-name">Canadá</span><span class="bm-score">1</span></div></div>
+<div class="bm" style="left:20px;top:20px;"><div class="bm-head">Seg, 29/06 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇩🇪</span><span class="bm-name">Alemanha</span><span class="bm-score">1<span class="bm-pen">(3)</span></span></div><div class="bm-team venceu"><span class="bm-flag">🇵🇾</span><span class="bm-name">Paraguai</span><span class="bm-score">1<span class="bm-pen">(4)</span></span></div></div>
+<div class="bm" style="left:20px;top:254px;"><div class="bm-head">Seg, 29/06 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇳🇱</span><span class="bm-name">Holanda</span><span class="bm-score">1<span class="bm-pen">(2)</span></span></div><div class="bm-team venceu"><span class="bm-flag">🇲🇦</span><span class="bm-name">Marrocos</span><span class="bm-score">1<span class="bm-pen">(3)</span></span></div></div>
+<div class="bm" style="left:20px;top:644px;"><div class="bm-head">Seg, 29/06 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇧🇷</span><span class="bm-name">Brasil</span><span class="bm-score">2</span></div><div class="bm-team perdeu"><span class="bm-flag">🇯🇵</span><span class="bm-name">Japão</span><span class="bm-score">1</span></div></div>
+<div class="bm" style="left:20px;top:98px;"><div class="bm-head">Ter, 30/06 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇫🇷</span><span class="bm-name">França</span><span class="bm-score">3</span></div><div class="bm-team perdeu"><span class="bm-flag">🇸🇪</span><span class="bm-name">Suécia</span><span class="bm-score">0</span></div></div>
+<div class="bm" style="left:20px;top:722px;"><div class="bm-head">Ter, 30/06 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇨🇮</span><span class="bm-name">Costa do Marfim</span><span class="bm-score">1</span></div><div class="bm-team venceu"><span class="bm-flag">🇳🇴</span><span class="bm-name">Noruega</span><span class="bm-score">2</span></div></div>
+<div class="bm" style="left:20px;top:800px;"><div class="bm-head">Ter, 30/06 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇲🇽</span><span class="bm-name">México</span><span class="bm-score">2</span></div><div class="bm-team perdeu"><span class="bm-flag">🇪🇨</span><span class="bm-name">Equador</span><span class="bm-score">0</span></div></div>
+<div class="bm" style="left:20px;top:878px;"><div class="bm-head">Qua, 01/07 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="bm-name">Inglaterra</span><span class="bm-score">2</span></div><div class="bm-team perdeu"><span class="bm-flag">🇨🇩</span><span class="bm-name">RD Congo</span><span class="bm-score">1</span></div></div>
+<div class="bm" style="left:20px;top:488px;"><div class="bm-head">Qua, 01/07 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇺🇸</span><span class="bm-name">Estados Unidos</span><span class="bm-score">2</span></div><div class="bm-team perdeu"><span class="bm-flag">🇧🇦</span><span class="bm-name">Bósnia e Herzegovina</span><span class="bm-score">0</span></div></div>
+<div class="bm" style="left:20px;top:566px;"><div class="bm-head">Qua, 01/07 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇧🇪</span><span class="bm-name">Bélgica</span><span class="bm-score">3</span></div><div class="bm-team perdeu"><span class="bm-flag">🇸🇳</span><span class="bm-name">Senegal</span><span class="bm-score">2</span></div></div>
+<div class="bm" style="left:20px;top:332px;"><div class="bm-head">Qui, 02/07 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇵🇹</span><span class="bm-name">Portugal</span><span class="bm-score">2</span></div><div class="bm-team perdeu"><span class="bm-flag">🇭🇷</span><span class="bm-name">Croácia</span><span class="bm-score">1</span></div></div>
+<div class="bm" style="left:20px;top:410px;"><div class="bm-head">Qui, 02/07 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇪🇸</span><span class="bm-name">Espanha</span><span class="bm-score">3</span></div><div class="bm-team perdeu"><span class="bm-flag">🇦🇹</span><span class="bm-name">Áustria</span><span class="bm-score">0</span></div></div>
+<div class="bm" style="left:20px;top:1112px;"><div class="bm-head">Sex, 03/07 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇨🇭</span><span class="bm-name">Suíça</span><span class="bm-score">2</span></div><div class="bm-team perdeu"><span class="bm-flag">🇩🇿</span><span class="bm-name">Argélia</span><span class="bm-score">0</span></div></div>
+<div class="bm" style="left:20px;top:956px;"><div class="bm-head">Sex, 03/07 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇦🇷</span><span class="bm-name">Argentina</span><span class="bm-score">3</span></div><div class="bm-team perdeu"><span class="bm-flag">🇨🇻</span><span class="bm-name">Cabo Verde</span><span class="bm-score">2</span></div></div>
+<div class="bm" style="left:20px;top:1190px;"><div class="bm-head">Sex, 03/07 · Fim</div><div class="bm-team venceu"><span class="bm-flag">🇨🇴</span><span class="bm-name">Colômbia</span><span class="bm-score">1</span></div><div class="bm-team perdeu"><span class="bm-flag">🇬🇭</span><span class="bm-name">Gana</span><span class="bm-score">0</span></div></div>
+<div class="bm" style="left:20px;top:1034px;"><div class="bm-head">Sex, 03/07 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇦🇺</span><span class="bm-name">Austrália</span><span class="bm-score">1<span class="bm-pen">(2)</span></span></div><div class="bm-team venceu"><span class="bm-flag">🇪🇬</span><span class="bm-name">Egito</span><span class="bm-score">1<span class="bm-pen">(4)</span></span></div></div>
+<div class="bm" style="left:240px;top:59px;"><div class="bm-head">Sáb, 04/07 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇵🇾</span><span class="bm-name">Paraguai</span><span class="bm-score">0</span></div><div class="bm-team venceu"><span class="bm-flag">🇫🇷</span><span class="bm-name">França</span><span class="bm-score">1</span></div></div>
+<div class="bm" style="left:240px;top:215px;"><div class="bm-head">Sáb, 04/07 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇨🇦</span><span class="bm-name">Canadá</span><span class="bm-score">0</span></div><div class="bm-team venceu"><span class="bm-flag">🇲🇦</span><span class="bm-name">Marrocos</span><span class="bm-score">3</span></div></div>
+<div class="bm" style="left:240px;top:683px;"><div class="bm-head">Dom, 05/07 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇧🇷</span><span class="bm-name">Brasil</span><span class="bm-score">1</span></div><div class="bm-team venceu"><span class="bm-flag">🇳🇴</span><span class="bm-name">Noruega</span><span class="bm-score">2</span></div></div>
+<div class="bm" style="left:240px;top:839px;"><div class="bm-head">Dom, 05/07 · 21h</div><div class="bm-team"><span class="bm-flag">🇲🇽</span><span class="bm-name">México</span></div><div class="bm-team"><span class="bm-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="bm-name">Inglaterra</span></div></div>
+<div class="bm" style="left:240px;top:371px;"><div class="bm-head">Seg, 06/07 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇵🇹</span><span class="bm-name">Portugal</span><span class="bm-score">0</span></div><div class="bm-team venceu"><span class="bm-flag">🇪🇸</span><span class="bm-name">Espanha</span><span class="bm-score">1</span></div></div>
+<div class="bm" style="left:240px;top:527px;"><div class="bm-head">Seg, 06/07 · Fim</div><div class="bm-team perdeu"><span class="bm-flag">🇺🇸</span><span class="bm-name">Estados Unidos</span><span class="bm-score">1</span></div><div class="bm-team venceu"><span class="bm-flag">🇧🇪</span><span class="bm-name">Bélgica</span><span class="bm-score">4</span></div></div>
+<div class="bm" style="left:240px;top:995px;"><div class="bm-head">Ter, 07/07 · 13h</div><div class="bm-team"><span class="bm-flag">🇦🇷</span><span class="bm-name">Argentina</span></div><div class="bm-team"><span class="bm-flag">🇪🇬</span><span class="bm-name">Egito</span></div></div>
+<div class="bm" style="left:240px;top:1151px;"><div class="bm-head">Ter, 07/07 · 17h</div><div class="bm-team"><span class="bm-flag">🇨🇭</span><span class="bm-name">Suíça</span></div><div class="bm-team"><span class="bm-flag">🇨🇴</span><span class="bm-name">Colômbia</span></div></div>
+<div class="bm" style="left:460px;top:137px;"><div class="bm-head">Qui, 09/07 · 17h</div><div class="bm-team"><span class="bm-flag">🇫🇷</span><span class="bm-name">França</span></div><div class="bm-team"><span class="bm-flag">🇲🇦</span><span class="bm-name">Marrocos</span></div></div>
+<div class="bm" style="left:460px;top:449px;"><div class="bm-head">Sex, 10/07 · 16h</div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div></div>
+<div class="bm" style="left:460px;top:761px;"><div class="bm-head">Sáb, 11/07 · 18h</div><div class="bm-team"><span class="bm-flag">🇳🇴</span><span class="bm-name">Noruega</span></div><div class="bm-team"><span class="bm-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="bm-name">Inglaterra</span></div></div>
+<div class="bm" style="left:460px;top:1073px;"><div class="bm-head">Sáb, 11/07 · 22h</div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div></div>
+<div class="bm" style="left:680px;top:293px;"><div class="bm-head">Ter, 14/07 · 16h</div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div></div>
+<div class="bm" style="left:680px;top:917px;"><div class="bm-head">Qua, 15/07 · 16h</div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div></div>
+<div class="bm" style="left:900px;top:1190px;"><div class="bm-head">Sáb, 18/07 · 18h</div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div></div>
+<div class="bm" style="left:900px;top:605px;"><div class="bm-head">Dom, 19/07 · 16h</div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div><div class="bm-team"><span class="bm-dot"></span><span class="bm-name">A definir</span></div></div>
+    <div class="bm-rotulo" style="left:900px;top:1168px;">3º lugar</div>
+  </div>
+</div>
+
+<footer>Fonte: football-data.org · Horários em Brasília</footer>
+
+<script>
+  var SCROLL_FASE = {"32avos": 0, "Oitavas": 220, "Quartas": 440, "Semifinal": 660, "Final": 880};
+  var wrap = document.getElementById('bracket-wrap');
+  var grupos = document.getElementById('grupos-wrap');
+  function mostrarAba(btn, fase){
+    document.querySelectorAll('.aba').forEach(function(b){b.classList.remove('ativa')});
+    btn.classList.add('ativa');
+    if(fase === 'Grupos'){
+      grupos.style.display = 'grid';
+      wrap.style.display = 'none';
+    } else {
+      grupos.style.display = 'none';
+      wrap.style.display = 'block';
+      var x = SCROLL_FASE[fase] || 0;
+      wrap.scrollTo({left: x, behavior: 'smooth'});
+    }
+  }
+</script>
+</body>
+</html>

@@ -1357,6 +1357,31 @@ JOGOS = [
     },
 ]
 
+# Estrutura da árvore do mata-mata: jogo_pai → (jogo_filho_1, jogo_filho_2).
+# O vencedor de cada filho avança para o pai. Derivada e VERIFICADA a partir dos
+# resultados reais 2026 (cada time do R16 é vencedor de exatamente um R32, cada
+# time do QF vem de um R16 etc.) — não é chute. Usada só para desenhar os
+# conectores do bracket; os times de cada slot continuam vindo da API por data.
+MATA_ARVORE = {
+    89: (74, 77),
+    90: (73, 75),
+    91: (76, 78),
+    92: (79, 80),
+    93: (83, 84),
+    94: (81, 82),
+    95: (86, 88),
+    96: (85, 87),
+    97: (89, 90),
+    98: (93, 94),
+    99: (91, 92),
+    100: (95, 96),
+    101: (97, 98),
+    102: (99, 100),
+    104: (101, 102),
+    # 3º lugar (103): disputado pelos PERDEDORES das semifinais 101 e 102.
+    103: (101, 102),
+}
+
 # Mapeamento de nomes da API (inglês) → nomes locais (português)
 MAPA_NOMES = {
     "Brazil": "Brasil",

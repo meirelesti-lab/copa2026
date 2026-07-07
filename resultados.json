@@ -583,7 +583,11 @@
     "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Alemanha",
-    "away_api": "Paraguai"
+    "away_api": "Paraguai",
+    "reg1": 1,
+    "reg2": 1,
+    "pen1": 3,
+    "pen2": 4
   },
   "64": {
     "gols1": 0,
@@ -695,7 +699,11 @@
     "ao_vivo": false,
     "status_api": "PAUSED",
     "home_api": "Holanda",
-    "away_api": "Marrocos"
+    "away_api": "Marrocos",
+    "reg1": 1,
+    "reg2": 1,
+    "pen1": 2,
+    "pen2": 3
   },
   "77": {
     "time1_real": "França",
@@ -816,7 +824,11 @@
     "ao_vivo": false,
     "status_api": "PAUSED",
     "home_api": "Austrália",
-    "away_api": "Egito"
+    "away_api": "Egito",
+    "reg1": 1,
+    "reg2": 1,
+    "pen1": 2,
+    "pen2": 4
   },
   "90": {
     "time1_real": "Canadá",

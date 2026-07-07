@@ -15,6 +15,7 @@ import requests
 from dotenv import load_dotenv
 
 from dados_jogos import JOGOS, MAPA_NOMES
+from gerar_bracket import gerar_bracket
 from gerar_html import gerar_html
 
 load_dotenv()
@@ -212,6 +213,21 @@ def processar(dados_api, resultados_existentes):
         res_atual = resultados_existentes.get(rid, {})
 
         if encerrado:
+            # Disputa de pênaltis: `fullTime` já SOMA o gol dos pênaltis (ex.:
+            # 1–1 + pên 3–4 vira fullTime 4–5). Guardamos o tempo normal
+            # (`reg1/reg2`) e o placar dos pênaltis (`pen1/pen2`) em campos
+            # separados para o bracket exibir "1(3)"; `gols1/gols2` seguem sendo
+            # o fullTime, sem mudar nada no index.html.
+            extra_pen = {}
+            if score.get("duration") == "PENALTY_SHOOTOUT":
+                rt = score.get("regularTime", {})
+                pens = score.get("penalties", {})
+                extra_pen = {
+                    "reg1": rt.get("home"),
+                    "reg2": rt.get("away"),
+                    "pen1": pens.get("home"),
+                    "pen2": pens.get("away"),
+                }
             resultado_novo = {
                 **res_atual,
                 "gols1": gols_home,
@@ -220,6 +236,7 @@ def processar(dados_api, resultados_existentes):
                 "ao_vivo": False,
                 "home_api": home,
                 "away_api": away,
+                **extra_pen,
             }
         elif ao_vivo:
             resultado_novo = {
@@ -260,7 +277,7 @@ def processar(dados_api, resultados_existentes):
 def git_push():
     agora = datetime.now(BRASILIA).strftime("%d/%m/%Y %H:%M")
     cmds = [
-        ["git", "add", "index.html", "resultados.json"],
+        ["git", "add", "index.html", "bracket.html", "resultados.json"],
         ["git", "commit", "--no-verify", "-m", f"Resultados atualizados - {agora}"],
         ["git", "push", "origin", "main"],
     ]
@@ -308,6 +325,8 @@ def main():
     # Gerar HTML
     print("\n[html] Gerando index.html ...")
     gerar_html(resultados_path=RESULTADOS_FILE, output_path="index.html")
+    print("[html] Gerando bracket.html ...")
+    gerar_bracket(output_path="bracket.html")
 
     # Git push (pulado quando rodando via GitHub Actions)
     if no_git:

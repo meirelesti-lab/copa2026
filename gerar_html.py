@@ -506,6 +506,7 @@ def gerar_html(resultados_path="resultados.json", output_path="index.html"):
   <h1>Copa do Mundo 2026 🏆</h1>
   <p>48 seleções · EUA, Canadá e México</p>
   <div class="header-links">
+    <a href="bracket.html" class="header-link">🏆 Chaveamento</a>
     <a href="mundiais.html" class="header-link">🌍 Histórico de Mundiais</a>
     {btn_resultados}
   </div>
