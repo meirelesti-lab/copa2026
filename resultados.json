@@ -892,10 +892,10 @@
   "95": {
     "time1_real": "Argentina",
     "time2_real": "Egito",
-    "gols1": 2,
+    "gols1": 3,
     "gols2": 2,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Argentina",
     "away_api": "Egito"
