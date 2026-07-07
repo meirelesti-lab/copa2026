@@ -862,7 +862,7 @@
     "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
-    "status_api": "IN_PLAY",
+    "status_api": "PAUSED",
     "home_api": "Estados Unidos",
     "away_api": "Bélgica"
   },
