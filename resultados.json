@@ -859,7 +859,7 @@
     "time1_real": "Estados Unidos",
     "time2_real": "Bélgica",
     "gols1": 0,
-    "gols2": 0,
+    "gols2": 1,
     "encerrado": false,
     "ao_vivo": true,
     "status_api": "IN_PLAY",
