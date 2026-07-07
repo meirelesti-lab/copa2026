@@ -902,7 +902,14 @@
   },
   "96": {
     "time1_real": "Suíça",
-    "time2_real": "Colômbia"
+    "time2_real": "Colômbia",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Suíça",
+    "away_api": "Colômbia"
   },
   "97": {
     "time1_real": "França",
