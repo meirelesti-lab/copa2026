@@ -858,8 +858,8 @@
   "94": {
     "time1_real": "Estados Unidos",
     "time2_real": "Bélgica",
-    "gols1": 0,
-    "gols2": 1,
+    "gols1": 1,
+    "gols2": 2,
     "encerrado": false,
     "ao_vivo": true,
     "status_api": "IN_PLAY",
