@@ -905,9 +905,9 @@
     "time2_real": "Colômbia",
     "gols1": 0,
     "gols2": 0,
-    "encerrado": true,
-    "ao_vivo": false,
-    "status_api": "PAUSED",
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
     "home_api": "Suíça",
     "away_api": "Colômbia"
   },
