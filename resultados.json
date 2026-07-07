@@ -903,13 +903,17 @@
   "96": {
     "time1_real": "Suíça",
     "time2_real": "Colômbia",
-    "gols1": 0,
-    "gols2": 0,
-    "encerrado": false,
-    "ao_vivo": true,
+    "gols1": 4,
+    "gols2": 3,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "PAUSED",
     "home_api": "Suíça",
-    "away_api": "Colômbia"
+    "away_api": "Colômbia",
+    "reg1": 0,
+    "reg2": 0,
+    "pen1": 3,
+    "pen2": 3
   },
   "97": {
     "time1_real": "França",
