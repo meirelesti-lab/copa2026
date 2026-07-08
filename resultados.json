@@ -912,7 +912,7 @@
     "away_api": "Colômbia",
     "reg1": 0,
     "reg2": 0,
-    "pen1": 3,
+    "pen1": 4,
     "pen2": 3
   },
   "97": {
@@ -926,5 +926,9 @@
   "98": {
     "time1_real": "Espanha",
     "time2_real": "Bélgica"
+  },
+  "100": {
+    "time1_real": "Argentina",
+    "time2_real": "Suíça"
   }
 }
