@@ -920,8 +920,8 @@
     "time2_real": "Marrocos",
     "gols1": 2,
     "gols2": 0,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "França",
     "away_api": "Marrocos"
