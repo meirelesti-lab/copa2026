@@ -932,7 +932,14 @@
   },
   "98": {
     "time1_real": "Espanha",
-    "time2_real": "Bélgica"
+    "time2_real": "Bélgica",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Espanha",
+    "away_api": "Bélgica"
   },
   "100": {
     "time1_real": "Argentina",
