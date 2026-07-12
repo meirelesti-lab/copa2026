@@ -931,8 +931,8 @@
     "time2_real": "Inglaterra",
     "gols1": 1,
     "gols2": 2,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "PAUSED",
     "home_api": "Noruega",
     "away_api": "Inglaterra"
