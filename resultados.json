@@ -951,10 +951,10 @@
   "100": {
     "time1_real": "Argentina",
     "time2_real": "Suíça",
-    "gols1": 2,
+    "gols1": 3,
     "gols2": 1,
-    "encerrado": false,
-    "ao_vivo": true,
+    "encerrado": true,
+    "ao_vivo": false,
     "status_api": "IN_PLAY",
     "home_api": "Argentina",
     "away_api": "Suíça"
