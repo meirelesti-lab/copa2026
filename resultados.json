@@ -972,6 +972,13 @@
   },
   "102": {
     "time1_real": "Inglaterra",
-    "time2_real": "Argentina"
+    "time2_real": "Argentina",
+    "gols1": 0,
+    "gols2": 0,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "Inglaterra",
+    "away_api": "Argentina"
   }
 }
