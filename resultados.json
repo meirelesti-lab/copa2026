@@ -980,5 +980,13 @@
     "status_api": "IN_PLAY",
     "home_api": "Inglaterra",
     "away_api": "Argentina"
+  },
+  "103": {
+    "time1_real": "França",
+    "time2_real": "Inglaterra"
+  },
+  "104": {
+    "time1_real": "Espanha",
+    "time2_real": "Argentina"
   }
 }
