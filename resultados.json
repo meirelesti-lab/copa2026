@@ -983,7 +983,14 @@
   },
   "103": {
     "time1_real": "França",
-    "time2_real": "Inglaterra"
+    "time2_real": "Inglaterra",
+    "gols1": 0,
+    "gols2": 1,
+    "encerrado": false,
+    "ao_vivo": true,
+    "status_api": "IN_PLAY",
+    "home_api": "França",
+    "away_api": "Inglaterra"
   },
   "104": {
     "time1_real": "Espanha",
