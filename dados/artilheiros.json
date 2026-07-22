@@ -1,0 +1,1613 @@
+[
+ {
+  "nome": "Kylian Mbappé",
+  "pais": "France",
+  "selecao": "França",
+  "gols": 10,
+  "jogos": 8,
+  "penaltis": 1,
+  "assistencias": 4
+ },
+ {
+  "nome": "Lionel Messi",
+  "pais": "Argentina",
+  "selecao": "Argentina",
+  "gols": 8,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 4
+ },
+ {
+  "nome": "Erling Haaland",
+  "pais": "Norway",
+  "selecao": "Noruega",
+  "gols": 7,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Jude Bellingham",
+  "pais": "England",
+  "selecao": "Inglaterra",
+  "gols": 7,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Harry Kane",
+  "pais": "England",
+  "selecao": "Inglaterra",
+  "gols": 6,
+  "jogos": 8,
+  "penaltis": 2,
+  "assistencias": 1
+ },
+ {
+  "nome": "Ousmane Dembélé",
+  "pais": "France",
+  "selecao": "França",
+  "gols": 6,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Mikel Oyarzabal",
+  "pais": "Spain",
+  "selecao": "Espanha",
+  "gols": 5,
+  "jogos": 8,
+  "penaltis": 1,
+  "assistencias": 1
+ },
+ {
+  "nome": "Julián Quiñones",
+  "pais": "Colombia",
+  "selecao": "México",
+  "gols": 4,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Vinicius Junior",
+  "pais": "Brazil",
+  "selecao": "Brasil",
+  "gols": 4,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Ismaïla Sarr",
+  "pais": "Senegal",
+  "selecao": "Senegal",
+  "gols": 4,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Raúl Jiménez",
+  "pais": "Mexico",
+  "selecao": "México",
+  "gols": 3,
+  "jogos": 5,
+  "penaltis": 1,
+  "assistencias": null
+ },
+ {
+  "nome": "Folarin Balogun",
+  "pais": "USA",
+  "selecao": "Estados Unidos",
+  "gols": 3,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Ismael Saibari",
+  "pais": "Morocco",
+  "selecao": "Marrocos",
+  "gols": 3,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Kai Havertz",
+  "pais": "Germany",
+  "selecao": "Alemanha",
+  "gols": 3,
+  "jogos": 4,
+  "penaltis": 1,
+  "assistencias": null
+ },
+ {
+  "nome": "Deniz Undav",
+  "pais": "Germany",
+  "selecao": "Alemanha",
+  "gols": 3,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Elijah Just",
+  "pais": "New Zealand",
+  "selecao": "Nova Zelândia",
+  "gols": 3,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Bradley Barcola",
+  "pais": "France",
+  "selecao": "França",
+  "gols": 3,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Yoane Wissa",
+  "pais": "Congo DR",
+  "selecao": "RD Congo",
+  "gols": 3,
+  "jogos": 3,
+  "penaltis": 1,
+  "assistencias": null
+ },
+ {
+  "nome": "Johan Manzambi",
+  "pais": "Switzerland",
+  "selecao": "Suíça",
+  "gols": 3,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Jonathan David",
+  "pais": "Canada",
+  "selecao": "Canadá",
+  "gols": 3,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Matheus Cunha",
+  "pais": "Brazil",
+  "selecao": "Brasil",
+  "gols": 3,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Brian Brobbey",
+  "pais": "Netherlands",
+  "selecao": "Holanda",
+  "gols": 3,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Cody Gakpo",
+  "pais": "Netherlands",
+  "selecao": "Holanda",
+  "gols": 3,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Cristiano Ronaldo",
+  "pais": "Portugal",
+  "selecao": "Portugal",
+  "gols": 3,
+  "jogos": 5,
+  "penaltis": 1,
+  "assistencias": null
+ },
+ {
+  "nome": "Romelu Lukaku",
+  "pais": "Belgium",
+  "selecao": "Bélgica",
+  "gols": 3,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Lautaro Martínez",
+  "pais": "Argentina",
+  "selecao": "Argentina",
+  "gols": 3,
+  "jogos": 8,
+  "penaltis": 1,
+  "assistencias": 1
+ },
+ {
+  "nome": "Charles De Ketelaere",
+  "pais": "Belgium",
+  "selecao": "Bélgica",
+  "gols": 3,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Bukayo Saka",
+  "pais": "England",
+  "selecao": "Inglaterra",
+  "gols": 3,
+  "jogos": 8,
+  "penaltis": 1,
+  "assistencias": 3
+ },
+ {
+  "nome": "Cyle Larin",
+  "pais": "Canada",
+  "selecao": "Canadá",
+  "gols": 2,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Breel Embolo",
+  "pais": "Switzerland",
+  "selecao": "Suíça",
+  "gols": 2,
+  "jogos": 6,
+  "penaltis": 1,
+  "assistencias": 2
+ },
+ {
+  "nome": "Crysencio Summerville",
+  "pais": "Netherlands",
+  "selecao": "Holanda",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Daichi Kamada",
+  "pais": "Japan",
+  "selecao": "Japão",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Amad Diallo",
+  "pais": "Ivory Coast",
+  "selecao": "Costa do Marfim",
+  "gols": 2,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Yasin Ayari",
+  "pais": "Sweden",
+  "selecao": "Suécia",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Emam Ashour",
+  "pais": "Egypt",
+  "selecao": "Egito",
+  "gols": 2,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Maximiliano Araújo",
+  "pais": "Uruguay",
+  "selecao": "Uruguai",
+  "gols": 2,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Ramin Rezaeian",
+  "pais": "Iran",
+  "selecao": "Irã",
+  "gols": 2,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Marko Arnautovic",
+  "pais": "Austria",
+  "selecao": "Áustria",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 1,
+  "assistencias": null
+ },
+ {
+  "nome": "Daniel Muñoz",
+  "pais": "Colombia",
+  "selecao": "Colômbia",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Ruben Vargas",
+  "pais": "Switzerland",
+  "selecao": "Suíça",
+  "gols": 2,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Ermin Mahmic",
+  "pais": "Bosnia and Herzegovina",
+  "selecao": "Bósnia e Herzegovina",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Anthony Elanga",
+  "pais": "Sweden",
+  "selecao": "Suécia",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Ayase Ueda",
+  "pais": "Japan",
+  "selecao": "Japão",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Mostafa Ziko",
+  "pais": "Egypt",
+  "selecao": "Egito",
+  "gols": 2,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Soufiane Rahimi",
+  "pais": "Morocco",
+  "selecao": "Marrocos",
+  "gols": 2,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Nicolas Pépé",
+  "pais": "Ivory Coast",
+  "selecao": "Costa do Marfim",
+  "gols": 2,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Habib Diarra",
+  "pais": "Senegal",
+  "selecao": "Senegal",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Pape Gueye",
+  "pais": "Senegal",
+  "selecao": "Senegal",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Leandro Trossard",
+  "pais": "Belgium",
+  "selecao": "Bélgica",
+  "gols": 2,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Riyad Mahrez",
+  "pais": "Algeria",
+  "selecao": "Argélia",
+  "gols": 2,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Youri Tielemans",
+  "pais": "Belgium",
+  "selecao": "Bélgica",
+  "gols": 2,
+  "jogos": 5,
+  "penaltis": 1,
+  "assistencias": null
+ },
+ {
+  "nome": "Malik Tillman",
+  "pais": "USA",
+  "selecao": "Estados Unidos",
+  "gols": 2,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Pedro Porro",
+  "pais": "Spain",
+  "selecao": "Espanha",
+  "gols": 2,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Dan Ndoye",
+  "pais": "Switzerland",
+  "selecao": "Suíça",
+  "gols": 2,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Azzedine Ounahi",
+  "pais": "Morocco",
+  "selecao": "Marrocos",
+  "gols": 2,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Mikel Merino",
+  "pais": "Spain",
+  "selecao": "Espanha",
+  "gols": 2,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Enzo Fernández",
+  "pais": "Argentina",
+  "selecao": "Argentina",
+  "gols": 2,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Ladislav Krejčí",
+  "pais": "Czech Republic",
+  "selecao": "República Tcheca",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "In-beom Hwang",
+  "pais": "South Korea",
+  "selecao": "Coreia do Sul",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Hyun-Gyu Oh",
+  "pais": "South Korea",
+  "selecao": "Coreia do Sul",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Jovo Lukić",
+  "pais": "Bosnia-Herzegovina",
+  "selecao": "Bósnia e Herzegovina",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Mauricio",
+  "pais": "Paraguay",
+  "selecao": "Paraguai",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Gio Reyna",
+  "pais": "USA",
+  "selecao": "Estados Unidos",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Boualem Khoukhi",
+  "pais": "Qatar",
+  "selecao": "Catar",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "John McGinn",
+  "pais": "Scotland",
+  "selecao": "Escócia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Nestor Irankunda",
+  "pais": "Australia",
+  "selecao": "Austrália",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Connor Metcalfe",
+  "pais": "Australia",
+  "selecao": "Austrália",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Felix Kalu Nmecha",
+  "pais": "Germany",
+  "selecao": "Alemanha",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Livano Comenencia",
+  "pais": "Curaçao",
+  "selecao": "Curaçao",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Nico Schlotterbeck",
+  "pais": "Germany",
+  "selecao": "Alemanha",
+  "gols": 1,
+  "jogos": 2,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Jamal Musiala",
+  "pais": "Germany",
+  "selecao": "Alemanha",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Nathaniel Brown",
+  "pais": "Germany",
+  "selecao": "Alemanha",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Virgil van Dijk",
+  "pais": "Netherlands",
+  "selecao": "Holanda",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Keito Nakamura",
+  "pais": "Japan",
+  "selecao": "Japão",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Alexander Isak",
+  "pais": "Sweden",
+  "selecao": "Suécia",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 3
+ },
+ {
+  "nome": "Omar Rekik",
+  "pais": "Tunisia",
+  "selecao": "Tunísia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Viktor Gyökeres",
+  "pais": "Sweden",
+  "selecao": "Suécia",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Mattias Svanberg",
+  "pais": "Sweden",
+  "selecao": "Suécia",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Abdulelah Al Amri",
+  "pais": "Saudi Arabia",
+  "selecao": "Arábia Saudita",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Mohammad Mohebi",
+  "pais": "Iran",
+  "selecao": "Irã",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Ibrahim M'Baye",
+  "pais": "Senegal",
+  "selecao": "Senegal",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Aymen Hussein",
+  "pais": "Iraq",
+  "selecao": "Iraque",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Leo Østigård",
+  "pais": "Norway",
+  "selecao": "Noruega",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Romano Schmid",
+  "pais": "Austria",
+  "selecao": "Áustria",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Ali Olwan",
+  "pais": "Jordan",
+  "selecao": "Jordânia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Joao Neves",
+  "pais": "Portugal",
+  "selecao": "Portugal",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Martin Baturina",
+  "pais": "Croatia",
+  "selecao": "Croácia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Petar Musa",
+  "pais": "Croatia",
+  "selecao": "Croácia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Marcus Rashford",
+  "pais": "England",
+  "selecao": "Inglaterra",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Caleb Yirenkyi",
+  "pais": "Ghana",
+  "selecao": "Gana",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Abbosbek Fayzullaev",
+  "pais": "Uzbekistan",
+  "selecao": "Uzbequistão",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Luis Díaz",
+  "pais": "Colombia",
+  "selecao": "Colômbia",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Jaminton Campaz",
+  "pais": "Colombia",
+  "selecao": "Colômbia",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Michal Sadílek",
+  "pais": "Czech Republic",
+  "selecao": "República Tcheca",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Teboho Mokoena",
+  "pais": "South Africa",
+  "selecao": "África do Sul",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 1,
+  "assistencias": null
+ },
+ {
+  "nome": "Granit Xhaka",
+  "pais": "Switzerland",
+  "selecao": "Suíça",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 1,
+  "assistencias": null
+ },
+ {
+  "nome": "Nathan-Dylan Saliba",
+  "pais": "Canada",
+  "selecao": "Canadá",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Luis Romo",
+  "pais": "Mexico",
+  "selecao": "México",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Alex Freeman",
+  "pais": "USA",
+  "selecao": "Estados Unidos",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Matías Galarza",
+  "pais": "Paraguay",
+  "selecao": "Paraguai",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Franck Kessié",
+  "pais": "Ivory Coast",
+  "selecao": "Costa do Marfim",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Junya Ito",
+  "pais": "Japan",
+  "selecao": "Japão",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Lamine Yamal",
+  "pais": "Spain",
+  "selecao": "Espanha",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Kevin Pina",
+  "pais": "Cape Verde Islands",
+  "selecao": "Cabo Verde",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Agustín Canobbio",
+  "pais": "Uruguay",
+  "selecao": "Uruguai",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Hélio Varela",
+  "pais": "Cape Verde Islands",
+  "selecao": "Cabo Verde",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Finn Surman",
+  "pais": "New Zealand",
+  "selecao": "Nova Zelândia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Mohamed Salah",
+  "pais": "Egypt",
+  "selecao": "Egito",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Trezeguet",
+  "pais": "Egypt",
+  "selecao": "Egito",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Marcus Pedersen",
+  "pais": "Norway",
+  "selecao": "Noruega",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Nizar Al Rashdan",
+  "pais": "Jordan",
+  "selecao": "Jordânia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Nadhir Benbouali",
+  "pais": "Algeria",
+  "selecao": "Argélia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Amine Gouiri",
+  "pais": "Algeria",
+  "selecao": "Argélia",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Nuno Mendes",
+  "pais": "Portugal",
+  "selecao": "Portugal",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Rafael Leão",
+  "pais": "Portugal",
+  "selecao": "Portugal",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Ante Budimir",
+  "pais": "Croatia",
+  "selecao": "Croácia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Promise Akinpelu",
+  "pais": "Canada",
+  "selecao": "Canadá",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Kerim Alajbegović",
+  "pais": "Bosnia-Herzegovina",
+  "selecao": "Bósnia e Herzegovina",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Hassan Al Haydos",
+  "pais": "Qatar",
+  "selecao": "Catar",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Achraf Hakimi",
+  "pais": "Morocco",
+  "selecao": "Marrocos",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Wilson Isidor",
+  "pais": "Haiti",
+  "selecao": "Haiti",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Gessime Yassine",
+  "pais": "France",
+  "selecao": "Marrocos",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Mateo Chávez",
+  "pais": "Mexico",
+  "selecao": "México",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Álvaro Fidalgo",
+  "pais": "Spain",
+  "selecao": "México",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Thapelo Maseko",
+  "pais": "South Africa",
+  "selecao": "África do Sul",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Leroy Sané",
+  "pais": "Germany",
+  "selecao": "Alemanha",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Nilson Angulo",
+  "pais": "Ecuador",
+  "selecao": "Equador",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Gonzalo Plata",
+  "pais": "Ecuador",
+  "selecao": "Equador",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Hazem Mastouri",
+  "pais": "Tunisia",
+  "selecao": "Tunísia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Jan Paul van Hecke",
+  "pais": "Netherlands",
+  "selecao": "Holanda",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Daizen Maeda",
+  "pais": "Japan",
+  "selecao": "Japão",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Auston Trusty",
+  "pais": "USA",
+  "selecao": "Estados Unidos",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Arda Guler",
+  "pais": "Turkey",
+  "selecao": "Turquia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Orkun Kökçü",
+  "pais": "Turkey",
+  "selecao": "Turquia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Sebastian Berhalter",
+  "pais": "USA",
+  "selecao": "Estados Unidos",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Kaan Ayhan",
+  "pais": "Turkey",
+  "selecao": "Turquia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Thelo Aasgaard",
+  "pais": "Norway",
+  "selecao": "Noruega",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Desire Doue",
+  "pais": "France",
+  "selecao": "França",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Iliman Ndiaye",
+  "pais": "Senegal",
+  "selecao": "Senegal",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Álex Baena",
+  "pais": "Spain",
+  "selecao": "Espanha",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Kevin De Bruyne",
+  "pais": "Belgium",
+  "selecao": "Bélgica",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Alexis Saelemaekers",
+  "pais": "Belgium",
+  "selecao": "Bélgica",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Mahmoud Saber",
+  "pais": "Egypt",
+  "selecao": "Egito",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Petar Sucic",
+  "pais": "Croatia",
+  "selecao": "Croácia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Derrick Luckassen",
+  "pais": "Ghana",
+  "selecao": "Gana",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Nikola Vlašić",
+  "pais": "Croatia",
+  "selecao": "Croácia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Eldor Shomurodov",
+  "pais": "Uzbekistan",
+  "selecao": "Uzbequistão",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Fiston Mayele",
+  "pais": "Congo DR",
+  "selecao": "RD Congo",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Giovani Lo Celso",
+  "pais": "Argentina",
+  "selecao": "Argentina",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Musa Al Taamari",
+  "pais": "Jordan",
+  "selecao": "Jordânia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Rafik Belghali",
+  "pais": "Algeria",
+  "selecao": "Argélia",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Marcel Sabitzer",
+  "pais": "Austria",
+  "selecao": "Áustria",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Saša Kalajdžić",
+  "pais": "Austria",
+  "selecao": "Áustria",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Stephen Eustáquio",
+  "pais": "Canada",
+  "selecao": "Canadá",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Kaishu Sano",
+  "pais": "Japan",
+  "selecao": "Japão",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Casemiro",
+  "pais": "Brazil",
+  "selecao": "Brasil",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Martinelli",
+  "pais": "Brazil",
+  "selecao": "Brasil",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Julio Enciso",
+  "pais": "Paraguay",
+  "selecao": "Paraguai",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Issa Diop",
+  "pais": "France",
+  "selecao": "Marrocos",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Antonio Nusa",
+  "pais": "Norway",
+  "selecao": "Noruega",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Brian Cipenga",
+  "pais": "Congo DR",
+  "selecao": "RD Congo",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Ivan Perišić",
+  "pais": "Croatia",
+  "selecao": "Croácia",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Gonçalo Ramos",
+  "pais": "Portugal",
+  "selecao": "Portugal",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Deroy Duarte",
+  "pais": "Cape Verde Islands",
+  "selecao": "Cabo Verde",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Lisandro Martínez",
+  "pais": "Argentina",
+  "selecao": "Argentina",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Sidny Lopes Cabral",
+  "pais": "Cape Verde Islands",
+  "selecao": "Cabo Verde",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Jhon Arias",
+  "pais": "Colombia",
+  "selecao": "Colômbia",
+  "gols": 1,
+  "jogos": 4,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Neymar",
+  "pais": "Brazil",
+  "selecao": "Brasil",
+  "gols": 1,
+  "jogos": 3,
+  "penaltis": 1,
+  "assistencias": null
+ },
+ {
+  "nome": "Hans Vanaken",
+  "pais": "Belgium",
+  "selecao": "Bélgica",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Yasser Ibrahim",
+  "pais": "Egypt",
+  "selecao": "Egito",
+  "gols": 1,
+  "jogos": 5,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Christian Romero",
+  "pais": "Argentina",
+  "selecao": "Argentina",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Fabián Ruiz",
+  "pais": "Spain",
+  "selecao": "Espanha",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Andreas Schjelderup",
+  "pais": "Norway",
+  "selecao": "Noruega",
+  "gols": 1,
+  "jogos": 6,
+  "penaltis": 0,
+  "assistencias": 3
+ },
+ {
+  "nome": "Alexis Mac Allister",
+  "pais": "Argentina",
+  "selecao": "Argentina",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 1
+ },
+ {
+  "nome": "Julián Álvarez",
+  "pais": "Argentina",
+  "selecao": "Argentina",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Anthony Gordon",
+  "pais": "England",
+  "selecao": "Inglaterra",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 3
+ },
+ {
+  "nome": "Declan Rice",
+  "pais": "England",
+  "selecao": "Inglaterra",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": 2
+ },
+ {
+  "nome": "Ezri Konsa",
+  "pais": "England",
+  "selecao": "Inglaterra",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ },
+ {
+  "nome": "Ferrán Torres",
+  "pais": "Spain",
+  "selecao": "Espanha",
+  "gols": 1,
+  "jogos": 8,
+  "penaltis": 0,
+  "assistencias": null
+ }
+]

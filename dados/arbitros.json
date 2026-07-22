@@ -1,0 +1,410 @@
+{
+ "1": {
+  "nome": "Wilton Sampaio",
+  "pais": "Brazil"
+ },
+ "2": {
+  "nome": "Amin Omar",
+  "pais": "Egypt"
+ },
+ "3": {
+  "nome": "Facundo Tello",
+  "pais": "Argentina"
+ },
+ "4": {
+  "nome": "Danny Makkelie",
+  "pais": "Netherlands"
+ },
+ "6": {
+  "nome": "Said Martinez",
+  "pais": "Honduras"
+ },
+ "7": {
+  "nome": "Slavko Vinčič",
+  "pais": "Slovenia"
+ },
+ "8": {
+  "nome": "Mustapha Ghorbal",
+  "pais": null
+ },
+ "5": {
+  "nome": "Jesús Valenzuela",
+  "pais": "Venezuela"
+ },
+ "9": {
+  "nome": "Jalal Jayed",
+  "pais": "Morocco"
+ },
+ "10": {
+  "nome": "Ismail Elfath",
+  "pais": "United States"
+ },
+ "11": {
+  "nome": "François Letexier",
+  "pais": "France"
+ },
+ "12": {
+  "nome": "Yael Falcón",
+  "pais": "Argentina"
+ },
+ "13": {
+  "nome": "Adham Makhadmeh",
+  "pais": "Jordan"
+ },
+ "14": {
+  "nome": "Ramon Abatti Abel",
+  "pais": "Brazil"
+ },
+ "15": {
+  "nome": "Maurizio Mariani",
+  "pais": "Italy"
+ },
+ "16": {
+  "nome": "César Ramos",
+  "pais": "Mexico"
+ },
+ "18": {
+  "nome": "Alireza Faghani",
+  "pais": "Iran"
+ },
+ "19": {
+  "nome": "Pierre Atcho",
+  "pais": "Gabon"
+ },
+ "17": {
+  "nome": "Szymon Marciniak",
+  "pais": "Poland"
+ },
+ "20": {
+  "nome": "Dahane Beida",
+  "pais": "Mauritania"
+ },
+ "21": {
+  "nome": "Abdulrahman Al Jassim",
+  "pais": "Qatar"
+ },
+ "22": {
+  "nome": "Clément Turpin",
+  "pais": "France"
+ },
+ "23": {
+  "nome": "Glenn Nyberg",
+  "pais": "Sweden"
+ },
+ "24": {
+  "nome": "Anthony Taylor",
+  "pais": "England"
+ },
+ "25": {
+  "nome": "Tori Penso",
+  "pais": "USA"
+ },
+ "26": {
+  "nome": "João Pinheiro",
+  "pais": "Portugal"
+ },
+ "27": {
+  "nome": "Cristián Garay",
+  "pais": "Chile"
+ },
+ "28": {
+  "nome": "Gustavo Tejera",
+  "pais": "Uruguay"
+ },
+ "30": {
+  "nome": "Felix Zwayer",
+  "pais": "Germany"
+ },
+ "31": {
+  "nome": "Il'giz Tantashev",
+  "pais": "Uzbekistan"
+ },
+ "32": {
+  "nome": "Alejandro Hernández Hernández",
+  "pais": "Spain"
+ },
+ "29": {
+  "nome": "Ivan Barton",
+  "pais": null
+ },
+ "33": {
+  "nome": "Michael Oliver",
+  "pais": "England"
+ },
+ "34": {
+  "nome": "Juan Benítez",
+  "pais": "Paraguay"
+ },
+ "35": {
+  "nome": "Ning Ma",
+  "pais": "China PR"
+ },
+ "36": {
+  "nome": "István Kovács",
+  "pais": "Romania"
+ },
+ "37": {
+  "nome": "Raphael Claus",
+  "pais": "Brazil"
+ },
+ "38": {
+  "nome": "Darío Herrera",
+  "pais": "Argentina"
+ },
+ "39": {
+  "nome": "Espen Eskås",
+  "pais": "Norway"
+ },
+ "40": {
+  "nome": "Omar Mohamed Al Ali",
+  "pais": "United Arab Emirates"
+ },
+ "41": {
+  "nome": "Amin Omar",
+  "pais": "Egypt"
+ },
+ "42": {
+  "nome": "Drew Fischer",
+  "pais": "Canada"
+ },
+ "43": {
+  "nome": "Wilton Sampaio",
+  "pais": "Brazil"
+ },
+ "44": {
+  "nome": "Slavko Vinčič",
+  "pais": "Slovenia"
+ },
+ "45": {
+  "nome": "Jalal Jayed",
+  "pais": "Morocco"
+ },
+ "46": {
+  "nome": "Said Martinez",
+  "pais": "Honduras"
+ },
+ "49": {
+  "nome": "Ramon Abatti Abel",
+  "pais": "Brazil"
+ },
+ "50": {
+  "nome": "Jesús Valenzuela",
+  "pais": "Venezuela"
+ },
+ "52": {
+  "nome": "Danny Makkelie",
+  "pais": "Netherlands"
+ },
+ "51": {
+  "nome": "César Ramos",
+  "pais": "Mexico"
+ },
+ "53": {
+  "nome": "Yael Falcón",
+  "pais": "Argentina"
+ },
+ "54": {
+  "nome": "Facundo Tello",
+  "pais": "Argentina"
+ },
+ "55": {
+  "nome": "Tori Penso",
+  "pais": "USA"
+ },
+ "56": {
+  "nome": "Glenn Nyberg",
+  "pais": "Sweden"
+ },
+ "58": {
+  "nome": "Katia García",
+  "pais": "Mexico"
+ },
+ "57": {
+  "nome": "Ivan Barton",
+  "pais": null
+ },
+ "59": {
+  "nome": "Mustapha Ghorbal",
+  "pais": null
+ },
+ "60": {
+  "nome": "Clément Turpin",
+  "pais": "France"
+ },
+ "61": {
+  "nome": "Michael Oliver",
+  "pais": "England"
+ },
+ "62": {
+  "nome": "Anthony Taylor",
+  "pais": "England"
+ },
+ "64": {
+  "nome": "Ismail Elfath",
+  "pais": "United States"
+ },
+ "63": {
+  "nome": "François Letexier",
+  "pais": "France"
+ },
+ "66": {
+  "nome": "Adham Makhadmeh",
+  "pais": "Jordan"
+ },
+ "65": {
+  "nome": "Szymon Marciniak",
+  "pais": "Poland"
+ },
+ "67": {
+  "nome": "Abdulrahman Al Jassim",
+  "pais": "Qatar"
+ },
+ "68": {
+  "nome": "Drew Fischer",
+  "pais": "Canada"
+ },
+ "69": {
+  "nome": "Alireza Faghani",
+  "pais": "Iran"
+ },
+ "70": {
+  "nome": "Felix Zwayer",
+  "pais": "Germany"
+ },
+ "72": {
+  "nome": "István Kovács",
+  "pais": "Romania"
+ },
+ "71": {
+  "nome": "Il'giz Tantashev",
+  "pais": "Uzbekistan"
+ },
+ "73": {
+  "nome": "João Pinheiro",
+  "pais": "Portugal"
+ },
+ "76": {
+  "nome": "Maurizio Mariani",
+  "pais": "Italy"
+ },
+ "74": {
+  "nome": "Jalal Jayed",
+  "pais": "Morocco"
+ },
+ "75": {
+  "nome": "Wilton Sampaio",
+  "pais": "Brazil"
+ },
+ "78": {
+  "nome": "Jesús Valenzuela",
+  "pais": "Venezuela"
+ },
+ "77": {
+  "nome": "Danny Makkelie",
+  "pais": "Netherlands"
+ },
+ "79": {
+  "nome": "Slavko Vinčič",
+  "pais": "Slovenia"
+ },
+ "80": {
+  "nome": "Adham Makhadmeh",
+  "pais": "Jordan"
+ },
+ "82": {
+  "nome": "Said Martinez",
+  "pais": "Honduras"
+ },
+ "81": {
+  "nome": "Raphael Claus",
+  "pais": "Brazil"
+ },
+ "84": {
+  "nome": "Glenn Nyberg",
+  "pais": "Sweden"
+ },
+ "83": {
+  "nome": "Espen Eskås",
+  "pais": "Norway"
+ },
+ "85": {
+  "nome": "Yael Falcón",
+  "pais": "Argentina"
+ },
+ "88": {
+  "nome": "Gustavo Tejera",
+  "pais": "Uruguay"
+ },
+ "86": {
+  "nome": "Drew Fischer",
+  "pais": "Canada"
+ },
+ "87": {
+  "nome": "Clément Turpin",
+  "pais": "France"
+ },
+ "90": {
+  "nome": "Michael Oliver",
+  "pais": "England"
+ },
+ "89": {
+  "nome": "Il'giz Tantashev",
+  "pais": "Uzbekistan"
+ },
+ "91": {
+  "nome": "Ismail Elfath",
+  "pais": "United States"
+ },
+ "92": {
+  "nome": "Alireza Faghani",
+  "pais": "Iran"
+ },
+ "93": {
+  "nome": "Anthony Taylor",
+  "pais": "England"
+ },
+ "94": {
+  "nome": "Adham Makhadmeh",
+  "pais": "Jordan"
+ },
+ "95": {
+  "nome": "François Letexier",
+  "pais": "France"
+ },
+ "96": {
+  "nome": "Ivan Barton",
+  "pais": null
+ },
+ "97": {
+  "nome": "Facundo Tello",
+  "pais": "Argentina"
+ },
+ "98": {
+  "nome": "Michael Oliver",
+  "pais": "England"
+ },
+ "99": {
+  "nome": "Clément Turpin",
+  "pais": "France"
+ },
+ "100": {
+  "nome": "João Pinheiro",
+  "pais": "Portugal"
+ },
+ "101": {
+  "nome": "Ivan Barton",
+  "pais": null
+ },
+ "102": {
+  "nome": "Ismail Elfath",
+  "pais": "United States"
+ },
+ "103": {
+  "nome": "Jesús Valenzuela",
+  "pais": "Venezuela"
+ },
+ "104": {
+  "nome": "Slavko Vinčič",
+  "pais": "Slovenia"
+ }
+}

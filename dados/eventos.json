@@ -1,0 +1,2423 @@
+{
+ "1": {
+  "casa": "México",
+  "fora": "África do Sul",
+  "gols_casa": [
+   {
+    "jogador": "Julián Quiñones",
+    "minuto": "9",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Raúl Jiménez",
+    "minuto": "67",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "2": {
+  "casa": "Coreia do Sul",
+  "fora": "República Tcheca",
+  "gols_casa": [
+   {
+    "jogador": "Hwang In-Beom",
+    "minuto": "67",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Oh Hyeon-Gyu",
+    "minuto": "80",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ladislav Krejcí",
+    "minuto": "59",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "25": {
+  "casa": "República Tcheca",
+  "fora": "África do Sul",
+  "gols_casa": [
+   {
+    "jogador": "Michal Sadílek",
+    "minuto": "6",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Teboho Mokoena",
+    "minuto": "83",
+    "tipo": "penalti"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "28": {
+  "casa": "México",
+  "fora": "Coreia do Sul",
+  "gols_casa": [
+   {
+    "jogador": "Luis Romo",
+    "minuto": "50",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "53": {
+  "casa": "República Tcheca",
+  "fora": "México",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Mateo Chávez",
+    "minuto": "55",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Julián Quiñones",
+    "minuto": "61",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Álvaro Fidalgo",
+    "minuto": "90+4",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "54": {
+  "casa": "África do Sul",
+  "fora": "Coreia do Sul",
+  "gols_casa": [
+   {
+    "jogador": "Thapelo Maseko",
+    "minuto": "63",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "3": {
+  "casa": "Canadá",
+  "fora": "Bósnia e Herzegovina",
+  "gols_casa": [
+   {
+    "jogador": "Cyle Larin",
+    "minuto": "78",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Jovo Lukić",
+    "minuto": "21",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "6": {
+  "casa": "Catar",
+  "fora": "Suíça",
+  "gols_casa": [
+   {
+    "jogador": "Miro Muheim",
+    "minuto": "90+4",
+    "tipo": "contra"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Breel Embolo",
+    "minuto": "17",
+    "tipo": "penalti"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "26": {
+  "casa": "Suíça",
+  "fora": "Bósnia e Herzegovina",
+  "gols_casa": [
+   {
+    "jogador": "Johan Manzambi",
+    "minuto": "74",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Johan Manzambi",
+    "minuto": "90",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Rubén Vargas",
+    "minuto": "84",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Granit Xhaka",
+    "minuto": "90+7",
+    "tipo": "penalti"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ermin Mahmic",
+    "minuto": "90+3",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "27": {
+  "casa": "Canadá",
+  "fora": "Catar",
+  "gols_casa": [
+   {
+    "jogador": "Cyle Larin",
+    "minuto": "16",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Jonathan David",
+    "minuto": "29",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Jonathan David",
+    "minuto": "45+3",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Nathan Saliba",
+    "minuto": "64",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mohamed Manai",
+    "minuto": "75",
+    "tipo": "contra"
+   },
+   {
+    "jogador": "Jonathan David",
+    "minuto": "90+2",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "49": {
+  "casa": "Suíça",
+  "fora": "Canadá",
+  "gols_casa": [
+   {
+    "jogador": "Rubén Vargas",
+    "minuto": "46",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Johan Manzambi",
+    "minuto": "57",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Promise David",
+    "minuto": "76",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "50": {
+  "casa": "Bósnia e Herzegovina",
+  "fora": "Catar",
+  "gols_casa": [
+   {
+    "jogador": "Kerim Alajbegovic",
+    "minuto": "29",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mahmoud Abunada",
+    "minuto": "34",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "(OG) Ermin Mahmic",
+    "minuto": "80",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Hassan Al-Haydos",
+    "minuto": "42",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "7": {
+  "casa": "Brasil",
+  "fora": "Marrocos",
+  "gols_casa": [
+   {
+    "jogador": "Vinícius Júnior",
+    "minuto": "32",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ismael Saibari",
+    "minuto": "21",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "8": {
+  "casa": "Haiti",
+  "fora": "Escócia",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "John McGinn",
+    "minuto": "28",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "31": {
+  "casa": "Escócia",
+  "fora": "Marrocos",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Ismael Saibari",
+    "minuto": "2",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "32": {
+  "casa": "Brasil",
+  "fora": "Haiti",
+  "gols_casa": [
+   {
+    "jogador": "Matheus Cunha",
+    "minuto": "23",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Matheus Cunha",
+    "minuto": "36",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Vinícius Júnior",
+    "minuto": "45+3",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "51": {
+  "casa": "Escócia",
+  "fora": "Brasil",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Vinícius Júnior",
+    "minuto": "7",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Vinícius Júnior",
+    "minuto": "45+3",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Matheus Cunha",
+    "minuto": "60",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "52": {
+  "casa": "Marrocos",
+  "fora": "Haiti",
+  "gols_casa": [
+   {
+    "jogador": "Achraf Hakimi",
+    "minuto": "39",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ismael Saibari",
+    "minuto": "45+1",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Soufiane Rahimi",
+    "minuto": "78",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Gessime Yassine",
+    "minuto": "89",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Yassine Bounou",
+    "minuto": "10",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "(OG) Wilson Isidor",
+    "minuto": "43",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "4": {
+  "casa": "Estados Unidos",
+  "fora": "Paraguai",
+  "gols_casa": [
+   {
+    "jogador": "Damian Bobadilla",
+    "minuto": "7",
+    "tipo": "contra"
+   },
+   {
+    "jogador": "Folarin Balogun",
+    "minuto": "31",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Folarin Balogun",
+    "minuto": "45+5",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Giovanni Reyna",
+    "minuto": "90+8",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Mauricio",
+    "minuto": "73",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "5": {
+  "casa": "Austrália",
+  "fora": "Turquia",
+  "gols_casa": [
+   {
+    "jogador": "Nestory Irankunda",
+    "minuto": "27",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Connor Metcalfe",
+    "minuto": "75",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "30": {
+  "casa": "Estados Unidos",
+  "fora": "Austrália",
+  "gols_casa": [
+   {
+    "jogador": "Cameron Burgess",
+    "minuto": "11",
+    "tipo": "contra"
+   },
+   {
+    "jogador": "Alex Freeman",
+    "minuto": "43",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "29": {
+  "casa": "Turquia",
+  "fora": "Paraguai",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Matías Galarza",
+    "minuto": "2",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "59": {
+  "casa": "Turquia",
+  "fora": "Estados Unidos",
+  "gols_casa": [
+   {
+    "jogador": "Arda Güler",
+    "minuto": "10",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Baris Alper Yilmaz",
+    "minuto": "31",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Kaan Ayhan",
+    "minuto": "90+8",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Auston Trusty",
+    "minuto": "3",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Sebastian Berhalter",
+    "minuto": "49",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "60": {
+  "casa": "Paraguai",
+  "fora": "Austrália",
+  "gols_casa": [],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "9": {
+  "casa": "Alemanha",
+  "fora": "Curaçao",
+  "gols_casa": [
+   {
+    "jogador": "Felix Nmecha",
+    "minuto": "6",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Nico Schlotterbeck",
+    "minuto": "38",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Kai Havertz",
+    "minuto": "45+5",
+    "tipo": "penalti"
+   },
+   {
+    "jogador": "Kai Havertz",
+    "minuto": "88",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Jamal Musiala",
+    "minuto": "47",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Nathaniel Brown",
+    "minuto": "68",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Deniz Undav",
+    "minuto": "78",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Livano Comenencia",
+    "minuto": "21",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "11": {
+  "casa": "Costa do Marfim",
+  "fora": "Equador",
+  "gols_casa": [
+   {
+    "jogador": "Amad Diallo",
+    "minuto": "90",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "34": {
+  "casa": "Alemanha",
+  "fora": "Costa do Marfim",
+  "gols_casa": [
+   {
+    "jogador": "Deniz Undav",
+    "minuto": "68",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Deniz Undav",
+    "minuto": "90+4",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Franck Kessié",
+    "minuto": "30",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "35": {
+  "casa": "Equador",
+  "fora": "Curaçao",
+  "gols_casa": [],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "56": {
+  "casa": "Curaçao",
+  "fora": "Costa do Marfim",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Nicolas Pépé",
+    "minuto": "7",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Nicolas Pépé",
+    "minuto": "64",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "55": {
+  "casa": "Equador",
+  "fora": "Alemanha",
+  "gols_casa": [
+   {
+    "jogador": "Nilson Angulo",
+    "minuto": "9",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Gonzalo Plata",
+    "minuto": "77",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Leroy Sané",
+    "minuto": "2",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "10": {
+  "casa": "Holanda",
+  "fora": "Japão",
+  "gols_casa": [
+   {
+    "jogador": "Virgil van Dijk",
+    "minuto": "51",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Crysencio Summerville",
+    "minuto": "64",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Keito Nakamura",
+    "minuto": "57",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Daichi Kamada",
+    "minuto": "88",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "12": {
+  "casa": "Suécia",
+  "fora": "Tunísia",
+  "gols_casa": [
+   {
+    "jogador": "Yasin Ayari",
+    "minuto": "7",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Yasin Ayari",
+    "minuto": "90+6",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Alexander Isak",
+    "minuto": "30",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Viktor Gyökeres",
+    "minuto": "59",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mattias Svanberg",
+    "minuto": "84",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Omar Rekik",
+    "minuto": "43",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "33": {
+  "casa": "Holanda",
+  "fora": "Suécia",
+  "gols_casa": [
+   {
+    "jogador": "Brian Brobbey",
+    "minuto": "5",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Brian Brobbey",
+    "minuto": "17",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Cody Gakpo",
+    "minuto": "47",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Cody Gakpo",
+    "minuto": "54",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Crysencio Summerville",
+    "minuto": "89",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Anthony Elanga",
+    "minuto": "59",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "36": {
+  "casa": "Tunísia",
+  "fora": "Japão",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Daichi Kamada",
+    "minuto": "4",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ayase Ueda",
+    "minuto": "31",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ayase Ueda",
+    "minuto": "83",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Junya Ito",
+    "minuto": "69",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "57": {
+  "casa": "Japão",
+  "fora": "Suécia",
+  "gols_casa": [
+   {
+    "jogador": "Daizen Maeda",
+    "minuto": "56",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Anthony Elanga",
+    "minuto": "62",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "58": {
+  "casa": "Tunísia",
+  "fora": "Holanda",
+  "gols_casa": [
+   {
+    "jogador": "Hazem Mastouri",
+    "minuto": "54",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ellyes Skhiri",
+    "minuto": "3",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "(OG) Brian Brobbey",
+    "minuto": "7",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Jan Paul van Hecke",
+    "minuto": "62",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "14": {
+  "casa": "Bélgica",
+  "fora": "Egito",
+  "gols_casa": [
+   {
+    "jogador": "Mohamed Hany",
+    "minuto": "66",
+    "tipo": "contra"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Emam Ashour",
+    "minuto": "19",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "16": {
+  "casa": "Irã",
+  "fora": "Nova Zelândia",
+  "gols_casa": [
+   {
+    "jogador": "Ramin Rezaeian",
+    "minuto": "32",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mohammad Mohebbi",
+    "minuto": "64",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Elijah Just",
+    "minuto": "7",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Elijah Just",
+    "minuto": "54",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "38": {
+  "casa": "Bélgica",
+  "fora": "Irã",
+  "gols_casa": [],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "40": {
+  "casa": "Nova Zelândia",
+  "fora": "Egito",
+  "gols_casa": [
+   {
+    "jogador": "Finn Surman",
+    "minuto": "15",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Mostafa Zico",
+    "minuto": "58",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mohamed Salah",
+    "minuto": "67",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Trézéguet",
+    "minuto": "82",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "65": {
+  "casa": "Egito",
+  "fora": "Irã",
+  "gols_casa": [
+   {
+    "jogador": "Mahmoud Saber",
+    "minuto": "5",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ramin Rezaeian",
+    "minuto": "14",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "66": {
+  "casa": "Nova Zelândia",
+  "fora": "Bélgica",
+  "gols_casa": [
+   {
+    "jogador": "Elijah Just",
+    "minuto": "84",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Leandro Trossard",
+    "minuto": "28",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Leandro Trossard",
+    "minuto": "50",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Kevin De Bruyne",
+    "minuto": "66",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Romelu Lukaku",
+    "minuto": "86",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Alexis Saelemaekers",
+    "minuto": "90+4",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "13": {
+  "casa": "Espanha",
+  "fora": "Cabo Verde",
+  "gols_casa": [],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "15": {
+  "casa": "Arábia Saudita",
+  "fora": "Uruguai",
+  "gols_casa": [
+   {
+    "jogador": "Abdulelah Al-Amri",
+    "minuto": "41",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Maxi Araújo",
+    "minuto": "80",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "37": {
+  "casa": "Espanha",
+  "fora": "Arábia Saudita",
+  "gols_casa": [
+   {
+    "jogador": "Lamine Yamal",
+    "minuto": "10",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mikel Oyarzabal",
+    "minuto": "21",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mikel Oyarzabal",
+    "minuto": "24",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Hassan Al-Tambakti",
+    "minuto": "49",
+    "tipo": "contra"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "39": {
+  "casa": "Uruguai",
+  "fora": "Cabo Verde",
+  "gols_casa": [
+   {
+    "jogador": "Maxi Araújo",
+    "minuto": "44",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Agustín Cano",
+    "minuto": "45+6",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Kevin Pina",
+    "minuto": "21",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Hélio Varela",
+    "minuto": "61",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "63": {
+  "casa": "Cabo Verde",
+  "fora": "Arábia Saudita",
+  "gols_casa": [],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "64": {
+  "casa": "Uruguai",
+  "fora": "Espanha",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Álex Baena",
+    "minuto": "42",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "18": {
+  "casa": "França",
+  "fora": "Senegal",
+  "gols_casa": [
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "66",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "90+6",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Bradley Barcola",
+    "minuto": "82",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ibrahim Mbaye",
+    "minuto": "90+5",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "19": {
+  "casa": "Iraque",
+  "fora": "Noruega",
+  "gols_casa": [
+   {
+    "jogador": "Aymen Hussein",
+    "minuto": "39",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Erling Haaland",
+    "minuto": "29",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Erling Haaland",
+    "minuto": "43",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Leo Østigard",
+    "minuto": "76",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Aymen Hussein",
+    "minuto": "90+6",
+    "tipo": "contra"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "42": {
+  "casa": "França",
+  "fora": "Iraque",
+  "gols_casa": [
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "14",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "54",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ousmane Dembélé",
+    "minuto": "66",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "43": {
+  "casa": "Noruega",
+  "fora": "Senegal",
+  "gols_casa": [
+   {
+    "jogador": "Marcus Holmgren Pedersen",
+    "minuto": "43",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Erling Haaland",
+    "minuto": "48",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Erling Haaland",
+    "minuto": "58",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ismaïla Sarr",
+    "minuto": "53",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ismaïla Sarr",
+    "minuto": "90+3",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "61": {
+  "casa": "Noruega",
+  "fora": "França",
+  "gols_casa": [
+   {
+    "jogador": "Thelo Aasgaard",
+    "minuto": "21",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ousmane Dembélé",
+    "minuto": "7",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ousmane Dembélé",
+    "minuto": "20",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ousmane Dembélé",
+    "minuto": "32",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Désiré Doué",
+    "minuto": "90+4",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "62": {
+  "casa": "Senegal",
+  "fora": "Iraque",
+  "gols_casa": [
+   {
+    "jogador": "Habib Diarra",
+    "minuto": "4",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ismaïla Sarr",
+    "minuto": "56",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Pape Gueye",
+    "minuto": "59",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Pape Gueye",
+    "minuto": "71",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Iliman Ndiaye",
+    "minuto": "82",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "17": {
+  "casa": "Argentina",
+  "fora": "Argélia",
+  "gols_casa": [
+   {
+    "jogador": "Lionel Messi",
+    "minuto": "17",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Lionel Messi",
+    "minuto": "60",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Lionel Messi",
+    "minuto": "76",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "20": {
+  "casa": "Áustria",
+  "fora": "Jordânia",
+  "gols_casa": [
+   {
+    "jogador": "Romano Schmid",
+    "minuto": "21",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Yazan Al-Arab",
+    "minuto": "76",
+    "tipo": "contra"
+   },
+   {
+    "jogador": "Marko Arnautovic",
+    "minuto": "90+12",
+    "tipo": "penalti"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ali Olwan",
+    "minuto": "50",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "41": {
+  "casa": "Argentina",
+  "fora": "Áustria",
+  "gols_casa": [
+   {
+    "jogador": "Lionel Messi",
+    "minuto": "38",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Lionel Messi",
+    "minuto": "90+5",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "44": {
+  "casa": "Jordânia",
+  "fora": "Argélia",
+  "gols_casa": [
+   {
+    "jogador": "Nizar Al-Rashdan",
+    "minuto": "36",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Nadhir Benbouali",
+    "minuto": "69",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Amine Gouiri",
+    "minuto": "82",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "71": {
+  "casa": "Argélia",
+  "fora": "Áustria",
+  "gols_casa": [
+   {
+    "jogador": "Rafik Belghali",
+    "minuto": "45",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Riyad Mahrez",
+    "minuto": "60",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Riyad Mahrez",
+    "minuto": "90+3",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Marko Arnautovic",
+    "minuto": "28",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Marcel Sabitzer",
+    "minuto": "55",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Sasa Kalajdzic",
+    "minuto": "90+6",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "72": {
+  "casa": "Jordânia",
+  "fora": "Argentina",
+  "gols_casa": [
+   {
+    "jogador": "Mousa Al-Tamari",
+    "minuto": "55",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Giovani Lo Celso",
+    "minuto": "19",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Lautaro Martínez",
+    "minuto": "31",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "(pen.) Lionel Messi",
+    "minuto": "80",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "21": {
+  "casa": "Portugal",
+  "fora": "RD Congo",
+  "gols_casa": [
+   {
+    "jogador": "João Neves",
+    "minuto": "6",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Yoane Wissa",
+    "minuto": "45+5",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "24": {
+  "casa": "Uzbequistão",
+  "fora": "Colômbia",
+  "gols_casa": [
+   {
+    "jogador": "Abbosbek Fayzullaev",
+    "minuto": "60",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Daniel Muñoz",
+    "minuto": "40",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Luis Díaz",
+    "minuto": "65",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Jáminton Campaz",
+    "minuto": "90+9",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "45": {
+  "casa": "Portugal",
+  "fora": "Uzbequistão",
+  "gols_casa": [
+   {
+    "jogador": "Cristiano Ronaldo",
+    "minuto": "6",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Cristiano Ronaldo",
+    "minuto": "39",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Nuno Mendes",
+    "minuto": "17",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Abduvohid Nematov",
+    "minuto": "60",
+    "tipo": "contra"
+   },
+   {
+    "jogador": "Rafael Leão",
+    "minuto": "87",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "48": {
+  "casa": "Colômbia",
+  "fora": "RD Congo",
+  "gols_casa": [
+   {
+    "jogador": "Daniel Muñoz",
+    "minuto": "76",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "69": {
+  "casa": "Colômbia",
+  "fora": "Portugal",
+  "gols_casa": [],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "70": {
+  "casa": "RD Congo",
+  "fora": "Uzbequistão",
+  "gols_casa": [
+   {
+    "jogador": "Yoane Wissa",
+    "minuto": "68",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "(pen.) Fiston Mayele",
+    "minuto": "78",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Yoane Wissa",
+    "minuto": "90+1",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Eldor Shomurodov",
+    "minuto": "10",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "22": {
+  "casa": "Inglaterra",
+  "fora": "Croácia",
+  "gols_casa": [
+   {
+    "jogador": "Harry Kane",
+    "minuto": "12",
+    "tipo": "penalti"
+   },
+   {
+    "jogador": "Harry Kane",
+    "minuto": "42",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Jude Bellingham",
+    "minuto": "47",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Marcus Rashford",
+    "minuto": "85",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Martin Baturina",
+    "minuto": "36",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Petar Musa",
+    "minuto": "45+5",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "23": {
+  "casa": "Gana",
+  "fora": "Panamá",
+  "gols_casa": [
+   {
+    "jogador": "Caleb Yirenkyi",
+    "minuto": "90+5",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "46": {
+  "casa": "Inglaterra",
+  "fora": "Gana",
+  "gols_casa": [],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "47": {
+  "casa": "Panamá",
+  "fora": "Croácia",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Ante Budimir",
+    "minuto": "54",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "67": {
+  "casa": "Panamá",
+  "fora": "Inglaterra",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Jude Bellingham",
+    "minuto": "62",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Harry Kane",
+    "minuto": "67",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "68": {
+  "casa": "Croácia",
+  "fora": "Gana",
+  "gols_casa": [
+   {
+    "jogador": "Petar Sucic",
+    "minuto": "31",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Nikola Vlasic",
+    "minuto": "83",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Derrick Luckassen",
+    "minuto": "73",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "73": {
+  "casa": "África do Sul",
+  "fora": "Canadá",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Stephan Eustáquio",
+    "minuto": "90+2",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "74": {
+  "casa": "Alemanha",
+  "fora": "Paraguai",
+  "gols_casa": [
+   {
+    "jogador": "Kai Havertz",
+    "minuto": "54",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Julio Enciso",
+    "minuto": "42",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": true
+ },
+ "75": {
+  "casa": "Holanda",
+  "fora": "Marrocos",
+  "gols_casa": [
+   {
+    "jogador": "Cody Gakpo",
+    "minuto": "72",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Issa Diop",
+    "minuto": "90+1",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": true
+ },
+ "76": {
+  "casa": "Brasil",
+  "fora": "Japão",
+  "gols_casa": [
+   {
+    "jogador": "Casemiro",
+    "minuto": "56",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Gabriel Martinelli",
+    "minuto": "90+5",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Kaishu Sano",
+    "minuto": "29",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "77": {
+  "casa": "França",
+  "fora": "Suécia",
+  "gols_casa": [
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "45",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "74",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Bradley Barcola",
+    "minuto": "53",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "78": {
+  "casa": "Costa do Marfim",
+  "fora": "Noruega",
+  "gols_casa": [
+   {
+    "jogador": "Amad Diallo",
+    "minuto": "74",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Antonio Nusa",
+    "minuto": "39",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Erling Haaland",
+    "minuto": "86",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "79": {
+  "casa": "México",
+  "fora": "Equador",
+  "gols_casa": [
+   {
+    "jogador": "Julián Quiñones",
+    "minuto": "31",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Raúl Jiménez",
+    "minuto": "45+1",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "80": {
+  "casa": "Inglaterra",
+  "fora": "RD Congo",
+  "gols_casa": [
+   {
+    "jogador": "Harry Kane",
+    "minuto": "75",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Harry Kane",
+    "minuto": "86",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Brian Cipenga",
+    "minuto": "7",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "81": {
+  "casa": "Estados Unidos",
+  "fora": "Bósnia e Herzegovina",
+  "gols_casa": [
+   {
+    "jogador": "Folarin Balogun",
+    "minuto": "45",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Malik Tillman",
+    "minuto": "82",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "82": {
+  "casa": "Bélgica",
+  "fora": "Senegal",
+  "gols_casa": [
+   {
+    "jogador": "Romelu Lukaku",
+    "minuto": "86",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Youri Tielemans",
+    "minuto": "89",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Youri Tielemans",
+    "minuto": "120+5",
+    "tipo": "penalti"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Habib Diarra",
+    "minuto": "25",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ismaïla Sarr",
+    "minuto": "51",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": true
+ },
+ "83": {
+  "casa": "Portugal",
+  "fora": "Croácia",
+  "gols_casa": [
+   {
+    "jogador": "Cristiano Ronaldo",
+    "minuto": "68",
+    "tipo": "penalti"
+   },
+   {
+    "jogador": "Gonçalo Ramos",
+    "minuto": "90+4",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Ivan Perisic",
+    "minuto": "53",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "84": {
+  "casa": "Espanha",
+  "fora": "Áustria",
+  "gols_casa": [
+   {
+    "jogador": "Mikel Oyarzabal",
+    "minuto": "36",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mikel Oyarzabal",
+    "minuto": "89",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Pedro Porro",
+    "minuto": "66",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "85": {
+  "casa": "Suíça",
+  "fora": "Argélia",
+  "gols_casa": [
+   {
+    "jogador": "Breel Embolo",
+    "minuto": "10",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Dan Ndoye",
+    "minuto": "46",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "86": {
+  "casa": "Argentina",
+  "fora": "Cabo Verde",
+  "gols_casa": [
+   {
+    "jogador": "Lionel Messi",
+    "minuto": "29",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Lisandro Martínez",
+    "minuto": "92",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Diney Borges",
+    "minuto": "111",
+    "tipo": "contra"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Deroy Duarte",
+    "minuto": "59",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Sidny Lopes Cabral",
+    "minuto": "103",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": true
+ },
+ "87": {
+  "casa": "Colômbia",
+  "fora": "Gana",
+  "gols_casa": [
+   {
+    "jogador": "Jhon Arias",
+    "minuto": "14",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "88": {
+  "casa": "Austrália",
+  "fora": "Egito",
+  "gols_casa": [
+   {
+    "jogador": "Mohamed Hany",
+    "minuto": "55",
+    "tipo": "contra"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Emam Ashour",
+    "minuto": "13",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": true
+ },
+ "89": {
+  "casa": "Paraguai",
+  "fora": "França",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "70",
+    "tipo": "penalti"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "90": {
+  "casa": "Canadá",
+  "fora": "Marrocos",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Azzedine Ounahi",
+    "minuto": "50",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Azzedine Ounahi",
+    "minuto": "82",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Soufiane Rahimi",
+    "minuto": "90+8",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "91": {
+  "casa": "Brasil",
+  "fora": "Noruega",
+  "gols_casa": [
+   {
+    "jogador": "Neymar",
+    "minuto": "90+10",
+    "tipo": "penalti"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Erling Haaland",
+    "minuto": "79",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Erling Haaland",
+    "minuto": "90",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "92": {
+  "casa": "México",
+  "fora": "Inglaterra",
+  "gols_casa": [
+   {
+    "jogador": "Julián Quiñones",
+    "minuto": "42",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Raúl Jiménez",
+    "minuto": "69",
+    "tipo": "penalti"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Jude Bellingham",
+    "minuto": "36",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Jude Bellingham",
+    "minuto": "38",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Harry Kane",
+    "minuto": "60",
+    "tipo": "penalti"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "93": {
+  "casa": "Portugal",
+  "fora": "Espanha",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Mikel Merino",
+    "minuto": "90+1",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "94": {
+  "casa": "Estados Unidos",
+  "fora": "Bélgica",
+  "gols_casa": [
+   {
+    "jogador": "Malik Tillman",
+    "minuto": "31",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Charles De Ketelaere",
+    "minuto": "9",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Charles De Ketelaere",
+    "minuto": "33",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Hans Vanaken",
+    "minuto": "57",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Romelu Lukaku",
+    "minuto": "90+3",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "95": {
+  "casa": "Argentina",
+  "fora": "Egito",
+  "gols_casa": [
+   {
+    "jogador": "Cristian Romero",
+    "minuto": "79",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Lionel Messi",
+    "minuto": "83",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Enzo Fernández",
+    "minuto": "90+2",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Yasser Ibrahim",
+    "minuto": "15",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mostafa Zico",
+    "minuto": "67",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "96": {
+  "casa": "Suíça",
+  "fora": "Colômbia",
+  "gols_casa": [],
+  "gols_fora": [],
+  "prorrogacao": true
+ },
+ "97": {
+  "casa": "França",
+  "fora": "Marrocos",
+  "gols_casa": [
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "60",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ousmane Dembélé",
+    "minuto": "66",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": false
+ },
+ "98": {
+  "casa": "Espanha",
+  "fora": "Bélgica",
+  "gols_casa": [
+   {
+    "jogador": "Fabián Ruiz",
+    "minuto": "30",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Mikel Merino",
+    "minuto": "88",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Charles De Ketelaere",
+    "minuto": "41",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "99": {
+  "casa": "Noruega",
+  "fora": "Inglaterra",
+  "gols_casa": [
+   {
+    "jogador": "Andreas Schjelderup",
+    "minuto": "36",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Jude Bellingham",
+    "minuto": "45+2",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Jude Bellingham",
+    "minuto": "93",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": true
+ },
+ "100": {
+  "casa": "Argentina",
+  "fora": "Suíça",
+  "gols_casa": [
+   {
+    "jogador": "Alexis Mac Allister",
+    "minuto": "10",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Julián Álvarez",
+    "minuto": "112",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Lautaro Martínez",
+    "minuto": "120+1",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Dan Ndoye",
+    "minuto": "67",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": true
+ },
+ "101": {
+  "casa": "França",
+  "fora": "Espanha",
+  "gols_casa": [],
+  "gols_fora": [
+   {
+    "jogador": "Mikel Oyarzabal",
+    "minuto": "22",
+    "tipo": "penalti"
+   },
+   {
+    "jogador": "Pedro Porro",
+    "minuto": "58",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "102": {
+  "casa": "Inglaterra",
+  "fora": "Argentina",
+  "gols_casa": [
+   {
+    "jogador": "Anthony Gordon",
+    "minuto": "55",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Enzo Fernández",
+    "minuto": "86",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Lautaro Martínez",
+    "minuto": "92",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "103": {
+  "casa": "França",
+  "fora": "Inglaterra",
+  "gols_casa": [
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "48",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Kylian Mbappé",
+    "minuto": "66",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Bradley Barcola",
+    "minuto": "54",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ousmane Dembélé",
+    "minuto": "90+6",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [
+   {
+    "jogador": "Declan Rice",
+    "minuto": "3",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Ezri Konsa",
+    "minuto": "18",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Bukayo Saka",
+    "minuto": "37",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Bukayo Saka",
+    "minuto": "45+1",
+    "tipo": "normal"
+   },
+   {
+    "jogador": "Bukayo Saka",
+    "minuto": "87",
+    "tipo": "penalti"
+   },
+   {
+    "jogador": "Jude Bellingham",
+    "minuto": "90+8",
+    "tipo": "normal"
+   }
+  ],
+  "prorrogacao": false
+ },
+ "104": {
+  "casa": "Espanha",
+  "fora": "Argentina",
+  "gols_casa": [
+   {
+    "jogador": "Ferran Torres",
+    "minuto": "106",
+    "tipo": "normal"
+   }
+  ],
+  "gols_fora": [],
+  "prorrogacao": true
+ }
+}
