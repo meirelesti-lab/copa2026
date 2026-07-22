@@ -1,12 +1,9 @@
 name: Atualizar Copa 2026
 
+# A Copa acabou em 19/07/2026 (Espanha 1–0 Argentina). Não há mais placar para
+# buscar, então o agendamento automático foi desligado — o workflow só roda
+# quando disparado à mão (ex.: backfill de algum jogo que faltou casar).
 on:
-  schedule:
-    # O agendador do GitHub é best-effort no plano gratuito: atrasa/pula
-    # disparos, então minutos esparsos resultavam em ~2 runs/dia. Adensar a
-    # malha (a cada 10 min) aumenta a chance de algum disparo cair perto do
-    # fim de cada jogo e evita janelas mortas de várias horas.
-    - cron: '*/10 * * * *'
   workflow_dispatch:          # permite rodar manualmente pelo GitHub
 
 # Cron interno e pinger externo disparam o mesmo workflow. Serializa runs para
