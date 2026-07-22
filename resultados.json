@@ -865,7 +865,13 @@
   },
   "92": {
     "time1_real": "México",
-    "time2_real": "Inglaterra"
+    "time2_real": "Inglaterra",
+    "gols1": 2,
+    "gols2": 3,
+    "encerrado": true,
+    "home_api": "México",
+    "away_api": "Inglaterra",
+    "ao_vivo": false
   },
   "94": {
     "time1_real": "Estados Unidos",
