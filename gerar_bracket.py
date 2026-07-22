@@ -179,10 +179,7 @@ def _card(j, pos):
     x, y = pos[j["id"]]
     venc = _vencedor(j)
     encerrado = j["encerrado"] and venc is not None
-    if encerrado:
-        cabecalho = f"{j['dia']}, {j['data']} · Fim"
-    else:
-        cabecalho = f"{j['dia']}, {j['data']} · {j['hora']}"
+    cabecalho = f"{j['dia']}, {j['data']}"
     l1 = _linha_time(j["time1"], j["flag1"], j["mostra1"], j["pen1"], venc == 1, encerrado)
     l2 = _linha_time(j["time2"], j["flag2"], j["mostra2"], j["pen2"], venc == 2, encerrado)
     return (
@@ -376,7 +373,7 @@ def gerar_bracket(output_path="bracket.html"):
   </div>
 </div>
 
-<footer>Fonte: football-data.org · Horários em Brasília</footer>
+<footer>Fonte: football-data.org · Torneio encerrado em 19/07/2026</footer>
 
 <script>
   var SCROLL_FASE = __SCROLL_JSON__;
