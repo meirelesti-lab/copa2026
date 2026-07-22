@@ -24,6 +24,8 @@ API_KEY = os.getenv("FOOTBALL_API_KEY", "")
 API_URL = "https://api.football-data.org/v4/competitions/WC/matches"
 RESULTADOS_FILE = "resultados.json"
 
+TORNEIO_ENCERRADO = True
+
 BRASILIA = timezone(timedelta(hours=-3))
 
 
@@ -296,6 +298,16 @@ def git_push():
 
 def main():
     no_git = "--no-git" in sys.argv
+
+    # A Copa acabou em 19/07/2026 e resultados.json está completo (104/104).
+    # Este script existe só como ferramenta de manutenção: rodá-lo por acidente
+    # (um dispatch esquecido, a API apontando para outro torneio) reescreveria o
+    # arquivo do qual o site inteiro depende. Regenerar o HTML é sempre seguro.
+    if TORNEIO_ENCERRADO and "--force" not in sys.argv:
+        print("Torneio encerrado — resultados.json está congelado.")
+        print("Para só regerar as páginas: python3 gerar_html.py && python3 gerar_bracket.py")
+        print("Para buscar na API mesmo assim: python3 atualizar.py --force")
+        return
 
     # Carregar resultados existentes
     resultados = {}
